@@ -119,6 +119,9 @@ class gdpr_cookie_notice_compliance {
 
         add_option( 'gpdrcono_readmore_text', esc_html__( 'Read More', 'gdprcono' ) );
         register_setting( 'gdprcono_options_group', 'gpdrcono_readmore_text' );
+
+        add_option( 'gpdrcono_readmore_link' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_readmore_link' );
 	}
 
 	/*
@@ -153,7 +156,7 @@ class gdpr_cookie_notice_compliance {
 
         // Update options.
         update_option( 'gpdrcono_headline_text', sanitize_text_field( $_POST['gpdrcono_headline_text'] ) );
-        update_option( 'gpdrcono_accept_text', '' );
+        update_option( 'gpdrcono_accept_text', sanitize_text_field( $_POST['gpdrcono_accept_text'] ) );
         update_option( 'gpdrcono_reject_text', sanitize_text_field( $_POST['gpdrcono_reject_text'] ) );
         update_option( 'gpdrcono_readmore_text', sanitize_text_field( $_POST['gpdrcono_readmore_text'] ) );
 	}

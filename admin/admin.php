@@ -11,7 +11,7 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
 <div class="gdprcono wrap">
     <h1 class="gdprcono__title"><?php esc_html_e( 'GDPR Cookie Notice & Compliance', 'gdprcono' ) ?></h1>
     
-    <form method="post" action="options.php" spellcheck="false">
+    <form method="post" action="options.php" spellcheck="false" autocomplete="off">
         <?php settings_fields( 'gdprcono_options_group' ); ?>
         <?php wp_nonce_field( 'gdprcono_action', 'gdprcono_admin_nonce' ); ?>
             <table>
@@ -48,6 +48,15 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                     </th>
                     <td>
                         <input type="text" id="gpdrcono_readmore_text" name="gpdrcono_readmore_text" value="<?php echo get_option( 'gpdrcono_readmore_text' ); ?>" />
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="gpdrcono_readmore_link"><?php esc_html_e( 'Read More URL', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="gpdrcono_readmore_link" name="gpdrcono_readmore_link" value="<?php echo get_option( 'gpdrcono_readmore_link' ); ?>" />
                     </td>
                 </tr>
             </table>
