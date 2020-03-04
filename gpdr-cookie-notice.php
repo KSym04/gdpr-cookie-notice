@@ -147,9 +147,15 @@ class gdpr_cookie_notice_compliance {
 		}
 
 		// Security token.
-		if( ! ( isset( $_POST['_wpnonce'] ) && check_admin_referer( 'gdprcono_action', 'gdprcono_nonce' ) ) ) {
+		if( ! ( isset( $_POST['_wpnonce'] ) && check_admin_referer( 'gdprcono_action', 'gdprcono_admin_nonce' ) ) ) {
 			return;
         }
+
+        // Update options.
+        update_option( 'gpdrcono_headline_text', sanitize_text_field( $_POST['gpdrcono_headline_text'] ) );
+        update_option( 'gpdrcono_accept_text', '' );
+        update_option( 'gpdrcono_reject_text', sanitize_text_field( $_POST['gpdrcono_reject_text'] ) );
+        update_option( 'gpdrcono_readmore_text', sanitize_text_field( $_POST['gpdrcono_readmore_text'] ) );
 	}
 
 	/*

@@ -1,9 +1,19 @@
+<?php
+/**
+ * Admin Page Settings
+ *
+ * @package GDPR Cookie Notice & Compliance
+ * @since 1.0.0
+ */
+
+if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
+
 <div class="gdprcono wrap">
     <h1 class="gdprcono__title"><?php esc_html_e( 'GDPR Cookie Notice & Compliance', 'gdprcono' ) ?></h1>
     
     <form method="post" action="options.php" spellcheck="false">
         <?php settings_fields( 'gdprcono_options_group' ); ?>
-        <?php wp_nonce_field( 'gdprcono_action', 'gdprcono_nonce' ); ?>
+        <?php wp_nonce_field( 'gdprcono_action', 'gdprcono_admin_nonce' ); ?>
             <table>
                 <tr valign="top">
                     <th scope="row">
