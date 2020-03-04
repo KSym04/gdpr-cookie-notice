@@ -1,9 +1,9 @@
 # GDPR Cookie Notice & Compliance #
 
-**Contributors:** eteamdk\
+**Contributors:** eteamdk, ksym04\
 **Tags:** cookie consent, gdpr compliance, gdpr notice\
 **Requires at least:** 4.7\
-**Tested up to:** 5.4\
+**Tested up to:** 5.3.2\
 **Stable tag:** 1.0.0\
 **License:** GPLv3\
 **License URI:** [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)
