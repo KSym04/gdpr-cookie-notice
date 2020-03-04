@@ -76,9 +76,9 @@ class gdpr_cookie_notice_compliance {
 		);
 
 		// Actions.
-		// add_action( 'init', array( $this, 'main') );
-		add_action( 'admin_menu', array( $this, 'admin_page_url') );
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_page_styles_scripts') );
+        add_action( 'admin_init', array( $this, 'admin_page_options_register' ) );
+		add_action( 'admin_menu', array( $this, 'admin_page_url' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_page_styles_scripts' ) );
 	}
 
 	/*
@@ -86,7 +86,7 @@ class gdpr_cookie_notice_compliance {
 	*
 	*  @type	function
 	*  @date	03/04/2020
-	*  @since	1.0.2
+	*  @since	1.0.0
 	*/
 	public function admin_page_url() {
 		add_options_page(
@@ -98,6 +98,27 @@ class gdpr_cookie_notice_compliance {
 		);
 
 		add_filter( 'plugin_action_links_' . $this->settings['basename'], array( $this, 'admin_settings_url') );
+    }
+    
+	/*
+	*  admin_page_options_register
+	*
+	*  @type	function
+	*  @date	03/04/2020
+	*  @since	1.0.0
+	*/
+	public function admin_page_options_register() {
+        add_option( 'gpdrcono_headline_text', esc_html__( 'This website uses cookies for statistics and settings. By clicking further on the site you accept the use of cookies.', 'gdprcono' ) );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_headline_text' );
+
+        add_option( 'gpdrcono_accept_text', esc_html__( 'OK', 'gdprcono' ) );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_accept_text' );
+
+        add_option( 'gpdrcono_reject_text', esc_html__( 'No, thanks', 'gdprcono' ) );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_reject_text' );
+
+        add_option( 'gpdrcono_readmore_text', esc_html__( 'Read More', 'gdprcono' ) );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_readmore_text' );
 	}
 
 	/*
@@ -105,11 +126,30 @@ class gdpr_cookie_notice_compliance {
 	*
 	*  @type	function
 	*  @date	03/04/2020
-	*  @since	1.0.2
+	*  @since	1.0.0
 	*/
 	public function admin_settings_page() {
-		// $this->admin_save_settings();
-		include( $this->settings['path'] . 'admin/admin.php' );
+		$this->admin_save_settings();
+        include( $this->settings['path'] . 'admin/admin.php' );
+    }
+    
+    /*
+	*  admin_save_settings
+	*
+	*  @type	function
+	*  @date	03/04/2020
+	*  @since	1.0.0
+	*/
+	public function admin_save_settings() {
+		// Check user capability.
+		if( ! current_user_can( $this->settings['permission'] ) ) {
+			return;
+		}
+
+		// Security token.
+		if( ! ( isset( $_POST['_wpnonce'] ) && check_admin_referer( 'gdprcono_action', 'gdprcono_nonce' ) ) ) {
+			return;
+        }
 	}
 
 	/*
@@ -117,11 +157,11 @@ class gdpr_cookie_notice_compliance {
 	*
 	*  @type	function
 	*  @date	03/04/2020
-	*  @since	1.0.2
+	*  @since	1.0.0
 	*/
 	public function admin_settings_url( $url ) {
 		$settings_url  = menu_page_url( $this->settings['menu_slug'], false );
-		$settings_link = "<a href='$settings_url'>" . esc_html__( "Settings", "gdprcono" ) . "</a>";
+		$settings_link = "<a href='{$settings_url}'>" . esc_html__( 'Settings', 'gdprcono' ) . "</a>";
 		array_unshift( $url, $settings_link );
 
 		return $url;
@@ -132,7 +172,7 @@ class gdpr_cookie_notice_compliance {
 	*
 	*  @type	function
 	*  @date	03/04/2020
-	*  @since	1.0.2
+	*  @since	1.0.0
 	*/
 	public function admin_page_styles_scripts() {
 		// Style.

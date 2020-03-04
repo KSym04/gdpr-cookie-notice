@@ -1,0 +1,47 @@
+<div class="gdprcono wrap">
+    <h1 class="gdprcono__title"><?php esc_html_e( 'GDPR Cookie Notice & Compliance', 'gdprcono' ) ?></h1>
+    
+    <form method="post" action="options.php" spellcheck="false">
+        <?php settings_fields( 'gdprcono_options_group' ); ?>
+        <?php wp_nonce_field( 'gdprcono_action', 'gdprcono_nonce' ); ?>
+            <table>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="gpdrcono_headline_text"><?php esc_html_e( 'Headline Text', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <textarea id="gpdrcono_headline_text" name="gpdrcono_headline_text"><?php echo get_option( 'gpdrcono_headline_text' ); ?></textarea>
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="gpdrcono_accept_text"><?php esc_html_e( 'Accept Text', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="gpdrcono_accept_text" name="gpdrcono_accept_text" value="<?php echo get_option( 'gpdrcono_accept_text' ); ?>" />
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="gpdrcono_reject_text"><?php esc_html_e( 'Reject Text', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="gpdrcono_reject_text" name="gpdrcono_reject_text" value="<?php echo get_option( 'gpdrcono_reject_text' ); ?>" />
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="gpdrcono_readmore_text"><?php esc_html_e( 'Read More Text', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="gpdrcono_readmore_text" name="gpdrcono_readmore_text" value="<?php echo get_option( 'gpdrcono_readmore_text' ); ?>" />
+                    </td>
+                </tr>
+            </table>
+        <hr />
+        <?php submit_button(); ?>
+    </form>
+</div>

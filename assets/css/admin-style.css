@@ -1,0 +1,36 @@
+.gdprcono table { 
+    width: 80%; 
+    max-width: 800px; 
+    margin-top: 30px; 
+}
+
+.gdprcono th { 
+    width: 20%; 
+}
+
+.gdprcono td { 
+    vertical-align: middle; 
+    padding-bottom: 15px; 
+}
+
+.gdprcono em { 
+    display: block; 
+}
+
+.gdprcono label { 
+    display: block; 
+    width: 180px; 
+    padding: 12px 0; 
+    font-size: 16px; 
+    text-align: left; 
+}
+
+.gdprcono input[type="text"],
+.gdprcono textarea { 
+    width: 80%; 
+    padding: 10px; 
+}
+
+.gdprcono textarea {
+    min-height: 120px;
+}
