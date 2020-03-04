@@ -15,7 +15,7 @@ Domain Path: /lang
 
 /*
     Copyright Eteam.dk
-    
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -28,3 +28,149 @@ Domain Path: /lang
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
 */
+
+if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
+
+if( ! class_exists( 'gdpr_cookie_notice_compliance' ) ) :
+
+class gdpr_cookie_notice_compliance {
+
+	/*
+	*  __construct
+	*
+	*  A dummy constructor to ensure GDPR Cookie Notice & Compliance is only initialized once
+	*
+	*  @type	function
+	*  @date	03/04/2020
+	*  @since	1.0.0
+	*
+	*  @param	N/A
+	*  @return	N/A
+	*/
+	public function __construct() {
+		// Do nothing here.
+	}
+
+	/*
+	*  initialize
+	*
+	*  The real constructor to initialize GDPR Cookie Notice & Compliance
+	*
+	*  @type	function
+	*  @date	03/04/2020
+	*  @since	1.0.0
+	*
+	*  @param	N/A
+	*  @return	N/A
+	*/
+	public function initialize() {
+		// Variables.
+		$this->settings = array(
+			'name'		 => __( 'GDPR Cookie Notice & Compliance', 'gdprcono' ),
+			'version'	 => '1.0.0',
+			'menu_slug'	 => 'gdpr-cookie-notice-compliance',
+			'permission' => 'manage_options',
+			'basename'	 => plugin_basename( __FILE__ ),
+			'path'		 => plugin_dir_path( __FILE__ ),
+			'dir'		 => plugin_dir_url( __FILE__ )
+		);
+
+		// Actions.
+		// add_action( 'init', array( $this, 'main') );
+		add_action( 'admin_menu', array( $this, 'admin_page_url') );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_page_styles_scripts') );
+	}
+
+	/*
+	*  admin_page_url
+	*
+	*  @type	function
+	*  @date	03/04/2020
+	*  @since	1.0.2
+	*/
+	public function admin_page_url() {
+		add_options_page(
+			esc_html__( 'GDPR Cookie Notice & Compliance / Settings', 'gdprcono' ),
+			esc_html__( 'GDPR Cookie Notice & Compliance', 'gdprcono' ),
+			$this->settings['permission'], // capability
+			$this->settings['menu_slug'],  // menu slug
+			array( $this, 'admin_settings_page')
+		);
+
+		add_filter( 'plugin_action_links_' . $this->settings['basename'], array( $this, 'admin_settings_url') );
+	}
+
+	/*
+	*  admin_settings_page
+	*
+	*  @type	function
+	*  @date	03/04/2020
+	*  @since	1.0.2
+	*/
+	public function admin_settings_page() {
+		// $this->admin_save_settings();
+		include( $this->settings['path'] . 'admin/admin.php' );
+	}
+
+	/*
+	*  admin_settings_url
+	*
+	*  @type	function
+	*  @date	03/04/2020
+	*  @since	1.0.2
+	*/
+	public function admin_settings_url( $url ) {
+		$settings_url  = menu_page_url( $this->settings['menu_slug'], false );
+		$settings_link = "<a href='$settings_url'>" . esc_html__( "Settings", "gdprcono" ) . "</a>";
+		array_unshift( $url, $settings_link );
+
+		return $url;
+	}
+
+	/*
+	*  admin_page_styles_scripts
+	*
+	*  @type	function
+	*  @date	03/04/2020
+	*  @since	1.0.2
+	*/
+	public function admin_page_styles_scripts() {
+		// Style.
+		wp_enqueue_style( 'gdprcono-admin-base', plugin_dir_url( __FILE__ ) . 'assets/css/admin-style.css', array(), $this->settings['version'] );
+
+		// Script.
+		wp_enqueue_script( 'gdprcono-admin', plugin_dir_url( __FILE__ ) . 'assets/js/admin-script.js', array( 'jquery' ), $this->settings['version'] );
+	}
+}
+
+/*
+*  gdpr_cookie_notice_compliance
+*
+*  The main function responsible for returning the one true gdpr_cookie_notice_compliance Instance to functions everywhere.
+*  Use this function like you would a global variable, except without needing to declare the global.
+*
+*  Example: <?php $gdpr_cookie_notice_compliance = gdpr_cookie_notice_compliance(); ?>
+*
+*  @type	function
+*  @date	03/04/2020
+*  @since	1.0.0
+*
+*  @param	N/A
+*  @return	(object)
+*/
+
+function gdpr_cookie_notice_compliance() {
+	global $gdpr_cookie_notice_compliance;
+	if( ! isset($gdpr_cookie_notice_compliance) ) {
+		$gdpr_cookie_notice_compliance = new gdpr_cookie_notice_compliance();
+		$gdpr_cookie_notice_compliance->initialize();
+	}
+
+	return $gdpr_cookie_notice_compliance;
+}
+
+// initialize.
+gdpr_cookie_notice_compliance();
+
+
+endif; // class_exists check.
