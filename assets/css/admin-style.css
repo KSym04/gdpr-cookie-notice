@@ -17,6 +17,14 @@
     display: block; 
 }
 
+.gdprcono .gdprcono__titlesub {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #777777;
+    color: #ffffff;
+    margin-bottom: -10px;
+}
+
 .gdprcono .label { 
     display: block; 
     width: 180px; 

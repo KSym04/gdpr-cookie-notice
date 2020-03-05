@@ -11,6 +11,7 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
 <div class="gdprcono wrap">
     <h1 class="gdprcono__title"><?php esc_html_e( 'GDPR Cookie Notice & Compliance', 'gdprcono' ) ?></h1>
     
+    <h3 class="gdprcono__titlesub"><?php esc_html_e( 'Notification Bar', 'gdprcono' ) ?></h3>
     <form method="post" action="options.php" spellcheck="false" autocomplete="off">
         <?php settings_fields( 'gdprcono_options_group' ); ?>
         <?php wp_nonce_field( 'gdprcono_action', 'gdprcono_admin_nonce' ); ?>
@@ -72,6 +73,15 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                     </th>
                     <td>
                         <input type="text" class="gpdrcono-notice-bgcolor" id="gpdrcono_notice_bgcolor" name="gpdrcono_notice_bgcolor" value="<?php echo get_option( 'gpdrcono_notice_bgcolor' ); ?>" data-default-color="#333333" />
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_notice_txtcolor"><?php esc_html_e( 'Notice Text Color', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" class="gpdrcono-notice-bgcolor" id="gpdrcono_notice_txtcolor" name="gpdrcono_notice_txtcolor" value="<?php echo get_option( 'gpdrcono_notice_txtcolor' ); ?>" data-default-color="#ffffff" />
                     </td>
                 </tr>
             </table>
