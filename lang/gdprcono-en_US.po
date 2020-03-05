@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eteam.dk <1.0.0>\n"
-"POT-Creation-Date: 2020-03-04 18:36+0800\n"
-"PO-Revision-Date: 2020-03-04 18:36+0800\n"
+"POT-Creation-Date: 2020-03-05 15:02+0800\n"
+"PO-Revision-Date: 2020-03-05 15:02+0800\n"
 "Last-Translator: \n"
 "Language-Team: Eteam.dk\n"
 "Language: en\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/admin.php:12 gpdr-cookie-notice.php:69 gpdr-cookie-notice.php:94
+#: admin/admin.php:12 gpdr-cookie-notice.php:69 gpdr-cookie-notice.php:109
 msgid "GDPR Cookie Notice & Compliance"
 msgstr ""
 
@@ -35,28 +35,32 @@ msgstr ""
 msgid "Read More Text"
 msgstr ""
 
-#: gpdr-cookie-notice.php:93
+#: admin/admin.php:56
+msgid "Read More URL"
+msgstr ""
+
+#: gpdr-cookie-notice.php:108
 msgid "GDPR Cookie Notice & Compliance / Settings"
 msgstr ""
 
-#: gpdr-cookie-notice.php:111
+#: gpdr-cookie-notice.php:126
 msgid ""
 "This website uses cookies for statistics and settings. By clicking further "
 "on the site you accept the use of cookies."
 msgstr ""
 
-#: gpdr-cookie-notice.php:114
+#: gpdr-cookie-notice.php:129
 msgid "OK"
 msgstr ""
 
-#: gpdr-cookie-notice.php:117
+#: gpdr-cookie-notice.php:132
 msgid "No, thanks"
 msgstr ""
 
-#: gpdr-cookie-notice.php:120
+#: gpdr-cookie-notice.php:135
 msgid "Read More"
 msgstr ""
 
-#: gpdr-cookie-notice.php:170
+#: gpdr-cookie-notice.php:188
 msgid "Settings"
 msgstr ""

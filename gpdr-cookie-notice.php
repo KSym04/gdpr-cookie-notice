@@ -75,11 +75,26 @@ class gdpr_cookie_notice_compliance {
 			'dir'		 => plugin_dir_url( __FILE__ )
 		);
 
-		// Actions.
+		// Actions (main).
+        add_action( 'init', array( $this, 'main' ) );
+
+		// Actions (admin).
         add_action( 'admin_init', array( $this, 'admin_page_options_register' ) );
 		add_action( 'admin_menu', array( $this, 'admin_page_url' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_page_styles_scripts' ) );
 	}
+
+	/*
+	*  main
+	*
+	*  @type	function
+	*  @date	03/05/2020
+	*  @since	1.0.0
+	*/
+	public function main() {
+        include( $this->settings['path'] . 'inc/gdpr-cookie-notice-template.php' );
+        include( $this->settings['path'] . 'inc/gdpr-cookie-notice-shortcode.php' );
+    }
 
 	/*
 	*  admin_page_url
@@ -122,6 +137,9 @@ class gdpr_cookie_notice_compliance {
 
         add_option( 'gpdrcono_readmore_link' );
         register_setting( 'gdprcono_options_group', 'gpdrcono_readmore_link' );
+
+        add_option( 'gpdrcono_notice_bgcolor' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_notice_bgcolor' );
 	}
 
 	/*
@@ -184,11 +202,12 @@ class gdpr_cookie_notice_compliance {
 	*  @since	1.0.0
 	*/
 	public function admin_page_styles_scripts() {
-		// Style.
-		wp_enqueue_style( 'gdprcono-admin-base', plugin_dir_url( __FILE__ ) . 'assets/css/admin-style.css', array(), $this->settings['version'] );
+        // Style.
+        wp_enqueue_style( 'gdprcono-admin-base', plugin_dir_url( __FILE__ ) . 'assets/css/admin-style.css', array(), $this->settings['version'] );
+        wp_enqueue_style( 'wp-color-picker' );
 
 		// Script.
-		wp_enqueue_script( 'gdprcono-admin', plugin_dir_url( __FILE__ ) . 'assets/js/admin-script.js', array( 'jquery' ), $this->settings['version'] );
+		wp_enqueue_script( 'gdprcono-admin', plugin_dir_url( __FILE__ ) . 'assets/js/admin-script.js', array( 'jquery', 'wp-color-picker' ), $this->settings['version'] );
 	}
 }
 

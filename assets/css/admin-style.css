@@ -17,7 +17,7 @@
     display: block; 
 }
 
-.gdprcono label { 
+.gdprcono .label { 
     display: block; 
     width: 180px; 
     padding: 12px 0; 
@@ -26,7 +26,9 @@
 }
 
 .gdprcono input[type="text"],
-.gdprcono textarea { 
+.gdprcono textarea,
+.gdprcono select { 
+    display: block;
     width: 80%; 
     padding: 10px; 
 }

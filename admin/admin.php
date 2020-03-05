@@ -17,7 +17,7 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
             <table>
                 <tr valign="top">
                     <th scope="row">
-                        <label for="gpdrcono_headline_text"><?php esc_html_e( 'Headline Text', 'gdprcono' ); ?></label>
+                        <label class="label" for="gpdrcono_headline_text"><?php esc_html_e( 'Headline Text', 'gdprcono' ); ?></label>
                     </th>
                     <td>
                         <textarea id="gpdrcono_headline_text" name="gpdrcono_headline_text"><?php echo get_option( 'gpdrcono_headline_text' ); ?></textarea>
@@ -26,7 +26,7 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
 
                 <tr valign="top">
                     <th scope="row">
-                        <label for="gpdrcono_accept_text"><?php esc_html_e( 'Accept Text', 'gdprcono' ); ?></label>
+                        <label class="label" for="gpdrcono_accept_text"><?php esc_html_e( 'Accept Text', 'gdprcono' ); ?></label>
                     </th>
                     <td>
                         <input type="text" id="gpdrcono_accept_text" name="gpdrcono_accept_text" value="<?php echo get_option( 'gpdrcono_accept_text' ); ?>" />
@@ -35,7 +35,7 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
 
                 <tr valign="top">
                     <th scope="row">
-                        <label for="gpdrcono_reject_text"><?php esc_html_e( 'Reject Text', 'gdprcono' ); ?></label>
+                        <label class="label" for="gpdrcono_reject_text"><?php esc_html_e( 'Reject Text', 'gdprcono' ); ?></label>
                     </th>
                     <td>
                         <input type="text" id="gpdrcono_reject_text" name="gpdrcono_reject_text" value="<?php echo get_option( 'gpdrcono_reject_text' ); ?>" />
@@ -44,7 +44,7 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
 
                 <tr valign="top">
                     <th scope="row">
-                        <label for="gpdrcono_readmore_text"><?php esc_html_e( 'Read More Text', 'gdprcono' ); ?></label>
+                        <label class="label" for="gpdrcono_readmore_text"><?php esc_html_e( 'Read More Text', 'gdprcono' ); ?></label>
                     </th>
                     <td>
                         <input type="text" id="gpdrcono_readmore_text" name="gpdrcono_readmore_text" value="<?php echo get_option( 'gpdrcono_readmore_text' ); ?>" />
@@ -53,10 +53,25 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
 
                 <tr valign="top">
                     <th scope="row">
-                        <label for="gpdrcono_readmore_link"><?php esc_html_e( 'Read More URL', 'gdprcono' ); ?></label>
+                        <label class="label" for="gpdrcono_readmore_link"><?php esc_html_e( 'Read More URL', 'gdprcono' ); ?></label>
                     </th>
                     <td>
-                        <input type="text" id="gpdrcono_readmore_link" name="gpdrcono_readmore_link" value="<?php echo get_option( 'gpdrcono_readmore_link' ); ?>" />
+                        <?php 
+                            $selected_args = array( 
+                                'id' => 'gpdrcono_readmore_link',
+                                'name' => 'gpdrcono_readmore_link'
+                            );
+
+                            echo gdprcono_dropdown_list_tpl( get_option( 'gpdrcono_readmore_link' ), $selected_args ); ?>
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_notice_bgcolor"><?php esc_html_e( 'Notice Background Color', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" class="gpdrcono-notice-bgcolor" id="gpdrcono_notice_bgcolor" name="gpdrcono_notice_bgcolor" value="<?php echo get_option( 'gpdrcono_notice_bgcolor' ); ?>" data-default-color="#333333" />
                     </td>
                 </tr>
             </table>
