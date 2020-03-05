@@ -45,30 +45,7 @@ function gdprcono_display_notification_bar() {
                 
                 <p class="gdprcono-front__headline-text">
                     ' . $headline_text . '
-                </p>
-
-                <p class="gdprcono-front__headline-text">
-                    ' . $accept_text . '
-                </p>
-
-                <p class="gdprcono-front__headline-text">
-                    ' . $reject_text . '
-                </p>
-
-                <p class="gdprcono-front__headline-text">
-                    ' . $readmore_text . '
-                </p>
-
-                <p class="gdprcono-front__headline-text">
-                    ' . $readmore_link . '
-                </p>
-
-                <p class="gdprcono-front__headline-text">
-                    ' . $notice_bgcolor . '
-                </p>
-
-                <p class="gdprcono-front__headline-text">
-                    ' . $notice_txtcolor . '
+                    <a href="' . $readmore_link . '" class="gdprcono-front__dialog">' . $readmore_text . '</a>
                 </p>
 
             </div>
