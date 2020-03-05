@@ -81,7 +81,7 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                         <label class="label" for="gpdrcono_notice_txtcolor"><?php esc_html_e( 'Notice Text Color', 'gdprcono' ); ?></label>
                     </th>
                     <td>
-                        <input type="text" class="gpdrcono-notice-bgcolor" id="gpdrcono_notice_txtcolor" name="gpdrcono_notice_txtcolor" value="<?php echo get_option( 'gpdrcono_notice_txtcolor' ); ?>" data-default-color="#ffffff" />
+                        <input type="text" class="gpdrcono-notice-txtcolor" id="gpdrcono_notice_txtcolor" name="gpdrcono_notice_txtcolor" value="<?php echo get_option( 'gpdrcono_notice_txtcolor' ); ?>" data-default-color="#ffffff" />
                     </td>
                 </tr>
             </table>

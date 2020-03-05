@@ -140,6 +140,9 @@ class gdpr_cookie_notice_compliance {
 
         add_option( 'gpdrcono_notice_bgcolor' );
         register_setting( 'gdprcono_options_group', 'gpdrcono_notice_bgcolor' );
+
+        add_option( 'gpdrcono_notice_txtcolor' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_notice_txtcolor' );
 	}
 
 	/*
