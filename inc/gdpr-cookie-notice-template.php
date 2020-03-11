@@ -31,23 +31,30 @@ function gdprcono_dropdown_list_tpl( $selected = 0, $args = array() ) {
  * @package GDPR_Cookie_Notice_Compliance
  */
 function gdprcono_display_notification_bar() {
-    // Clean vars.
-    $headline_text = get_option( 'gpdrcono_headline_text' );
-    $accept_text = get_option( 'gpdrcono_accept_text' );
-    $reject_text = get_option( 'gpdrcono_reject_text' );
-    $readmore_text = get_option( 'gpdrcono_readmore_text' );
-    $readmore_link = get_option( 'gpdrcono_readmore_link' );
-    $notice_bgcolor = get_option( 'gpdrcono_notice_bgcolor' );
-    $notice_txtcolor = get_option( 'gpdrcono_notice_txtcolor' );
+    if( 'reject' == $_COOKIE['gdprconostatus'] ) {
+        gdprcono_clearall_cookies();
+    }
 
-    echo '<div class="gdprcono-front__wrapper gdprcono-front__wrapper-top">
-            <div class="gdprcono-front__inner">
-                
-                <p class="gdprcono-front__headline-text">
-                    ' . $headline_text . '
-                    <a href="' . $readmore_link . '" class="gdprcono-front__dialog">' . $readmore_text . '</a>
-                </p>
+    if( 'hold' == $_COOKIE['gdprconostatus'] ) {
+        // Clean vars.
+        $headline_text = get_option( 'gpdrcono_headline_text' );
+        $accept_text = get_option( 'gpdrcono_accept_text' );
+        $reject_text = get_option( 'gpdrcono_reject_text' );
+        $readmore_text = get_option( 'gpdrcono_readmore_text' );
+        $readmore_link = get_option( 'gpdrcono_readmore_link' );
 
-            </div>
-          </div>';
+        echo '<div class="gdprcono-front__wrapper gdprcono-front__wrapper-top">
+                <div class="gdprcono-front__inner">
+                    
+                    <p class="gdprcono-front__headline-text">
+                        ' . $headline_text . '
+                        <a href="' . $readmore_link . '" class="gdprcono-front__dialog">' . $readmore_text . '</a>
+                    </p>
+
+                    <button id="gdprcono-accept-btn">' . $accept_text . '</button>
+                    <button id="gdprcono-reject-btn">' . $reject_text . '</button>
+
+                </div>
+            </div>';
+    }
 }
