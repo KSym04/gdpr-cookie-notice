@@ -48,13 +48,17 @@ function gdprcono_display_notification_bar() {
                     
                     <p class="gdprcono-front__headline-text">
                         ' . $headline_text . '
-                        <a href="' . $readmore_link . '" class="gdprcono-front__dialog">' . $readmore_text . '</a>
+                        <a href="#gdprcono-modal__main" rel="modal:open" class="gdprcono-front__dialog">' . $readmore_text . '</a>
                     </p>
 
                     <button id="gdprcono-accept-btn">' . $accept_text . '</button>
                     <button id="gdprcono-reject-btn">' . $reject_text . '</button>
 
                 </div>
-            </div>';
+              </div>';
+
+        echo '<div id="gdprcono-modal__main" class="modal">
+                
+              </div>';
     }
 }

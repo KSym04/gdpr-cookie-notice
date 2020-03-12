@@ -12,6 +12,10 @@
             removeNotifications();
         }
 
+        jQuery('.gdprcono-front__dialog').on('click', function(e){
+            e.preventDefault();
+        });
+
         // Form submit (accept).
         jQuery('#gdprcono-accept-btn').on('click', function(e){
             e.preventDefault();

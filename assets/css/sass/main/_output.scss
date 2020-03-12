@@ -1,0 +1,64 @@
+.gdprcono-front {
+    &__wrapper {
+        position: fixed;
+        z-index: 1500;
+        padding: 20px 20px;
+
+        &-top {
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    &__inner {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    &__headline-text {
+        display: inline-block;
+        max-width: 520px;
+        vertical-align: top;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+}
+
+#gdprcono-accept-btn,
+#gdprcono-reject-btn {
+    background-color: $color__light-grey;
+    border-radius: 20px;
+    padding: 7px 20px 8px;
+    border: none;
+    font-size: 14px;
+    color: $color__white;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:hover {
+        background-color: $color__white;
+        color: $color__light-grey;
+    }
+}
+
+/* dialog box */
+.jquery-modal {
+    &.blocker {
+        background-color: rgba(255,255,255,0.95);
+        z-index: 99999;
+    }
+}
+
+#gdprcono-modal__main.modal {
+    &__main.modal {
+        max-width: 1080px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+}

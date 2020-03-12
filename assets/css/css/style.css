@@ -1,29 +1,28 @@
 .gdprcono-front__wrapper {
   position: fixed;
   z-index: 1500;
-  padding: 20px 20px;
-}
+  padding: 20px 20px; }
+
 .gdprcono-front__wrapper-top {
   bottom: 0;
   left: 0;
-  right: 0;
-}
+  right: 0; }
+
 .gdprcono-front__inner {
   max-width: 680px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
+
 .gdprcono-front__headline-text {
   display: inline-block;
   max-width: 520px;
   vertical-align: top;
   font-size: 14px;
   font-weight: 600;
-  text-align: left;
-}
+  text-align: left; }
+
 .gdprcono-front__headline-text a {
   color: inherit;
-  text-decoration: underline;
-}
+  text-decoration: underline; }
 
 #gdprcono-accept-btn,
 #gdprcono-reject-btn {
@@ -33,22 +32,22 @@
   border: none;
   font-size: 14px;
   color: #ffffff;
-  transition: all 0.3s ease-in-out;
-}
-#gdprcono-accept-btn:hover, #gdprcono-accept-btn:hover,
-#gdprcono-reject-btn:hover,
+  transition: all 0.3s ease-in-out; }
+
+#gdprcono-accept-btn:hover,
 #gdprcono-reject-btn:hover {
   background-color: #ffffff;
-  color: #777777;
-}
+  color: #777777; }
 
 /* dialog box */
 .jquery-modal.blocker {
   background-color: rgba(255, 255, 255, 0.95);
-  z-index: 99999;
-}
+  z-index: 99999; }
 
-#gdprcono-modal__main.modal__main.modal {
+#gdprcono-modal__main.modal {
   max-width: 1080px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
+
+/*# sourceMappingURL=style.css.map */
