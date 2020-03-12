@@ -51,14 +51,14 @@
 /* dialog box */
 .jquery-modal {
     &.blocker {
-        background-color: rgba(255,255,255,0.95);
+        background-color: rgba( 0, 0, 0, 0.7 );
         z-index: 99999;
     }
 }
 
-#gdprcono-modal__main.modal {
+#gdprcono-modal {
     &__main.modal {
         max-width: 1080px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 );
     }
 }

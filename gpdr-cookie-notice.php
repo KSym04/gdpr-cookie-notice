@@ -204,6 +204,33 @@ class gdpr_cookie_notice_compliance {
 
         add_option( 'gpdrcono_notice_txtcolor' );
         register_setting( 'gdprcono_options_group', 'gpdrcono_notice_txtcolor' );
+
+        // Privacy policy tab.
+        add_option( 'gpdrcono_privacy_policy_page_switch' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_privacy_policy_page_switch' );
+
+        add_option( 'gpdrcono_privacy_policy_page' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_privacy_policy_page' );
+
+        add_option( 'gpdrcono_privacy_policy_tab_title' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_privacy_policy_tab_title' );
+
+        // Cookie required settings tab.
+        add_option( 'gpdrcono_cookie_required_settings_switch' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_required_settings_switch' );
+
+        add_option( 'gpdrcono_cookie_required_settings_tab_title' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_required_settings_tab_title' );
+
+        // Cookie information tab.
+        add_option( 'gpdrcono_cookie_information_switch' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_information_switch' );
+
+        add_option( 'gpdrcono_cookie_information_tab_title' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_information_tab_title' );
+
+        add_option( 'gpdrcono_cookie_information_tab_content' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_information_tab_content' );
 	}
 
 	/*

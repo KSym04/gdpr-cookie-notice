@@ -11,10 +11,11 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
 <div class="gdprcono wrap">
     <h1 class="gdprcono__title"><?php esc_html_e( 'GDPR Cookie Notice & Compliance', 'gdprcono' ) ?></h1>
     
-    <h3 class="gdprcono__titlesub"><?php esc_html_e( 'Notification Bar', 'gdprcono' ) ?></h3>
     <form method="post" action="options.php" spellcheck="false" autocomplete="off">
         <?php settings_fields( 'gdprcono_options_group' ); ?>
         <?php wp_nonce_field( 'gdprcono_action', 'gdprcono_admin_nonce' ); ?>
+        
+        <h3 class="gdprcono__titlesub"><?php esc_html_e( 'Notification Bar', 'gdprcono' ) ?></h3>
             <table>
                 <tr valign="top">
                     <th scope="row">
@@ -85,6 +86,141 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                     </td>
                 </tr>
             </table>
+        <hr />
+
+        <h3 class="gdprcono__titlesub"><?php esc_html_e( 'Privacy Policy (tab)', 'gdprcono' ) ?></h3>
+            <table>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_privacy_policy_page_switch"><?php esc_html_e( 'Display', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <?php 
+                            $gpdrcono_privacy_policy_page_switch_args = array( 
+                                'class' => 'small',
+                                'id' => 'gpdrcono_privacy_policy_page_switch',
+                                'name' => 'gpdrcono_privacy_policy_page_switch',
+                                'options' => array( 
+                                    esc_html__( 'Yes', 'gdprcono' ),
+                                    esc_html__( 'No', 'gdprcono' ) 
+                                )
+                            );
+
+                            echo gdprcono_generate_select_html( get_option( 'gpdrcono_privacy_policy_page_switch' ), $gpdrcono_privacy_policy_page_switch_args ); ?>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_privacy_policy_tab_title"><?php esc_html_e( 'Tab Title', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="gpdrcono_privacy_policy_tab_title" name="gpdrcono_privacy_policy_tab_title" value="<?php echo get_option( 'gpdrcono_privacy_policy_tab_title' ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_privacy_policy_page"><?php esc_html_e( 'Privacy Policy Page', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <?php 
+                            $gpdrcono_privacy_policy_page_args = array( 
+                                'id' => 'gpdrcono_privacy_policy_page',
+                                'name' => 'gpdrcono_privacy_policy_page'
+                            );
+
+                            echo gdprcono_dropdown_list_tpl( get_option( 'gpdrcono_privacy_policy_page' ), $gpdrcono_privacy_policy_page_args, 'ID' ); ?>
+                    </td>
+                </tr>
+            </table>
+        <hr />
+
+
+        <h3 class="gdprcono__titlesub"><?php esc_html_e( 'Cookie Required Settings (tab)', 'gdprcono' ) ?></h3>
+            <table>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_cookie_required_settings_switch"><?php esc_html_e( 'Display', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <?php 
+                            $gpdrcono_cookie_required_settings_switch_args = array( 
+                                'class' => 'small',
+                                'id' => 'gpdrcono_cookie_required_settings_switch',
+                                'name' => 'gpdrcono_cookie_required_settings_switch',
+                                'options' => array( 
+                                    esc_html__( 'Yes', 'gdprcono' ),
+                                    esc_html__( 'No', 'gdprcono' ) 
+                                )
+                            );
+
+                            echo gdprcono_generate_select_html( get_option( 'gpdrcono_cookie_required_settings_switch' ), $gpdrcono_cookie_required_settings_switch_args ); ?>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_cookie_required_settings_tab_title"><?php esc_html_e( 'Tab Title', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="gpdrcono_cookie_required_settings_tab_title" name="gpdrcono_cookie_required_settings_tab_title" value="<?php echo get_option( 'gpdrcono_cookie_required_settings_tab_title' ); ?>" />
+                    </td>
+                </tr>
+            </table>
+        <hr />
+
+        <h3 class="gdprcono__titlesub"><?php esc_html_e( 'Cookie Information (tab)', 'gdprcono' ) ?></h3>
+            <table>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_cookie_information_switch"><?php esc_html_e( 'Display', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <?php 
+                            $gpdrcono_cookie_information_switch_args = array( 
+                                'class' => 'small',
+                                'id' => 'gpdrcono_cookie_information_switch',
+                                'name' => 'gpdrcono_cookie_information_switch',
+                                'options' => array( 
+                                    esc_html__( 'Yes', 'gdprcono' ),
+                                    esc_html__( 'No', 'gdprcono' ) 
+                                )
+                            );
+
+                            echo gdprcono_generate_select_html( get_option( 'gpdrcono_cookie_information_switch' ), $gpdrcono_cookie_information_switch_args ); ?>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_cookie_information_tab_title"><?php esc_html_e( 'Tab Title', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="gpdrcono_cookie_information_tab_title" name="gpdrcono_cookie_information_tab_title" value="<?php echo get_option( 'gpdrcono_cookie_information_tab_title' ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_cookie_information_tab_content"><?php esc_html_e( 'Content', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <?php 
+                            $gpdrcono_cookie_information_tab_content_args = array(
+                                'wpautop' => true,
+                                'media_buttons' => false,
+                                'textarea_rows' => 20,
+                                'tabindex' => '',
+                                'tabfocus_elements' => ':prev,:next', 
+                                'editor_css' => '', 
+                                'editor_class' => '',
+                                'teeny' => false,
+                                'dfw' => false,
+                                'tinymce' => true,
+                                'quicktags' => true
+                            );
+                        
+                            echo wp_editor( get_option( 'gpdrcono_cookie_information_tab_content' ), 'gpdrcono_cookie_information_tab_content', $gpdrcono_cookie_information_tab_content_args ); ?>
+                    </td>
+                </tr>
+            </table>
+
         <hr />
         <?php submit_button(); ?>
     </form>

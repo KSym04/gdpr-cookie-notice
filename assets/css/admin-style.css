@@ -41,6 +41,10 @@
     padding: 10px; 
 }
 
+.gdprcono select.small {
+    width: 120px;
+}
+
 .gdprcono textarea {
     min-height: 120px;
 }

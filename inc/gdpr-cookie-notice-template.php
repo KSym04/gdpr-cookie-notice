@@ -8,16 +8,43 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
  * @since 1.0.0
  * @package GDPR_Cookie_Notice_Compliance
  */
-function gdprcono_dropdown_list_tpl( $selected = 0, $args = array() ) {
-    $content = '<select ïd="' . $args['id'] . '" name="' . $args['name'] . '">';
+function gdprcono_dropdown_list_tpl( $selected = 0, $args = array(), $type = 'link' ) {
+    $content = '<select class="' . $args['class'] . '" ïd="' . $args['id'] . '" name="' . $args['name'] . '">';
         $pages = get_pages();
         foreach ( $pages as $page ) {
             $active_state = '';
             if( $selected == get_page_link( $page->ID ) ) {
                 $active_state = 'selected';
             }
-            $content .= '<option ' . $active_state . ' value="' . get_page_link( $page->ID ) . '">';
-            $content .= $page->post_title;
+
+            if( 'ID' == $type ) {
+                $content .= '<option ' . $active_state . ' value="' . $page->ID . '">';
+            } else {
+                $content .= '<option ' . $active_state . ' value="' . get_page_link( $page->ID ) . '">';
+            }
+            
+                $content .= $page->post_title;
+            $content .= '</option>';
+        }
+    $content .= '</select>';
+    return $content;
+}
+
+/**
+ * Build select element HTML.
+ * 
+ * @since 1.0.0
+ * @package GDPR_Cookie_Notice_Compliance
+ */
+function gdprcono_generate_select_html( $selected = 0, $args = array() ) {
+    $content = '<select class="' . $args['class'] . '" ïd="' . $args['id'] . '" name="' . $args['name'] . '">';
+        foreach ( $args['options'] as $option ) {
+            $active_state = '';
+            if( strtolower( $selected ) == strtolower( $option ) ) {
+                $active_state = 'selected';
+            }
+            $content .= '<option ' . $active_state . ' value="' . strtolower( $option ) . '">';
+                $content .= ucwords( $option );
             $content .= '</option>';
         }
     $content .= '</select>';
