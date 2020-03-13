@@ -34,7 +34,7 @@
 .gdprcono-tab {
     &__list {
         padding: 0;
-        margin: 0;
+        margin: 0 0 2.3em;
         list-style: none;
 
         li {
@@ -68,6 +68,39 @@
 
         &.active {
             display: block !important;
+            overflow: hidden;
+        }
+
+        & > h3 {
+            display: block;
+            margin-bottom: 0.7em;
+            padding-left: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #2f2f2f;
+        }
+
+        article {
+            width: 65%;
+            padding: 0;
+            margin-left: 20px;
+            white-space: pre-line;
+            float: left;
+            height: 260px;
+            border-bottom: 1px solid #c6c6c6;
+            box-sizing: border-box;
+        }
+        
+        .button {
+            cursor: pointer;
+            display: inline-block;
+            padding: 9px 27px 11px;
+            border: 1px solid #960001;
+            border-radius: 25px;
+            line-height: 1;
+            text-decoration: none;
+            color: inherit;
         }
     }
 }
@@ -100,6 +133,7 @@
 #gdprcono-modal {
     &__main.modal {
         max-width: 1080px;
+        padding: 30px 30px;
         background-color: #ebebeb;
         box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 );
     }

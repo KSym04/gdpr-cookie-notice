@@ -89,6 +89,7 @@ function gdprcono_display_notification_bar() {
             $tablist_1 = '<li data-tab-name="' . sanitize_title( $gpdrcono_privacy_policy_tab_title ) . '">' . $gpdrcono_privacy_policy_tab_title . '</li>';
             $tablist_1_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_privacy_policy_tab_title ) . '">
                                     <h3>' . $gpdrcono_privacy_policy_tab_title . '</h3>
+                                    <article>' . get_the_content( null, false, get_option( 'gpdrcono_privacy_policy_page' ) ) . '</article>
                                   </div>';
         }
 
@@ -98,6 +99,7 @@ function gdprcono_display_notification_bar() {
             $tablist_2 = '<li data-tab-name="' . sanitize_title( $gpdrcono_cookie_required_settings_tab_title ) . '">' . $gpdrcono_cookie_required_settings_tab_title . '</li>';
             $tablist_2_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_cookie_required_settings_tab_title ) . '">
                                     <h3>' . $gpdrcono_cookie_required_settings_tab_title . '</h3>
+                                    <article></article>
                                   </div>';
         }
 
@@ -107,6 +109,7 @@ function gdprcono_display_notification_bar() {
             $tablist_3 = '<li data-tab-name="' . sanitize_title( $gpdrcono_cookie_information_tab_title ) . '">' . $gpdrcono_cookie_information_tab_title . '</li>';
             $tablist_3_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_cookie_information_tab_title ) . '">
                                     <h3>' . $gpdrcono_cookie_information_tab_title . '</h3>
+                                    <article>' . get_option( 'gpdrcono_cookie_information_tab_content' ) . '</article>
                                   </div>';
         }
 
