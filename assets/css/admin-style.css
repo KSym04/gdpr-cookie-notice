@@ -48,3 +48,8 @@
 .gdprcono textarea {
     min-height: 120px;
 }
+
+.gdprcono .mce-edit-area {
+    padding-left: 20px;
+    padding-right: 20px;
+}
