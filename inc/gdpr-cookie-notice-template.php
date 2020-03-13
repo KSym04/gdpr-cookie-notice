@@ -68,7 +68,6 @@ function gdprcono_display_notification_bar() {
         $accept_text = get_option( 'gpdrcono_accept_text' );
         $reject_text = get_option( 'gpdrcono_reject_text' );
         $readmore_text = get_option( 'gpdrcono_readmore_text' );
-        $readmore_link = get_option( 'gpdrcono_readmore_link' );
 
         echo '<div class="gdprcono-front__wrapper gdprcono-front__wrapper-top">
                 <div class="gdprcono-front__inner">
@@ -84,8 +83,42 @@ function gdprcono_display_notification_bar() {
                 </div>
               </div>';
 
+        // Privacy policy page.
+        $gpdrcono_privacy_policy_tab_title = get_option( 'gpdrcono_privacy_policy_tab_title' );
+        if( $gpdrcono_privacy_policy_tab_title && get_option( 'gpdrcono_privacy_policy_page_switch' ) == 'yes' ) {
+            $tablist_1 = '<li data-tab-name="' . sanitize_title( $gpdrcono_privacy_policy_tab_title ) . '">' . $gpdrcono_privacy_policy_tab_title . '</li>';
+            $tablist_1_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_privacy_policy_tab_title ) . '">
+                                    <h3>' . $gpdrcono_privacy_policy_tab_title . '</h3>
+                                  </div>';
+        }
+
+        // Cookie required settings.
+        $gpdrcono_cookie_required_settings_tab_title = get_option( 'gpdrcono_cookie_required_settings_tab_title' );
+        if( $gpdrcono_cookie_required_settings_tab_title && get_option( 'gpdrcono_cookie_required_settings_switch' ) == 'yes' ) {
+            $tablist_2 = '<li data-tab-name="' . sanitize_title( $gpdrcono_cookie_required_settings_tab_title ) . '">' . $gpdrcono_cookie_required_settings_tab_title . '</li>';
+            $tablist_2_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_cookie_required_settings_tab_title ) . '">
+                                    <h3>' . $gpdrcono_cookie_required_settings_tab_title . '</h3>
+                                  </div>';
+        }
+
+        // Cookie information.
+        $gpdrcono_cookie_information_tab_title = get_option( 'gpdrcono_cookie_information_tab_title' );
+        if( $gpdrcono_cookie_information_tab_title && get_option( 'gpdrcono_cookie_information_switch' ) == 'yes' ) {
+            $tablist_3 = '<li data-tab-name="' . sanitize_title( $gpdrcono_cookie_information_tab_title ) . '">' . $gpdrcono_cookie_information_tab_title . '</li>';
+            $tablist_3_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_cookie_information_tab_title ) . '">
+                                    <h3>' . $gpdrcono_cookie_information_tab_title . '</h3>
+                                  </div>';
+        }
+
         echo '<div id="gdprcono-modal__main" class="modal">
-                
+                <ul class="gdprcono-tab__list">
+                    ' . $tablist_1 . '
+                    ' . $tablist_2 . '
+                    ' . $tablist_3 . '
+                </ul>
+                ' . $tablist_1_content . '
+                ' . $tablist_2_content . '
+                ' . $tablist_3_content . '
               </div>';
     }
 }

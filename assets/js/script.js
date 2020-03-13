@@ -12,6 +12,15 @@
             removeNotifications();
         }
 
+        // Tab.
+        jQuery('.gdprcono-tab__list li').first().addClass('active');
+        jQuery('#gdprcono-modal__main .gdprcono-tab__content').first().addClass('active');
+        jQuery('.gdprcono-tab__list li').on('click', function(){
+            var currentTabContent = jQuery(this).attr('data-tab-name');
+            jQuery(this).addClass('active').siblings().removeClass('active');
+            jQuery('#'+currentTabContent).addClass('active').siblings().removeClass('active');
+        });
+
         jQuery('.gdprcono-front__dialog').on('click', function(e){
             e.preventDefault();
         });

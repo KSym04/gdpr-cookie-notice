@@ -31,6 +31,47 @@
     }
 }
 
+.gdprcono-tab {
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+            cursor: pointer;
+            display: inline-block;
+            background-color: $color__white;
+            margin: 0 5px;
+            padding: 8px 25px;
+            border-radius: 10px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            
+            &:hover,
+            &.active {
+                background-color: #960001;
+                color: $color__white;
+            }
+        }
+
+        li:first-child {
+            margin-left: 0;
+        }
+
+        li:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__content {
+        display: none;
+
+        &.active {
+            display: block !important;
+        }
+    }
+}
+
 #gdprcono-accept-btn,
 #gdprcono-reject-btn {
     background-color: $color__light-grey;
@@ -59,6 +100,7 @@
 #gdprcono-modal {
     &__main.modal {
         max-width: 1080px;
+        background-color: #ebebeb;
         box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 );
     }
 }
