@@ -164,6 +164,29 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                         <input type="text" id="gpdrcono_cookie_required_settings_tab_title" name="gpdrcono_cookie_required_settings_tab_title" value="<?php echo get_option( 'gpdrcono_cookie_required_settings_tab_title' ); ?>" />
                     </td>
                 </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_cookie_required_settings_tab_content"><?php esc_html_e( 'Content', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <?php 
+                            $gpdrcono_cookie_required_settings_tab_content_args = array(
+                                'wpautop' => true,
+                                'media_buttons' => false,
+                                'textarea_rows' => 20,
+                                'tabindex' => '',
+                                'tabfocus_elements' => ':prev,:next', 
+                                'editor_css' => '', 
+                                'editor_class' => '',
+                                'teeny' => false,
+                                'dfw' => false,
+                                'tinymce' => true,
+                                'quicktags' => true
+                            );
+                        
+                            echo wp_editor( get_option( 'gpdrcono_cookie_required_settings_tab_content' ), 'gpdrcono_cookie_required_settings_tab_content', $gpdrcono_cookie_required_settings_tab_content_args ); ?>
+                    </td>
+                </tr>
             </table>
         <hr />
 

@@ -81,14 +81,22 @@
             color: #2f2f2f;
         }
 
-        article {
+        &-inner {
             width: 65%;
+            float: left;
+            height: 310px;
+            overflow: hidden;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #c6c6c6;
+            background: #ebebeb;
+        }
+
+        article {
+            overflow: auto;
+            max-height: 280px;
             padding: 0;
             margin-left: 20px;
             white-space: pre-line;
-            float: left;
-            height: 260px;
-            border-bottom: 1px solid #c6c6c6;
             box-sizing: border-box;
         }
         

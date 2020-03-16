@@ -133,6 +133,7 @@ class gdpr_cookie_notice_compliance {
 	public function main_styles_scripts() {
         // Style.
         wp_enqueue_style( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css', array(), '0.9.1' );
+        wp_enqueue_style( 'google-fonts-oswald', 'https://fonts.googleapis.com/css?family=Oswald&display=swap', array(), $this->settings['version'] );
         wp_enqueue_style( 'gdprcono-base', plugin_dir_url( __FILE__ ) . 'assets/css/style.css', array( 'jquery-modal' ), $this->settings['version'] );
 
         // Build inline styles.
@@ -221,6 +222,9 @@ class gdpr_cookie_notice_compliance {
 
         add_option( 'gpdrcono_cookie_required_settings_tab_title' );
         register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_required_settings_tab_title' );
+
+        add_option( 'gpdrcono_cookie_required_settings_tab_content' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_required_settings_tab_content' );
 
         // Cookie information tab.
         add_option( 'gpdrcono_cookie_information_switch' );
