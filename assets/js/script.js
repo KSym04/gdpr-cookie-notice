@@ -15,7 +15,13 @@
         // Switch.
         $('.gdprcono-togglefy').click(function(e){
             e.preventDefault();
-            $(this).toggleClass('toggle-on');
+            var addOrRemove = $(this).toggleClass('toggle-on');
+            console.log(addOrRemove);
+            if (addOrRemove) {
+                jQuery('.switchcontent-box').slideDown();
+            } else {
+                jQuery('.switchcontent-box').slideUp();
+            }
         });
 
         // Tab.

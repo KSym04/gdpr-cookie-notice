@@ -105,7 +105,7 @@ function gdprcono_display_notification_bar() {
             $tablist_2_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_cookie_required_settings_tab_title ) . '">
                                     <h3>' . $gpdrcono_cookie_required_settings_tab_title . '</h3>
                                     <div class="gdprcono-tab__content-inner">
-                                        <article>' . do_shortcode( get_option( 'gpdrcono_cookie_required_settings_tab_content' ) ) . '</article>
+                                        <article>' . do_shortcode( get_option( 'gpdrcono_cookie_required_settings_tab_content' ) ) . '<div class="switchcontent-box">' . get_option( 'gpdrcono_switch_content' ) . '</div></article>
                                     </div>
                                     <img src="' . plugins_url( 'assets/img/require-cookies.png', dirname( __FILE__ ) ) . '" alt="' . $gpdrcono_cookie_required_settings_tab_title . '" />
                                   </div>';
