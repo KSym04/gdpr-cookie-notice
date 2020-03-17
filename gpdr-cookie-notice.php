@@ -235,6 +235,16 @@ class gdpr_cookie_notice_compliance {
 
         add_option( 'gpdrcono_cookie_information_tab_content' );
         register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_information_tab_content' );
+
+        // Switch box.
+        add_option( 'gpdrcono_switch_activate_text' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_switch_activate_text' );
+
+        add_option( 'gpdrcono_switch_deactivate_text' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_switch_deactivate_text' );
+
+        add_option( 'gpdrcono_switch_content' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_switch_content' );
 	}
 
 	/*

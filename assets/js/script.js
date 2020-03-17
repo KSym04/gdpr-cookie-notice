@@ -12,6 +12,12 @@
             removeNotifications();
         }
 
+        // Switch.
+        $('.gdprcono-togglefy').click(function(e){
+            e.preventDefault();
+            $(this).toggleClass('toggle-on');
+        });
+
         // Tab.
         jQuery('.gdprcono-tab__list li').first().addClass('active');
         jQuery('#gdprcono-modal__main .gdprcono-tab__content').first().addClass('active');

@@ -245,6 +245,50 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
             </table>
 
         <hr />
+        <h3 class="gdprcono__titlesub"><?php esc_html_e( 'Switch box (button)', 'gdprcono' ) ?></h3>
+            <table>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_switch_activate_text"><?php esc_html_e( 'Activate Text', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="gpdrcono_switch_activate_text" name="gpdrcono_switch_activate_text" value="<?php echo get_option( 'gpdrcono_switch_activate_text' ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_switch_deactivate_text"><?php esc_html_e( 'Deactivate Text', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="gpdrcono_switch_deactivate_text" name="gpdrcono_switch_deactivate_text" value="<?php echo get_option( 'gpdrcono_switch_deactivate_text' ); ?>" />
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_switch_content"><?php esc_html_e( 'Notice', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <?php 
+                            $gpdrcono_switch_content_args = array(
+                                'wpautop' => true,
+                                'media_buttons' => false,
+                                'textarea_rows' => 20,
+                                'tabindex' => '',
+                                'tabfocus_elements' => ':prev,:next', 
+                                'editor_css' => '', 
+                                'editor_class' => '',
+                                'teeny' => false,
+                                'dfw' => false,
+                                'tinymce' => true,
+                                'quicktags' => true
+                            );
+                        
+                            echo wp_editor( get_option( 'gpdrcono_switch_content' ), 'gpdrcono_switch_content', $gpdrcono_switch_content_args ); ?>
+                    </td>
+                </tr>
+            </table>
+        <hr />
+
         <?php submit_button(); ?>
     </form>
 </div>
