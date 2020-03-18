@@ -119,16 +119,25 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                 </tr>
                 <tr valign="top">
                     <th scope="row">
-                        <label class="label" for="gpdrcono_privacy_policy_page"><?php esc_html_e( 'Privacy Policy Page', 'gdprcono' ); ?></label>
+                        <label class="label" for="gpdrcono_privacy_policy_page"><?php esc_html_e( 'Privacy Policy Content', 'gdprcono' ); ?></label>
                     </th>
                     <td>
                         <?php 
-                            $gpdrcono_privacy_policy_page_args = array( 
-                                'id' => 'gpdrcono_privacy_policy_page',
-                                'name' => 'gpdrcono_privacy_policy_page'
+                            $gpdrcono_privacy_policy_page_args = array(
+                                'wpautop' => true,
+                                'media_buttons' => false,
+                                'textarea_rows' => 20,
+                                'tabindex' => '',
+                                'tabfocus_elements' => ':prev,:next', 
+                                'editor_css' => '', 
+                                'editor_class' => '',
+                                'teeny' => false,
+                                'dfw' => false,
+                                'tinymce' => true,
+                                'quicktags' => true
                             );
-
-                            echo gdprcono_dropdown_list_tpl( get_option( 'gpdrcono_privacy_policy_page' ), $gpdrcono_privacy_policy_page_args, 'ID' ); ?>
+                        
+                            echo wp_editor( get_option( 'gpdrcono_privacy_policy_page' ), 'gpdrcono_privacy_policy_page', $gpdrcono_privacy_policy_page_args ); ?>
                     </td>
                 </tr>
             </table>

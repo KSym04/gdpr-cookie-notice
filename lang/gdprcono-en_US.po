@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eteam.dk <1.0.0>\n"
-"POT-Creation-Date: 2020-03-17 15:41+0800\n"
-"PO-Revision-Date: 2020-03-18 11:22+0800\n"
+"POT-Creation-Date: 2020-03-18 11:22+0800\n"
+"PO-Revision-Date: 2020-03-18 12:34+0800\n"
 "Last-Translator: \n"
 "Language-Team: Eteam.dk\n"
 "Language: en\n"
@@ -87,6 +87,22 @@ msgstr ""
 msgid "Cookie Information (tab)"
 msgstr ""
 
+#: admin/admin.php:248
+msgid "Switch box (button)"
+msgstr ""
+
+#: admin/admin.php:252
+msgid "Activate Text"
+msgstr ""
+
+#: admin/admin.php:260
+msgid "Deactivate Text"
+msgstr ""
+
+#: admin/admin.php:268
+msgid "Notice"
+msgstr ""
+
 #: gpdr-cookie-notice.php:170
 msgid "GDPR Cookie Notice & Compliance / Settings"
 msgstr ""
@@ -109,14 +125,10 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: gpdr-cookie-notice.php:286
+#: gpdr-cookie-notice.php:296
 msgid "Settings"
 msgstr ""
 
-#: inc/gdpr-cookie-notice-shortcode.php:16
-msgid "DEACTIVATE"
-msgstr ""
-
-#: inc/gdpr-cookie-notice-shortcode.php:19
-msgid "ACTIVATE"
+#: inc/gdpr-cookie-notice-shortcode.php:45
+msgid "All"
 msgstr ""

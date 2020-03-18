@@ -52,8 +52,8 @@
             display: inline-block;
             background-color: $color__white;
             margin: 0 5px;
-            padding: 8px 25px;
-            border-radius: 10px;
+            padding: 10px 20px 11px 15px;
+            border-radius: 15px;
             font-family: 'Oswald', sans-serif;
             font-size: 20px;
 
@@ -100,6 +100,7 @@
 
     &__content {
         display: none;
+        padding-left: 20px;
 
         &.active {
             display: block !important;
@@ -109,7 +110,6 @@
         & > h3 {
             display: block;
             margin-bottom: 0.7em;
-            padding-left: 20px;
             font-family: 'Oswald', sans-serif;
             font-size: 20px;
             font-weight: 400;
@@ -118,6 +118,7 @@
 
         &-inner {
             width: 65%;
+            max-width: 570px;
             float: left;
             height: 290px;
             overflow: hidden;
@@ -128,9 +129,15 @@
                 overflow: auto;
                 max-height: 260px;
                 padding: 0;
-                margin-left: 20px;
                 white-space: pre-line;
                 box-sizing: border-box;
+
+                ul,
+                ol {
+                    list-style-type: disc;
+                    margin: 0 0 0 2rem;
+                    padding: 0;
+                }
             }
             
             .button {
@@ -153,7 +160,33 @@
 
         & > img {
             width: 35%;
-            margin-top: -40px;
+            margin: -40px auto;
+            display: block;
+        }
+    }
+
+    &__activate-all {
+        padding-left: 20px;
+
+        a {
+            display: inline-block;
+            padding: 12px 30px 14px;
+            margin: 20px auto 0;
+            background-color: transparent;
+            border: 1px solid #2f2f2f;
+            border-radius: 50px;
+            color: #2f2f2f;
+            text-decoration: none;
+            line-height: 1;
+
+            &:hover {
+                background-color: #2f2f2f;
+                color: $color__white;
+            }
+
+            &.savesettings-btn {
+                display: none;
+            }
         }
     }
 }
@@ -185,8 +218,8 @@
 
 #gdprcono-modal {
     &__main.modal {
-        max-width: 1080px;
-        padding: 30px 30px;
+        max-width: 1220px;
+        padding: 50px 50px 40px;
         background-color: #ebebeb;
         box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 );
 
@@ -202,14 +235,14 @@
 
 /* vendor - switch */
 #gdprcono-switch {
-    width: 125px;
+    width: 180px;
     height: 40px;
     display: block;
     position: relative;
     margin-bottom: 15px;
 }
 
-.gdprcono-togglefy {
+.gdprcono-togglefy {    
     border: 2px solid #444249;
     border-radius: 20px;
     -webkit-transition: border-color .6s  ease-out;
@@ -228,9 +261,9 @@
     top: 4px;
     width: 28px;
     bottom: 4px;
-    right: 73%;
+    right: 81%;
     background-color: #444249;
-    border-radius: 19px; 
+    border-radius: 19px;
     cursor: pointer;
     -webkit-transition: all .3s .1s, width .1s, top .1s, bottom .1s;
     transition: all .3s .1s, width .1s, top .1s, bottom .1s;
@@ -238,11 +271,12 @@
 
 .toggle-on .toggle-button {
     top: 3px;
-    width: 95%;
+    width: 170px;
     bottom: 3px;
     right: 3px;
     border-radius: 23px;
     background-color: $color__green;
+    -webkit-box-shadow: 0 0 4px $color__green;
     box-shadow: 0 0 4px $color__green;
     -webkit-transition: all .2s .1s, right .1s;
     transition: all .2s .1s, right .1s;
@@ -250,11 +284,11 @@
 
 .toggle-text-on {
     position: absolute;
-    top: 0;
+    top: 10px;
     bottom: 0;
     left: 0;
     right: 0;
-    line-height: 36px;
+    line-height: 1;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
     font-size: 15px;
@@ -263,8 +297,9 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    color: rgba( 0, 0, 0, 0 );
+    color: transparent;
 }
+
 
 .toggle-on .toggle-text-on {
     color: $color__white;
@@ -274,15 +309,15 @@
 
 .toggle-text-off {
     position: absolute;
-    top: 0;
+    top: 10px;
     bottom: 0;
-    right: 14px;
-    line-height: 36px;
+    right: 16px;
+    line-height: 1;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
     font-size: 14px;
     font-weight: bold;
-    -webkit-user-select: none;      
+    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     cursor: pointer;
@@ -301,8 +336,9 @@
     left: 10px;
     right: 10px;
     border-radius: 6px;
-    background-color: rgba( 75, 122, 141, .1 );
-    box-shadow: 0 0 12px rgba( 75, 122, 141, .2 );
+    background-color: rgba(75,122,141,0.1);
+    -webkit-box-shadow: 0 0 12px rgba(75,122,141,0.2);
+    box-shadow: 0 0 12px rgba(75,122,141,0.2);
     -webkit-transition: opacity 4.5s 1s;
     transition: opacity 4.5s 1s;
 }

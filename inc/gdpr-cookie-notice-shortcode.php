@@ -19,14 +19,6 @@ function gdprcono_cookie_switch_box_logic( $atts ) {
                     <div class=\"toggle-text-on\">" . get_option( 'gpdrcono_switch_activate_text' ) . "</div>
                 </div>";
 
-    // $content = "<div class=\"gdprcono-togglefy__wrapper\">
-    //                 <div class=\"gdprcono-togglefy\">
-    //                     <input type=\"checkbox\" class=\"check\" \>
-    //                     <div class=\"b switch\"></div>
-    //                     <div class=\"b track\"></div>
-    //                 </div>
-    //             </div>";
-
 	return $content;
 }
 add_shortcode( 'gdprcono_cookie_switch_box', 'gdprcono_cookie_switch_box_logic' );
@@ -42,7 +34,8 @@ function gdprcono_activate_all_button_logic( $atts ) {
     settype( $content, 'string' );
 
     $content = "<div class=\"gdprcono-popactivate\">
-                    <button>" . esc_html__( 'All', 'gdprcono' ) . "</button>
+                    <a href=\"#close-modal\" rel=\"modal:close\" class=\"activateall-btn\">" . esc_html__( 'Activate All', 'gdprcono' ) . "</a>
+                    <a href=\"#close-modal\" rel=\"modal:close\" class=\"savesettings-btn\">" . esc_html__( 'Save Settings', 'gdprcono' ) . "</a>
                 </div>";
 
 	return $content;

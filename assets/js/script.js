@@ -6,6 +6,14 @@
         jQuery('.gdprcono-front__wrapper').remove();
     }
 
+    function switchBoxSlide(currentStatusToggle) {
+        if (currentStatusToggle == 2) {
+            jQuery('.switchcontent-box').slideUp();
+        } else {
+            jQuery('.switchcontent-box').slideDown();
+        }
+    }
+
     $(document).ready(function(){
         var consentGDPRStatus = Cookies.get('gdprconostatus');
         if('reject' == consentGDPRStatus) {
@@ -13,24 +21,25 @@
         }
 
         // Switch.
+        var currentStatusToggle = 1;
         $('.gdprcono-togglefy').click(function(e){
             e.preventDefault();
             var addOrRemove = $(this).toggleClass('toggle-on');
-            console.log(addOrRemove);
-            if (addOrRemove) {
-                jQuery('.switchcontent-box').slideDown();
-            } else {
-                jQuery('.switchcontent-box').slideUp();
-            }
+            currentStatusToggle = addOrRemove.context.classList.length;
+            switchBoxSlide(currentStatusToggle);
+            jQuery('.activateall-btn').hide();
+            jQuery('.savesettings-btn').css('display', 'inline-block');
         });
+        switchBoxSlide(currentStatusToggle);
 
         // Tab.
-        jQuery('.gdprcono-tab__list li').first().addClass('active');
+        var currentTabContent;
+        jQuery('.gdprcono-tab__list li:first-child').addClass('active');
         jQuery('#gdprcono-modal__main .gdprcono-tab__content').first().addClass('active');
         jQuery('.gdprcono-tab__list li').on('click', function(){
-            var currentTabContent = jQuery(this).attr('data-tab-name');
-            jQuery(this).addClass('active').siblings().removeClass('active');
+            currentTabContent = jQuery(this).attr('data-tab-name');
             jQuery('#'+currentTabContent).addClass('active').siblings().removeClass('active');
+            jQuery(this).addClass('active').siblings().removeClass('active');
         });
 
         jQuery('.gdprcono-front__dialog').on('click', function(e){
@@ -38,7 +47,7 @@
         });
 
         // Form submit (accept).
-        jQuery('#gdprcono-accept-btn').on('click', function(e){
+        jQuery('#gdprcono-accept-btn, .gdprcono-popactivate > a').on('click', function(e){
             e.preventDefault();
 
             // Submission controller.
