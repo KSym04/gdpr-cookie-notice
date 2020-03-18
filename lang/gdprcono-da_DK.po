@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eteam.dk <1.0.0>\n"
-"POT-Creation-Date: 2020-03-18 17:44+0800\n"
-"PO-Revision-Date: 2020-03-18 17:44+0800\n"
+"POT-Creation-Date: 2020-03-18 17:47+0800\n"
+"PO-Revision-Date: 2020-03-18 17:48+0800\n"
 "Last-Translator: \n"
 "Language-Team: Eteam.dk\n"
-"Language: en\n"
+"Language: da_DK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -131,8 +131,8 @@ msgstr ""
 
 #: inc/gdpr-cookie-notice-shortcode.php:37
 msgid "Activate All"
-msgstr ""
+msgstr "Gem Instillinger"
 
 #: inc/gdpr-cookie-notice-shortcode.php:38
 msgid "Save Settings"
-msgstr ""
+msgstr "Aktiver Alle"

@@ -73,7 +73,10 @@ class gdpr_cookie_notice_compliance {
 			'basename'	 => plugin_basename( __FILE__ ),
 			'path'		 => plugin_dir_path( __FILE__ ),
 			'dir'		 => plugin_dir_url( __FILE__ )
-		);
+        );
+        
+        // Language.
+        add_action( 'plugins_loaded', array( $this, 'language_support' ) );
 
 		// Actions (admin).
         add_action( 'admin_init', array( $this, 'admin_page_options_register' ) );
@@ -87,7 +90,18 @@ class gdpr_cookie_notice_compliance {
         //if( ! is_admin() && 'hold' == $_COOKIE['gdprconostatus'] ) {
             add_action( 'wp_footer', array( $this, 'show_notifications' ) );
         //}
-	}
+    }
+    
+	/*
+	*  language_support
+	*
+	*  @type	function
+	*  @date	03/05/2020
+	*  @since	1.0.0
+	*/
+	public function language_support() {
+        load_plugin_textdomain( 'gdprcono', FALSE, basename( dirname( __FILE__ ) ) . '/lang/' );
+    }
 
 	/*
 	*  main
