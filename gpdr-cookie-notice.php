@@ -87,9 +87,9 @@ class gdpr_cookie_notice_compliance {
         add_action( 'wp_enqueue_scripts', array( $this, 'main_styles_scripts' ) );
         add_action( 'init', array( $this, 'main' ) );
 
-        //if( ! is_admin() && 'hold' == $_COOKIE['gdprconostatus'] ) {
+        if( ! is_admin() && 'hold' == $_COOKIE['gdprconostatus'] ) {
             add_action( 'wp_footer', array( $this, 'show_notifications' ) );
-        //}
+        }
     }
     
 	/*
@@ -121,9 +121,9 @@ class gdpr_cookie_notice_compliance {
             setcookie( "gdprconostatus", "hold", time() + 172800, "/", $host );
         }
 
-        // if( 'reject' == $_COOKIE['gdprconostatus'] ) {
-        //     gdprcono_clearall_cookies();
-        // }
+        if( 'reject' == $_COOKIE['gdprconostatus'] ) {
+            gdprcono_clearall_cookies();
+        }
     }
 
 	/*

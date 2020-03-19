@@ -62,8 +62,8 @@ function gdprcono_display_notification_bar() {
         gdprcono_clearall_cookies();
     }
 
-    //if( 'hold' == $_COOKIE['gdprconostatus'] ) {
-        $serial_id = mt_rand(100000,999999);
+    if( 'hold' == $_COOKIE['gdprconostatus'] ) {
+        $serial_id = mt_rand( 100000, 999999 );
         
         // Clean vars.
         $headline_text = get_option( 'gpdrcono_headline_text' );
@@ -141,5 +141,5 @@ function gdprcono_display_notification_bar() {
                     ' . do_shortcode( '[gdprcono_activate_all_button]' ) . '
                 </div>
               </div>';
-    //}
+    }
 }
