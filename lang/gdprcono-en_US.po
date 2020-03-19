@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eteam.dk <1.0.0>\n"
-"POT-Creation-Date: 2020-03-18 17:44+0800\n"
-"PO-Revision-Date: 2020-03-18 17:44+0800\n"
+"POT-Creation-Date: 2020-03-19 12:23+0800\n"
+"PO-Revision-Date: 2020-03-19 12:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: Eteam.dk\n"
 "Language: en\n"
@@ -17,122 +17,124 @@ msgstr ""
 
 #: admin/admin.php:12 gpdr-cookie-notice.php:69 gpdr-cookie-notice.php:185
 msgid "GDPR Cookie Notice & Compliance"
-msgstr ""
+msgstr "GDPR Cookie Notice & Compliance"
 
 #: admin/admin.php:18
 msgid "Notification Bar"
-msgstr ""
+msgstr "Notification Bar"
 
 #: admin/admin.php:22
 msgid "Headline Text"
-msgstr ""
+msgstr "Headline Text"
 
 #: admin/admin.php:31
 msgid "Accept Text"
-msgstr ""
+msgstr "Accept Text"
 
 #: admin/admin.php:40
 msgid "Reject Text"
-msgstr ""
+msgstr "Reject Text"
 
 #: admin/admin.php:49
 msgid "Read More Text"
-msgstr ""
+msgstr "Read More Text"
 
 #: admin/admin.php:58
 msgid "Read More URL"
-msgstr ""
+msgstr "Read More URL"
 
 #: admin/admin.php:73
 msgid "Notice Background Color"
-msgstr ""
+msgstr "Notice Background Color"
 
 #: admin/admin.php:82
 msgid "Notice Text Color"
-msgstr ""
+msgstr "Notice Text Color"
 
 #: admin/admin.php:91
 msgid "Privacy Policy (tab)"
-msgstr ""
+msgstr "Privacy Policy (tab)"
 
 #: admin/admin.php:95 admin/admin.php:151 admin/admin.php:206
 msgid "Display"
-msgstr ""
+msgstr "Display"
 
 #: admin/admin.php:104 admin/admin.php:160 admin/admin.php:215
 msgid "Yes"
-msgstr ""
+msgstr "Yes"
 
 #: admin/admin.php:105 admin/admin.php:161 admin/admin.php:216
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: admin/admin.php:114 admin/admin.php:170 admin/admin.php:225
 msgid "Tab Title"
-msgstr ""
+msgstr "Tab Title"
 
 #: admin/admin.php:122
 msgid "Privacy Policy Content"
-msgstr ""
+msgstr "Privacy Policy Content"
 
 #: admin/admin.php:147
 msgid "Cookie Required Settings (tab)"
-msgstr ""
+msgstr "Cookie Required Settings (tab)"
 
 #: admin/admin.php:178 admin/admin.php:233
 msgid "Content"
-msgstr ""
+msgstr "Content"
 
 #: admin/admin.php:202
 msgid "Cookie Information (tab)"
-msgstr ""
+msgstr "Cookie Information (tab)"
 
 #: admin/admin.php:257
 msgid "Switch box (button)"
-msgstr ""
+msgstr "Switch box (button)"
 
 #: admin/admin.php:261
 msgid "Activate Text"
-msgstr ""
+msgstr "Activate Text"
 
 #: admin/admin.php:269
 msgid "Deactivate Text"
-msgstr ""
+msgstr "Deactivate Text"
 
 #: admin/admin.php:277
 msgid "Notice"
-msgstr ""
+msgstr "Notice"
 
 #: gpdr-cookie-notice.php:184
 msgid "GDPR Cookie Notice & Compliance / Settings"
-msgstr ""
+msgstr "GDPR Cookie Notice & Compliance / Settings"
 
 #: gpdr-cookie-notice.php:202
 msgid ""
 "This website uses cookies for statistics and settings. By clicking further "
 "on the site you accept the use of cookies."
 msgstr ""
+"This website uses cookies for statistics and settings. By clicking further "
+"on the site you accept the use of cookies."
 
 #: gpdr-cookie-notice.php:205
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: gpdr-cookie-notice.php:208
 msgid "No, thanks"
-msgstr ""
+msgstr "No, thanks"
 
 #: gpdr-cookie-notice.php:211
 msgid "Read More"
-msgstr ""
+msgstr "Read More"
 
 #: gpdr-cookie-notice.php:310
 msgid "Settings"
-msgstr ""
+msgstr "Settings"
 
 #: inc/gdpr-cookie-notice-shortcode.php:37
 msgid "Activate All"
-msgstr ""
+msgstr "Activate All"
 
 #: inc/gdpr-cookie-notice-shortcode.php:38
 msgid "Save Settings"
-msgstr ""
+msgstr "Save Settings"
