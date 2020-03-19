@@ -101,8 +101,14 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                                 'id' => 'gpdrcono_privacy_policy_page_switch',
                                 'name' => 'gpdrcono_privacy_policy_page_switch',
                                 'options' => array( 
-                                    esc_html__( 'Yes', 'gdprcono' ),
-                                    esc_html__( 'No', 'gdprcono' ) 
+                                    array(
+                                        'key' => esc_html__( 'Yes', 'gdprcono' ),
+                                        'value' => 'true'
+                                    ),
+                                    array(
+                                        'key' => esc_html__( 'No', 'gdprcono' ),
+                                        'value' => 'false'
+                                    )
                                 )
                             );
 
@@ -157,8 +163,14 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                                 'id' => 'gpdrcono_cookie_required_settings_switch',
                                 'name' => 'gpdrcono_cookie_required_settings_switch',
                                 'options' => array( 
-                                    esc_html__( 'Yes', 'gdprcono' ),
-                                    esc_html__( 'No', 'gdprcono' ) 
+                                    array(
+                                        'key' => esc_html__( 'Yes', 'gdprcono' ),
+                                        'value' => 'true'
+                                    ),
+                                    array(
+                                        'key' => esc_html__( 'No', 'gdprcono' ),
+                                        'value' => 'false'
+                                    )
                                 )
                             );
 
@@ -212,8 +224,14 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                                 'id' => 'gpdrcono_cookie_information_switch',
                                 'name' => 'gpdrcono_cookie_information_switch',
                                 'options' => array( 
-                                    esc_html__( 'Yes', 'gdprcono' ),
-                                    esc_html__( 'No', 'gdprcono' ) 
+                                    array(
+                                        'key' => esc_html__( 'Yes', 'gdprcono' ),
+                                        'value' => 'true'
+                                    ),
+                                    array(
+                                        'key' => esc_html__( 'No', 'gdprcono' ),
+                                        'value' => 'false'
+                                    )
                                 )
                             );
 
