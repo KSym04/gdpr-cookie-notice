@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eteam.dk <1.0.0>\n"
-"POT-Creation-Date: 2020-03-19 13:51+0800\n"
-"PO-Revision-Date: 2020-03-19 13:51+0800\n"
+"POT-Creation-Date: 2020-03-19 15:33+0800\n"
+"PO-Revision-Date: 2020-03-19 15:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: Eteam.dk\n"
 "Language: da_DK\n"
@@ -55,51 +55,51 @@ msgstr "Bemærk Tekstfarve"
 msgid "Privacy Policy (tab)"
 msgstr "Privatlivspolitik (fane)"
 
-#: admin/admin.php:95 admin/admin.php:151 admin/admin.php:206
+#: admin/admin.php:95 admin/admin.php:157 admin/admin.php:218
 msgid "Display"
 msgstr "Vis"
 
-#: admin/admin.php:104 admin/admin.php:160 admin/admin.php:215
+#: admin/admin.php:105 admin/admin.php:167 admin/admin.php:228
 msgid "Yes"
 msgstr "Ja"
 
-#: admin/admin.php:105 admin/admin.php:161 admin/admin.php:216
+#: admin/admin.php:109 admin/admin.php:171 admin/admin.php:232
 msgid "No"
 msgstr "Nej"
 
-#: admin/admin.php:114 admin/admin.php:170 admin/admin.php:225
+#: admin/admin.php:120 admin/admin.php:182 admin/admin.php:243
 msgid "Tab Title"
 msgstr "Fanen Titel"
 
-#: admin/admin.php:122
+#: admin/admin.php:128
 msgid "Privacy Policy Content"
 msgstr "Indhold Om Privatlivspolitik"
 
-#: admin/admin.php:147
+#: admin/admin.php:153
 msgid "Cookie Required Settings (tab)"
 msgstr "Cookie-krævede Indstillinger (fane)"
 
-#: admin/admin.php:178 admin/admin.php:233
+#: admin/admin.php:190 admin/admin.php:251
 msgid "Content"
 msgstr "Indhold"
 
-#: admin/admin.php:202
+#: admin/admin.php:214
 msgid "Cookie Information (tab)"
 msgstr "Cookieinformation (fane)"
 
-#: admin/admin.php:257
+#: admin/admin.php:275
 msgid "Switch box (button)"
 msgstr "Skift Boks (knap)"
 
-#: admin/admin.php:261
+#: admin/admin.php:279
 msgid "Activate Text"
 msgstr "Aktivér Tekst"
 
-#: admin/admin.php:269
+#: admin/admin.php:287
 msgid "Deactivate Text"
 msgstr "Deaktiver Tekst"
 
-#: admin/admin.php:277
+#: admin/admin.php:295
 msgid "Notice"
 msgstr "Bemærk"
 
