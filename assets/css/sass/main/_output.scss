@@ -127,6 +127,7 @@
 
             article {
                 overflow: auto;
+                overflow-x: hidden;
                 max-height: 260px;
                 padding: 0;
                 white-space: pre-line;
