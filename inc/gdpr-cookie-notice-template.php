@@ -37,7 +37,7 @@ function gdprcono_dropdown_list_tpl( $selected = 0, $args = array(), $type = 'li
  * @package GDPR_Cookie_Notice_Compliance
  */
 function gdprcono_generate_select_html( $selected = 0, $args = array() ) {
-    $content = '<select class="' . $args['class'] . '" ïd="' . $args['id'] . '" name="' . $args['name'] . '">';
+    $content = '<select name="' . $args['name'] . '">';
         foreach ( $args['options'] as $option ) {
             $active_state = '';
             if( strtolower( $selected ) == strtolower( $option['value'] ) ) {
