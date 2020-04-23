@@ -200,11 +200,8 @@ class gdpr_cookie_notice_compliance {
 	*/
 	public function admin_page_options_register() {
 
-        add_option( 'gpdrcono_headline_text', __( 
-            'Denne hjemmeside anvender cookies til statistik og indstillinger. <br />
-            Hvis du klikker videre på siden, accepterer du brugen af cookies.', 
-            'gdprcono' ) 
-        );
+        add_option( 'gpdrcono_headline_text', __( 'Denne hjemmeside anvender cookies til statistik og indstillinger. <br />
+        Hvis du klikker videre på siden, accepterer du brugen af cookies.', 'gdprcono' ) );
         register_setting( 'gdprcono_options_group', 'gpdrcono_headline_text' );
 
         add_option( 'gpdrcono_accept_text', esc_html__( 'OK', 'gdprcono' ) );
@@ -422,9 +419,9 @@ class gdpr_cookie_notice_compliance {
         add_option( 'gpdrcono_switch_deactivate_text', esc_html__( 'Deaktiver cookies', 'gdprcono' ) );
         register_setting( 'gdprcono_options_group', 'gpdrcono_switch_deactivate_text' );
 
-        add_option( 'gpdrcono_switch_content', esc_html__( 
+        add_option( 'gpdrcono_switch_content', __( 
             'Hvis du deaktiverer denne cookies funktion, kan vi ikke gemme dine præferencer.<br />
-             Det betyder, at hver gang du besøger denne hjemmeside, skal du aktivere eller deaktivere cookies igen.', 'gdprcono' ) 
+            Det betyder, at hver gang du besøger denne hjemmeside, skal du aktivere eller deaktivere cookies igen.', 'gdprcono' ) 
         );
         register_setting( 'gdprcono_options_group', 'gpdrcono_switch_content' );
 	}
