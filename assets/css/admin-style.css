@@ -34,15 +34,10 @@
 }
 
 .gdprcono input[type="text"],
-.gdprcono textarea,
-.gdprcono select { 
+.gdprcono textarea { 
     display: block;
     width: 80%; 
     padding: 10px; 
-}
-
-.gdprcono select.small {
-    width: 120px;
 }
 
 .gdprcono textarea {
