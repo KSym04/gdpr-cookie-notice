@@ -43,8 +43,8 @@ function gdprcono_generate_select_html( $selected = 0, $args = array() ) {
             if( strtolower( $selected ) == strtolower( $option['value'] ) ) {
                 $active_state = 'selected';
             }
-            $content .= '<option ' . $active_state . ' value="' . strtolower( $option['value'] ) . '">';
-                $content .= ucwords( $option['key'] );
+            $content .= '<option ' . $active_state . ' value="' . $option['value'] . '">';
+                $content .= $option['key'];
             $content .= '</option>';
         }
     $content .= '</select>';
