@@ -12,20 +12,21 @@
     }
 
     &__inner {
-        max-width: 680px;
+        max-width: 710px;
         margin: 0 auto;
         overflow: hidden;
     }
 
     &__headline-text {
         display: block;
-        max-width: 520px;
-        width: 70%;
+        width: 75%;
         font-size: 14px;
         font-weight: 600;
         text-align: left;
         box-sizing: border-box;
         float: left;
+        margin-top: 0;
+        margin-bottom: 0;
 
         a {
             color: inherit;
@@ -35,7 +36,7 @@
 
     &__action-button {
         display: block;
-        width: 30%;
+        width: 25%;
         text-align: right;
         float: left;
     }
