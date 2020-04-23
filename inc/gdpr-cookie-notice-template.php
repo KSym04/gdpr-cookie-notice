@@ -8,7 +8,7 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
  * @since 1.0.0
  * @package GDPR_Cookie_Notice_Compliance
  */
-function gdprcono_dropdown_list_tpl( $selected = 0, $args = array(), $type = 'link' ) {
+function gdprcono_dropdown_list_tpl( $selected, $args = array(), $type = 'link' ) {
     $content = '<select class="' . $args['class'] . '" ïd="' . $args['id'] . '" name="' . $args['name'] . '">';
         $pages = get_pages();
         foreach ( $pages as $page ) {
@@ -36,7 +36,7 @@ function gdprcono_dropdown_list_tpl( $selected = 0, $args = array(), $type = 'li
  * @since 1.0.0
  * @package GDPR_Cookie_Notice_Compliance
  */
-function gdprcono_generate_select_html( $selected = 0, $args = array() ) {
+function gdprcono_generate_select_html( $selected, $args = array() ) {
     $content = '<select name="' . $args['name'] . '">';
         foreach ( $args['options'] as $option ) {
             $active_state = '';
