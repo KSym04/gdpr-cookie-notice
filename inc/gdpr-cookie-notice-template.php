@@ -9,7 +9,7 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
  * @package GDPR_Cookie_Notice_Compliance
  */
 function gdprcono_dropdown_list_tpl( $selected, $args = array(), $type = 'link' ) {
-    $content = '<select class="' . $args['class'] . '" ïd="' . $args['id'] . '" name="' . $args['name'] . '">';
+    $content = '<select name="' . $args['name'] . '">';
         $pages = get_pages();
         foreach ( $pages as $page ) {
             $active_state = '';
