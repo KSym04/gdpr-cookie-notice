@@ -223,7 +223,7 @@ class gdpr_cookie_notice_compliance {
         register_setting( 'gdprcono_options_group', 'gpdrcono_notice_txtcolor' );
 
         // Privacy policy tab.
-        add_option( 'gpdrcono_privacy_policy_page_switch', 'true' );
+        add_option( 'gpdrcono_privacy_policy_page_switch', true );
         register_setting( 'gdprcono_options_group', 'gpdrcono_privacy_policy_page_switch' );
 
         add_option( 'gpdrcono_privacy_policy_tab_title', esc_html__( 'Persondatapolitik', 'gdprcono' ) );

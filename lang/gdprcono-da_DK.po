@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eteam.dk <1.0.0>\n"
-"POT-Creation-Date: 2020-04-23 14:58+0800\n"
-"PO-Revision-Date: 2020-04-23 14:58+0800\n"
+"POT-Creation-Date: 2020-04-23 15:56+0800\n"
+"PO-Revision-Date: 2020-04-23 15:57+0800\n"
 "Last-Translator: \n"
 "Language-Team: Eteam.dk\n"
 "Language: da_DK\n"
@@ -107,47 +107,53 @@ msgstr "Bemærk"
 msgid "GDPR Cookie Notice & Compliance / Settings"
 msgstr "GDPR Cookie Notice & Compliance / Indstillinger"
 
-#: gpdr-cookie-notice.php:210
+#: gpdr-cookie-notice.php:203
+msgid ""
+"Denne hjemmeside anvender cookies til statistik og indstillinger. <br />\n"
+"        Hvis du klikker videre på siden, accepterer du brugen af cookies."
+msgstr ""
+
+#: gpdr-cookie-notice.php:207
 msgid "OK"
 msgstr "OK"
 
-#: gpdr-cookie-notice.php:213
+#: gpdr-cookie-notice.php:210
 msgid "Nej, tak"
 msgstr ""
 
-#: gpdr-cookie-notice.php:216
+#: gpdr-cookie-notice.php:213
 msgid "Læs mere"
 msgstr ""
 
-#: gpdr-cookie-notice.php:232
+#: gpdr-cookie-notice.php:229
 msgid "Persondatapolitik"
 msgstr ""
 
-#: gpdr-cookie-notice.php:347
+#: gpdr-cookie-notice.php:344
 msgid "Nødvendige cookies"
 msgstr ""
 
-#: gpdr-cookie-notice.php:365
+#: gpdr-cookie-notice.php:362
 msgid "Cookies oplysninger"
 msgstr ""
 
-#: gpdr-cookie-notice.php:419
+#: gpdr-cookie-notice.php:416
 msgid "Aktiver cookies"
 msgstr ""
 
-#: gpdr-cookie-notice.php:422
+#: gpdr-cookie-notice.php:419
 msgid "Deaktiver cookies"
 msgstr ""
 
-#: gpdr-cookie-notice.php:426
+#: gpdr-cookie-notice.php:423
 msgid ""
 "Hvis du deaktiverer denne cookies funktion, kan vi ikke gemme dine "
 "præferencer.<br />\n"
-"             Det betyder, at hver gang du besøger denne hjemmeside, skal du "
+"            Det betyder, at hver gang du besøger denne hjemmeside, skal du "
 "aktivere eller deaktivere cookies igen."
 msgstr ""
 
-#: gpdr-cookie-notice.php:478
+#: gpdr-cookie-notice.php:475
 msgid "Settings"
 msgstr "Indstillinger"
 
