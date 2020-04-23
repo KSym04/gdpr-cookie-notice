@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eteam.dk <1.0.0>\n"
-"POT-Creation-Date: 2020-04-13 15:09+0800\n"
-"PO-Revision-Date: 2020-04-13 15:09+0800\n"
+"POT-Creation-Date: 2020-04-23 14:58+0800\n"
+"PO-Revision-Date: 2020-04-23 14:58+0800\n"
 "Last-Translator: \n"
 "Language-Team: Eteam.dk\n"
 "Language: da_DK\n"
@@ -107,27 +107,47 @@ msgstr "Bemærk"
 msgid "GDPR Cookie Notice & Compliance / Settings"
 msgstr "GDPR Cookie Notice & Compliance / Indstillinger"
 
-#: gpdr-cookie-notice.php:202
-msgid ""
-"This website uses cookies for statistics and settings. By clicking further "
-"on the site you accept the use of cookies."
-msgstr ""
-"Denne hjemmeside bruger cookies til statistik og indstillinger. Ved at "
-"klikke videre på webstedet accepterer du brugen af cookies."
-
-#: gpdr-cookie-notice.php:205
+#: gpdr-cookie-notice.php:210
 msgid "OK"
 msgstr "OK"
 
-#: gpdr-cookie-notice.php:208
-msgid "No, thanks"
-msgstr "Nej, tak"
+#: gpdr-cookie-notice.php:213
+msgid "Nej, tak"
+msgstr ""
 
-#: gpdr-cookie-notice.php:211
-msgid "Read More"
-msgstr "Læs Mere"
+#: gpdr-cookie-notice.php:216
+msgid "Læs mere"
+msgstr ""
 
-#: gpdr-cookie-notice.php:310
+#: gpdr-cookie-notice.php:232
+msgid "Persondatapolitik"
+msgstr ""
+
+#: gpdr-cookie-notice.php:347
+msgid "Nødvendige cookies"
+msgstr ""
+
+#: gpdr-cookie-notice.php:365
+msgid "Cookies oplysninger"
+msgstr ""
+
+#: gpdr-cookie-notice.php:419
+msgid "Aktiver cookies"
+msgstr ""
+
+#: gpdr-cookie-notice.php:422
+msgid "Deaktiver cookies"
+msgstr ""
+
+#: gpdr-cookie-notice.php:426
+msgid ""
+"Hvis du deaktiverer denne cookies funktion, kan vi ikke gemme dine "
+"præferencer.<br />\n"
+"             Det betyder, at hver gang du besøger denne hjemmeside, skal du "
+"aktivere eller deaktivere cookies igen."
+msgstr ""
+
+#: gpdr-cookie-notice.php:478
 msgid "Settings"
 msgstr "Indstillinger"
 
@@ -138,3 +158,16 @@ msgstr "Gem Instillinger"
 #: inc/gdpr-cookie-notice-shortcode.php:38
 msgid "Save Settings"
 msgstr "Aktiver Alle"
+
+#~ msgid ""
+#~ "This website uses cookies for statistics and settings. By clicking "
+#~ "further on the site you accept the use of cookies."
+#~ msgstr ""
+#~ "Denne hjemmeside bruger cookies til statistik og indstillinger. Ved at "
+#~ "klikke videre på webstedet accepterer du brugen af cookies."
+
+#~ msgid "No, thanks"
+#~ msgstr "Nej, tak"
+
+#~ msgid "Read More"
+#~ msgstr "Læs Mere"
