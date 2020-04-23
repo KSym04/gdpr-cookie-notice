@@ -200,7 +200,7 @@ class gdpr_cookie_notice_compliance {
 	*/
 	public function admin_page_options_register() {
 
-        add_option( 'gpdrcono_headline_text', wp_kses_allowed_html( 
+        add_option( 'gpdrcono_headline_text', __( 
             'Denne hjemmeside anvender cookies til statistik og indstillinger. <br />
             Hvis du klikker videre på siden, accepterer du brugen af cookies.', 
             'gdprcono' ) 
@@ -337,7 +337,7 @@ class gdpr_cookie_notice_compliance {
         
         Har du kommentarer eller spørgsmål vedrørende vores indsamling eller behandling af persondata, er du altid velkommen til at kontakte os på mail: <a href="mailto:info@eteam.dk">info@eteam.dk</a>';
 
-        add_option( 'gpdrcono_privacy_policy_page', wp_kses_allowed_html( $privacy_policy_content ) );
+        add_option( 'gpdrcono_privacy_policy_page', __( $privacy_policy_content ) );
         register_setting( 'gdprcono_options_group', 'gpdrcono_privacy_policy_page' );
 
         // Cookie required settings tab.
@@ -355,7 +355,7 @@ class gdpr_cookie_notice_compliance {
         
         [gdprcono_cookie_switch_box]';
 
-        add_option( 'gpdrcono_cookie_required_settings_tab_content', wp_kses_allowed_html( $cookie_policy_content ) );
+        add_option( 'gpdrcono_cookie_required_settings_tab_content', __( $cookie_policy_content ) );
         register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_required_settings_tab_content' );
 
         // Cookie information tab.
@@ -412,7 +412,7 @@ class gdpr_cookie_notice_compliance {
         Flash cookies: <a href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html" target="_blank" rel="noopener">KLIK HER</a>
         Apple produkter: <a href="https://support.apple.com/da-dk/HT1677" target="_blank" rel="noopener">KLIK HER</a>';
 
-        add_option( 'gpdrcono_cookie_information_tab_content', wp_kses_allowed_html( $cookie_information_content ) );
+        add_option( 'gpdrcono_cookie_information_tab_content', __( $cookie_information_content ) );
         register_setting( 'gdprcono_options_group', 'gpdrcono_cookie_information_tab_content' );
 
         // Switch box.
