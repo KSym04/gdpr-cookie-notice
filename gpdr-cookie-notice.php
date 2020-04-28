@@ -84,7 +84,7 @@ class gdpr_cookie_notice_compliance {
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_page_styles_scripts' ) );
 
         // Actions (main).
-        add_action( 'wp_enqueue_scripts', array( $this, 'main_styles_scripts' ) );
+        add_action( 'wp_enqueue_scripts', array( $this, 'main_styles_scripts' ), 9999 );
         add_action( 'init', array( $this, 'main' ) );
 
         if( ! is_admin() && 'hold' == $_COOKIE['gdprconostatus'] ) {
@@ -156,8 +156,8 @@ class gdpr_cookie_notice_compliance {
 
         $inline_styles = "
             .gdprcono-front__wrapper { 
-                background-color: {$notice_bgcolor};
-                color: {$notice_txtcolor};
+                background-color: {$notice_bgcolor} !important;
+                color: {$notice_txtcolor} !important;
             }
         ";
 
