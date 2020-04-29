@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eteam.dk <1.0.0>\n"
-"POT-Creation-Date: 2020-04-23 15:56+0800\n"
-"PO-Revision-Date: 2020-04-23 15:57+0800\n"
+"POT-Creation-Date: 2020-04-28 18:31+0800\n"
+"PO-Revision-Date: 2020-04-28 18:31+0800\n"
 "Last-Translator: \n"
 "Language-Team: Eteam.dk\n"
 "Language: da_DK\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/admin.php:12 gpdr-cookie-notice.php:69 gpdr-cookie-notice.php:185
+#: admin/admin.php:12 gpdr-cookie-notice.php:69 gpdr-cookie-notice.php:191
 msgid "GDPR Cookie Notice & Compliance"
 msgstr "GDPR Cookie Notice & Compliance"
 
@@ -52,100 +52,110 @@ msgid "Notice Text Color"
 msgstr "Bemærk Tekstfarve"
 
 #: admin/admin.php:91
-msgid "Privacy Policy (tab)"
-msgstr "Privatlivspolitik (fane)"
+msgid "Notice Text Color - Hover"
+msgstr "Bemærk Tekstfarve (hover)"
 
-#: admin/admin.php:95 admin/admin.php:157 admin/admin.php:218
-msgid "Display"
-msgstr "Vis"
+#: admin/admin.php:100
+msgid "Apply wpautop"
+msgstr "Ansøge wpautop"
 
-#: admin/admin.php:105 admin/admin.php:167 admin/admin.php:228
+#: admin/admin.php:110 admin/admin.php:140 admin/admin.php:202
+#: admin/admin.php:263
 msgid "Yes"
 msgstr "Ja"
 
-#: admin/admin.php:109 admin/admin.php:171 admin/admin.php:232
+#: admin/admin.php:114 admin/admin.php:144 admin/admin.php:206
+#: admin/admin.php:267
 msgid "No"
 msgstr "Nej"
 
-#: admin/admin.php:120 admin/admin.php:182 admin/admin.php:243
+#: admin/admin.php:126
+msgid "Privacy Policy (tab)"
+msgstr "Privatlivspolitik (fane)"
+
+#: admin/admin.php:130 admin/admin.php:192 admin/admin.php:253
+msgid "Display"
+msgstr "Vis"
+
+#: admin/admin.php:155 admin/admin.php:217 admin/admin.php:278
 msgid "Tab Title"
 msgstr "Fanen Titel"
 
-#: admin/admin.php:128
+#: admin/admin.php:163
 msgid "Privacy Policy Content"
 msgstr "Indhold Om Privatlivspolitik"
 
-#: admin/admin.php:153
+#: admin/admin.php:188
 msgid "Cookie Required Settings (tab)"
 msgstr "Cookie-krævede Indstillinger (fane)"
 
-#: admin/admin.php:190 admin/admin.php:251
+#: admin/admin.php:225 admin/admin.php:286
 msgid "Content"
 msgstr "Indhold"
 
-#: admin/admin.php:214
+#: admin/admin.php:249
 msgid "Cookie Information (tab)"
 msgstr "Cookieinformation (fane)"
 
-#: admin/admin.php:275
+#: admin/admin.php:310
 msgid "Switch box (button)"
 msgstr "Skift Boks (knap)"
 
-#: admin/admin.php:279
+#: admin/admin.php:314
 msgid "Activate Text"
 msgstr "Aktivér Tekst"
 
-#: admin/admin.php:287
+#: admin/admin.php:322
 msgid "Deactivate Text"
 msgstr "Deaktiver Tekst"
 
-#: admin/admin.php:295
+#: admin/admin.php:330
 msgid "Notice"
 msgstr "Bemærk"
 
-#: gpdr-cookie-notice.php:184
+#: gpdr-cookie-notice.php:190
 msgid "GDPR Cookie Notice & Compliance / Settings"
 msgstr "GDPR Cookie Notice & Compliance / Indstillinger"
 
-#: gpdr-cookie-notice.php:203
+#: gpdr-cookie-notice.php:208
 msgid ""
 "Denne hjemmeside anvender cookies til statistik og indstillinger. <br />\n"
 "        Hvis du klikker videre på siden, accepterer du brugen af cookies."
 msgstr ""
 
-#: gpdr-cookie-notice.php:207
+#: gpdr-cookie-notice.php:212
 msgid "OK"
 msgstr "OK"
 
-#: gpdr-cookie-notice.php:210
+#: gpdr-cookie-notice.php:215
 msgid "Nej, tak"
 msgstr ""
 
-#: gpdr-cookie-notice.php:213
+#: gpdr-cookie-notice.php:218
 msgid "Læs mere"
 msgstr ""
 
-#: gpdr-cookie-notice.php:229
+#: gpdr-cookie-notice.php:240
 msgid "Persondatapolitik"
 msgstr ""
 
-#: gpdr-cookie-notice.php:344
+#: gpdr-cookie-notice.php:355
 msgid "Nødvendige cookies"
 msgstr ""
 
-#: gpdr-cookie-notice.php:362
+#: gpdr-cookie-notice.php:373
 msgid "Cookies oplysninger"
 msgstr ""
 
-#: gpdr-cookie-notice.php:416
+#: gpdr-cookie-notice.php:427
 msgid "Aktiver cookies"
 msgstr ""
 
-#: gpdr-cookie-notice.php:419
+#: gpdr-cookie-notice.php:430
 msgid "Deaktiver cookies"
 msgstr ""
 
-#: gpdr-cookie-notice.php:423
+#: gpdr-cookie-notice.php:434
 msgid ""
 "Hvis du deaktiverer denne cookies funktion, kan vi ikke gemme dine "
 "præferencer.<br />\n"
@@ -153,7 +163,7 @@ msgid ""
 "aktivere eller deaktivere cookies igen."
 msgstr ""
 
-#: gpdr-cookie-notice.php:475
+#: gpdr-cookie-notice.php:486
 msgid "Settings"
 msgstr "Indstillinger"
 

@@ -85,6 +85,41 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly. ?>
                         <input type="text" class="gpdrcono-notice-txtcolor" id="gpdrcono_notice_txtcolor" name="gpdrcono_notice_txtcolor" value="<?php echo get_option( 'gpdrcono_notice_txtcolor' ); ?>" data-default-color="#ffffff" />
                     </td>
                 </tr>
+
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_notice_txtcolor_hover"><?php esc_html_e( 'Notice Text Color - Hover', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" class="gpdrcono-notice-txtcolor" id="gpdrcono_notice_txtcolor_hover" name="gpdrcono_notice_txtcolor_hover" value="<?php echo get_option( 'gpdrcono_notice_txtcolor_hover' ); ?>" data-default-color="#ffffff" />
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row">
+                        <label class="label" for="gpdrcono_apply_wpautop"><?php esc_html_e( 'Apply wpautop', 'gdprcono' ); ?></label>
+                    </th>
+                    <td>
+                        <?php 
+                            $gpdrcono_apply_wpautop_args = array( 
+                                'class' => 'small',
+                                'id' => 'gpdrcono_apply_wpautop',
+                                'name' => 'gpdrcono_apply_wpautop',
+                                'options' => array( 
+                                    array(
+                                        'key' => esc_html__( 'Yes', 'gdprcono' ),
+                                        'value' => 'true'
+                                    ),
+                                    array(
+                                        'key' => esc_html__( 'No', 'gdprcono' ),
+                                        'value' => 'false'
+                                    )
+                                )
+                            );
+
+                            echo gdprcono_generate_select_html( get_option( 'gpdrcono_apply_wpautop' ), $gpdrcono_apply_wpautop_args ); ?>
+                    </td>
+                </tr>
             </table>
         <hr />
 

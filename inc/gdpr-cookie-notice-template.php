@@ -64,12 +64,26 @@ function gdprcono_display_notification_bar() {
 
     if( 'hold' == $_COOKIE['gdprconostatus'] ) {
         $serial_id = mt_rand( 100000, 999999 );
+
+        remove_filter( 'the_content', 'wpautop' );
         
         // Clean vars.
         $headline_text = get_option( 'gpdrcono_headline_text' );
         $accept_text = get_option( 'gpdrcono_accept_text' );
         $reject_text = get_option( 'gpdrcono_reject_text' );
         $readmore_text = get_option( 'gpdrcono_readmore_text' );
+
+        $gpdrcono_privacy_policy_page = do_shortcode( get_option( 'gpdrcono_privacy_policy_page' ) );
+        $gpdrcono_cookie_required_settings_tab_content = do_shortcode( get_option( 'gpdrcono_cookie_required_settings_tab_content' ) );
+        $gpdrcono_cookie_information_tab_content = do_shortcode( get_option( 'gpdrcono_cookie_information_tab_content' ) );
+        $gpdrcono_switch_content = wpautop( get_option( 'gpdrcono_switch_content' ) );
+
+        if( 'true' == get_option( 'gpdrcono_apply_wpautop' ) ) {
+            $gpdrcono_privacy_policy_page = wpautop( $gpdrcono_privacy_policy_page );
+            $gpdrcono_cookie_required_settings_tab_content = wpautop( $gpdrcono_cookie_required_settings_tab_content );
+            $gpdrcono_cookie_information_tab_content = wpautop( $gpdrcono_cookie_information_tab_content );
+            $gpdrcono_switch_content = wpautop( $gpdrcono_switch_content );
+        }
 
         echo '<div class="gdprcono-front__wrapper gdprcono-front__wrapper-top">
                 <div class="gdprcono-front__inner">
@@ -93,7 +107,7 @@ function gdprcono_display_notification_bar() {
             $tablist_1_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_privacy_policy_tab_title ) . $serial_id .'">
                                     <h3>' . $gpdrcono_privacy_policy_tab_title . '</h3>
                                     <div class="gdprcono-tab__content-inner">
-                                        <article>' . get_option( 'gpdrcono_privacy_policy_page' ) . '</article>
+                                        <article>' . $gpdrcono_privacy_policy_page . '</article>
                                     </div>
                                     <img src="' . plugins_url( 'assets/img/lock.png', dirname( __FILE__ ) ) . '" alt="' . $gpdrcono_privacy_policy_tab_title . '" />
                                   </div>';
@@ -107,7 +121,7 @@ function gdprcono_display_notification_bar() {
             $tablist_2_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_cookie_required_settings_tab_title ) . $serial_id . '">
                                     <h3>' . $gpdrcono_cookie_required_settings_tab_title . '</h3>
                                     <div class="gdprcono-tab__content-inner">
-                                        <article>' . do_shortcode( get_option( 'gpdrcono_cookie_required_settings_tab_content' ) ) . '<div class="switchcontent-box">' . get_option( 'gpdrcono_switch_content' ) . '</div></article>
+                                        <article>' . $gpdrcono_cookie_required_settings_tab_content . '<div class="switchcontent-box">' . $gpdrcono_switch_content . '</div></article>
                                     </div>
                                     <img src="' . plugins_url( 'assets/img/require-cookies.png', dirname( __FILE__ ) ) . '" alt="' . $gpdrcono_cookie_required_settings_tab_title . '" />
                                   </div>';
@@ -121,7 +135,7 @@ function gdprcono_display_notification_bar() {
             $tablist_3_content = '<div class="gdprcono-tab__content" id="' . sanitize_title( $gpdrcono_cookie_information_tab_title ) . $serial_id . '">
                                     <h3>' . $gpdrcono_cookie_information_tab_title . '</h3>
                                     <div class="gdprcono-tab__content-inner">
-                                        <article>' . do_shortcode( get_option( 'gpdrcono_cookie_information_tab_content' ) ). '</article>
+                                        <article>' . $gpdrcono_cookie_information_tab_content . '</article>
                                     </div>
                                     <img src="' . plugins_url( 'assets/img/cookie-information.png', dirname( __FILE__ ) ) . '" alt="' . $gpdrcono_cookie_information_tab_title . '" />
                                   </div>';

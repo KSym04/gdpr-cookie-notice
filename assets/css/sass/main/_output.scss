@@ -22,6 +22,7 @@
         width: 75%;
         font-size: 14px;
         font-weight: 600;
+        color: inherit;
         text-align: left;
         box-sizing: border-box;
         float: left;
@@ -133,12 +134,24 @@
                 padding: 0;
                 white-space: pre-line;
                 box-sizing: border-box;
+                font-size: 15px;
 
                 ul,
                 ol {
                     list-style-type: disc;
                     margin: 0 0 0 2rem;
                     padding: 0;
+                }
+
+                strong {
+                    display: block;
+                    font-weight: 600;
+                }
+
+                p {
+                    display: block;
+                    margin-top: 1.5em;
+                    margin-bottom: 1.5em;
                 }
             }
             

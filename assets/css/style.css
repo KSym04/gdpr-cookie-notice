@@ -18,6 +18,7 @@
   width: 75%;
   font-size: 14px;
   font-weight: 600;
+  color: inherit;
   text-align: left;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -114,12 +115,22 @@
   white-space: pre-line;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-size: 15px;
 }
 .gdprcono-tab__content-inner article ul,
 .gdprcono-tab__content-inner article ol {
   list-style-type: disc;
   margin: 0 0 0 2rem;
   padding: 0;
+}
+.gdprcono-tab__content-inner article strong {
+  display: block;
+  font-weight: 600;
+}
+.gdprcono-tab__content-inner article p {
+  display: block;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
 .gdprcono-tab__content-inner .button {
   cursor: pointer;

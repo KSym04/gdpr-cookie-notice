@@ -153,11 +153,17 @@ class gdpr_cookie_notice_compliance {
         // Build inline styles.
         $notice_bgcolor = get_option( 'gpdrcono_notice_bgcolor' );
         $notice_txtcolor = get_option( 'gpdrcono_notice_txtcolor' );
+        $notice_txtcolor_hover = get_option( 'gpdrcono_notice_txtcolor_hover' );
 
         $inline_styles = "
             .gdprcono-front__wrapper { 
                 background-color: {$notice_bgcolor} !important;
                 color: {$notice_txtcolor} !important;
+            }
+
+            .gdprcono-front__wrapper
+            .gdprcono-front__headline-text a:hover { 
+                color: {$notice_txtcolor_hover} !important;
             }
         ";
 
@@ -199,7 +205,6 @@ class gdpr_cookie_notice_compliance {
 	*  @since	1.0.0
 	*/
 	public function admin_page_options_register() {
-
         add_option( 'gpdrcono_headline_text', __( 'Denne hjemmeside anvender cookies til statistik og indstillinger. <br />
         Hvis du klikker videre på siden, accepterer du brugen af cookies.', 'gdprcono' ) );
         register_setting( 'gdprcono_options_group', 'gpdrcono_headline_text' );
@@ -221,6 +226,12 @@ class gdpr_cookie_notice_compliance {
 
         add_option( 'gpdrcono_notice_txtcolor', '#ffffff' );
         register_setting( 'gdprcono_options_group', 'gpdrcono_notice_txtcolor' );
+
+        add_option( 'gpdrcono_notice_txtcolor_hover', '#ffffff' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_notice_txtcolor_hover' );
+
+        add_option( 'gpdrcono_apply_wpautop', 'true' );
+        register_setting( 'gdprcono_options_group', 'gpdrcono_apply_wpautop' );
 
         // Privacy policy tab.
         add_option( 'gpdrcono_privacy_policy_page_switch', 'true' );
