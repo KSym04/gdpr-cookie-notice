@@ -63,8 +63,17 @@ function gdprcono_display_notification_bar() {
     }
 
     if( 'hold' == $_COOKIE['gdprconostatus'] ) {
-        $serial_id = mt_rand( 100000, 999999 );
+        /**
+         * Add filter to support independent CSS class.
+         * 
+         * @since 1.0.0
+         * @package GDPR_Cookie_Notice_Compliance
+         */
+        add_filter( 'body_class', function( $classes ) {
+            return array_merge( $classes, array( 'gpdrcono-activated' ) );
+        } );
 
+        $serial_id = mt_rand( 100000, 999999 );
         remove_filter( 'the_content', 'wpautop' );
         
         // Clean vars.
