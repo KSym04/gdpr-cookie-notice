@@ -6,7 +6,7 @@
   position: fixed;
   z-index: 99999;
   padding: 20px 20px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .gpdrcono-activated .gdprcono-front__wrapper-top {
   bottom: 0;
@@ -21,7 +21,7 @@
 .gpdrcono-activated .gdprcono-front__headline-text {
   display: block;
   width: 75%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 600;
   text-align: left;
@@ -33,7 +33,7 @@
 }
 .gpdrcono-activated .gdprcono-front__headline-text a {
   color: inherit;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-decoration: underline;
 }
 .gpdrcono-activated .gdprcono-front__action-button {
@@ -41,7 +41,7 @@
   width: 25%;
   text-align: right;
   float: left;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .gpdrcono-activated .gdprcono-tab__list {
   padding: 0;
@@ -55,7 +55,7 @@
   margin: 0 5px;
   padding: 10px 20px 11px 15px;
   border-radius: 15px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 20px;
   color: #333333;
 }
@@ -100,7 +100,7 @@
 .gpdrcono-activated .gdprcono-tab__content > h3 {
   display: block;
   margin-bottom: 0.7em;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 20px;
   font-weight: 400;
   color: #2f2f2f;
@@ -122,7 +122,7 @@
   white-space: pre-line;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 15px;
   color: #333333;
 }
@@ -131,13 +131,13 @@
   list-style-type: disc;
   margin: 0 0 0 2rem;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: inherit;
   color: #333333;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article strong {
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: inherit;
   font-weight: 600;
   color: #333333;
@@ -146,9 +146,12 @@
   display: block;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: inherit;
   color: #333333;
+}
+.gpdrcono-activated .gdprcono-tab__content-inner article a {
+  color: #960001;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner .button {
   cursor: pointer;
@@ -180,6 +183,7 @@
   background-color: transparent;
   border: 1px solid #2f2f2f;
   border-radius: 50px;
+  font-family: "Open Sans", sans-serif;
   color: #2f2f2f;
   text-decoration: none;
   line-height: 1;
