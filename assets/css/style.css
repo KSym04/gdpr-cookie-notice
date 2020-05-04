@@ -4,7 +4,7 @@
 }
 .gpdrcono-activated .gdprcono-front__wrapper {
   position: fixed;
-  z-index: 1500;
+  z-index: 99999;
   padding: 20px 20px;
 }
 .gpdrcono-activated .gdprcono-front__wrapper-top {
@@ -20,6 +20,7 @@
 .gpdrcono-activated .gdprcono-front__headline-text {
   display: block;
   width: 75%;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: inherit;
@@ -118,6 +119,7 @@
   white-space: pre-line;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
   font-size: 15px;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article ul,
@@ -125,15 +127,19 @@
   list-style-type: disc;
   margin: 0 0 0 2rem;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article strong {
   display: block;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article p {
   display: block;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: inherit;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner .button {
   cursor: pointer;
@@ -203,6 +209,7 @@
   background-color: #ebebeb;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: initial;
 }
 .gpdrcono-activated #gdprcono-modal__main.modal a.close-modal {
   top: -25px;

@@ -124,6 +124,12 @@ class gdpr_cookie_notice_compliance {
         if( 'reject' == $_COOKIE['gdprconostatus'] ) {
             gdprcono_clearall_cookies();
         }
+
+        // Add filter on body class.
+        add_filter( 'body_class', function ( $classes ) {
+            $classes[] = 'gpdrcono-activated';
+            return $classes;
+        } );
     }
 
 	/*
@@ -147,6 +153,7 @@ class gdpr_cookie_notice_compliance {
 	public function main_styles_scripts() {
         // Style.
         wp_enqueue_style( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css', array(), '0.9.1' );
+        wp_enqueue_style( 'google-fonts-open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap', array(), $this->settings['version'] );
         wp_enqueue_style( 'google-fonts-oswald', 'https://fonts.googleapis.com/css?family=Oswald&display=swap', array(), $this->settings['version'] );
         wp_enqueue_style( 'gdprcono-base', plugin_dir_url( __FILE__ ) . 'assets/css/style.css', array( 'jquery-modal' ), $this->settings['version'] );
 
@@ -156,11 +163,13 @@ class gdpr_cookie_notice_compliance {
         $notice_txtcolor_hover = get_option( 'gpdrcono_notice_txtcolor_hover' );
 
         $inline_styles = "
+            .gpdrcono-activated
             .gdprcono-front__wrapper { 
                 background-color: {$notice_bgcolor} !important;
                 color: {$notice_txtcolor} !important;
             }
 
+            .gpdrcono-activated
             .gdprcono-front__wrapper
             .gdprcono-front__headline-text a:hover { 
                 color: {$notice_txtcolor_hover} !important;
@@ -534,6 +543,5 @@ function gdpr_cookie_notice_compliance() {
 
 // initialize.
 gdpr_cookie_notice_compliance();
-
 
 endif; // class_exists check.

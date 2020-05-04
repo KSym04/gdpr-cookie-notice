@@ -3,7 +3,7 @@
     .gdprcono-front {
         &__wrapper {
             position: fixed;
-            z-index: 1500;
+            z-index: 99999;
             padding: 20px 20px;
 
             &-top {
@@ -22,6 +22,7 @@
         &__headline-text {
             display: block;
             width: 75%;
+            font-family: 'Open Sans', sans-serif;
             font-size: 14px;
             font-weight: 600;
             color: inherit;
@@ -136,6 +137,7 @@
                     padding: 0;
                     white-space: pre-line;
                     box-sizing: border-box;
+                    font-family: 'Open Sans', sans-serif;
                     font-size: 15px;
 
                     ul,
@@ -143,10 +145,12 @@
                         list-style-type: disc;
                         margin: 0 0 0 2rem;
                         padding: 0;
+                        font-family: 'Open Sans', sans-serif;
                     }
 
                     strong {
                         display: block;
+                        font-family: 'Open Sans', sans-serif;
                         font-weight: 600;
                     }
 
@@ -154,6 +158,8 @@
                         display: block;
                         margin-top: 1.5em;
                         margin-bottom: 1.5em;
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: inherit;
                     }
                 }
                 
@@ -239,6 +245,7 @@
             padding: 50px 50px 40px;
             background-color: #ebebeb;
             box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 );
+            overflow: initial;
 
             a.close-modal {
                 top: -25px;

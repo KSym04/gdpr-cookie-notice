@@ -1,6 +1,9 @@
 (function( $ ) {
     "use strict";
 
+    // Globals
+    var bodyOfDOM = jQuery('body');
+
     // FUNCTIONS //
     function removeNotifications(){
         jQuery('.gdprcono-front__wrapper').remove();
@@ -15,6 +18,9 @@
     }
 
     $(document).ready(function(){
+        // Add GDPR class.
+        bodyOfDOM.addClass('gpdrcono-activated');
+
         var consentGDPRStatus = Cookies.get('gdprconostatus');
         if('reject' == consentGDPRStatus) {
             removeNotifications();
@@ -107,6 +113,9 @@
     });
 
     $(window).load(function(){
+        // Add GDPR class.
+        bodyOfDOM.addClass('gpdrcono-activated');
+
         var consentGDPRStatus = Cookies.get('gdprconostatus');
         if('reject' == consentGDPRStatus) {
             removeNotifications();
