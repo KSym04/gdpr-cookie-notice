@@ -52,3 +52,13 @@ function gdprcono_reject_cookie_handler() {
 }
 add_action( 'wp_ajax_gdprcono_reject_cookie_handler', 'gdprcono_reject_cookie_handler' );
 add_action( 'wp_ajax_nopriv_gdprcono_reject_cookie_handler', 'gdprcono_reject_cookie_handler' );
+
+/**
+ * Add filter to support independent CSS class.
+ * 
+ * @since 1.0.0
+ * @package GDPR_Cookie_Notice_Compliance
+ */
+add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array( 'gpdrcono-activated' ) );
+} );
