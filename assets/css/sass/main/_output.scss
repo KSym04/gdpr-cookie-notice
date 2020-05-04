@@ -5,6 +5,7 @@
             position: fixed;
             z-index: 99999;
             padding: 20px 20px;
+            font-family: 'Open Sans', sans-serif;
 
             &-top {
                 bottom: 0;
@@ -25,7 +26,6 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 14px;
             font-weight: 600;
-            color: inherit;
             text-align: left;
             box-sizing: border-box;
             float: left;
@@ -34,6 +34,7 @@
 
             a {
                 color: inherit;
+                font-family: 'Open Sans', sans-serif;
                 text-decoration: underline;
             }
         }
@@ -43,6 +44,7 @@
             width: 25%;
             text-align: right;
             float: left;
+            font-family: 'Open Sans', sans-serif;
         }
     }
 
@@ -61,6 +63,7 @@
                 border-radius: 15px;
                 font-family: 'Oswald', sans-serif;
                 font-size: 20px;
+                color: #333333;
 
                 img {
                     display: inline-block;
@@ -139,6 +142,7 @@
                     box-sizing: border-box;
                     font-family: 'Open Sans', sans-serif;
                     font-size: 15px;
+                    color: #333333;
 
                     ul,
                     ol {
@@ -146,12 +150,16 @@
                         margin: 0 0 0 2rem;
                         padding: 0;
                         font-family: 'Open Sans', sans-serif;
+                        font-size: inherit;
+                        color: #333333;
                     }
 
                     strong {
                         display: block;
                         font-family: 'Open Sans', sans-serif;
+                        font-size: inherit;
                         font-weight: 600;
+                        color: #333333;
                     }
 
                     p {
@@ -160,6 +168,7 @@
                         margin-bottom: 1.5em;
                         font-family: 'Open Sans', sans-serif;
                         font-size: inherit;
+                        color: #333333;
                     }
                 }
                 
@@ -198,6 +207,7 @@
                 background-color: transparent;
                 border: 1px solid #2f2f2f;
                 border-radius: 50px;
+                font-family: 'Open Sans', sans-serif;
                 color: #2f2f2f;
                 text-decoration: none;
                 line-height: 1;
