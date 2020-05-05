@@ -4,7 +4,7 @@
         &__wrapper {
             position: fixed;
             z-index: 99999;
-            padding: 20px 20px 15px;
+            padding: 20px;
             font-family: $text__default;
 
             &-top {
@@ -12,25 +12,17 @@
                 left: 0;
                 right: 0;
             }
-
-            .reposition {
-                position: absolute;
-                color: inherit;
-                left: 25px;
-                top: 36px;
-                font-size: 12px;
-            }
         }
 
         &__inner {
-            max-width: 710px;
+            max-width: 920px;
             margin: 0 auto;
             overflow: hidden;
         }
 
         &__headline-text {
             display: block;
-            width: 75%;
+            width: 65%;
             font-family: $text__default;
             font-size: 14px;
             font-weight: 600;
@@ -49,12 +41,13 @@
 
         &__action-button {
             position: relative;
-            padding: 0 0 20px;
+            padding: 0;
             display: block;
-            width: 25%;
+            width: 35%;
             text-align: right;
             float: left;
             font-family: $text__default;
+            outline: none;
         }
     }
 
@@ -239,7 +232,8 @@
     }
 
     #gdprcono-accept-btn,
-    #gdprcono-reject-btn {
+    #gdprcono-reject-btn,
+    #gdprcono-settings-btn {
         background-color: $color__light-grey;
         border-radius: 20px;
         padding: 7px 20px 8px;
@@ -253,6 +247,10 @@
             background-color: $color__white;
             color: $color__light-grey;
         }
+    }
+
+    #gdprcono-settings-btn {
+        margin-right: 5px;
     }
 
     /* dialog box */
@@ -364,7 +362,7 @@
         text-align: center;
         font-family: 'Quicksand', sans-serif;
         font-size: 14px;
-        font-weight: bold;
+        font-weight: 600;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;

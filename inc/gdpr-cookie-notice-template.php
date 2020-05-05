@@ -93,9 +93,9 @@ function gdprcono_display_notification_bar() {
 
                     <div class="gdprcono-front__action-button">
                         <button id="gdprcono-accept-btn">' . $accept_text . '</button>
-                        <button id="gdprcono-settings-btn" href="#gdprcono-modal__main" rel="modal:open" class="gdprcono-front__dialog">
+                        <a id="gdprcono-settings-btn" href="#gdprcono-modal__main" rel="modal:open" class="gdprcono-front__dialog">
                             ' . __( 'Cookie Settings', 'gdprcono' ) . '
-                        </button>
+                        </a>
                         <button id="gdprcono-reject-btn">' . $reject_text . '</button>
                     </div>
                 </div>

@@ -56,6 +56,26 @@
         }
     }
 
+    @media (max-width: 970px) {
+        .gdprcono-front__headline-text {
+            width: 100%;
+            max-width: none;
+            float: none;
+            margin-bottom: 10px;
+
+            br {
+                display: none;
+            }
+        }
+
+        .gdprcono-front__action-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            float: none;
+        }
+    }
+
     // Mobile.
     @media (max-width: 840px) {
         .gdprcono-tab {
@@ -83,41 +103,18 @@
         }
     }
 
-    @media (max-width: 767px) {
-        .gdprcono-front__headline-text {
-            width: 100%;
-            max-width: none;
-            float: none;
-            margin-bottom: 10px;
-
-            br {
-                display: none;
-            }
-        }
-
-        .gdprcono-front__action-button {
-            display: block;
-            width: 100%;
-            text-align: center;
-            float: none;
-        }
-
-        .gdprcono-front__wrapper {
-            .reposition {
-                position: absolute;
-                color: inherit;
-                left: 0;
-                right: 0;
-                text-align: center;
-                top: 38px;
-                font-size: 12px;
-            }
-        }
-    }
-
     @media (max-width: 520px) {
         .gdprcono-tab__content-inner .button {
             padding: 8px 16px 10px;
+        }
+
+        #gdprcono-accept-btn,
+        #gdprcono-reject-btn,
+        #gdprcono-settings-btn {
+            border-radius: 15px;
+            padding: 3px 12px 4px;
+            border: none;
+            font-size: 12px;
         }
     }
 
