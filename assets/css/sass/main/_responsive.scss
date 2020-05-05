@@ -101,6 +101,18 @@
             text-align: center;
             float: none;
         }
+
+        .gdprcono-front__wrapper {
+            .reposition {
+                position: absolute;
+                color: inherit;
+                left: 0;
+                right: 0;
+                text-align: center;
+                top: 38px;
+                font-size: 12px;
+            }
+        }
     }
 
     @media (max-width: 520px) {

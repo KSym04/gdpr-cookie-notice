@@ -111,6 +111,13 @@ class gdpr_cookie_notice_compliance {
 	*  @since	1.0.0
 	*/
 	public function main() {
+        require( $this->settings['path'] . 'ver/plugin-update-checker.php' );
+        $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+            'https://www.eteam.dk/modules/gdpr-cookie-notice.json',
+            __FILE__,
+            'gdprcono'
+        );
+
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-helpers.php' );
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-shortcode.php' );
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-handler.php' );

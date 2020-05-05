@@ -88,11 +88,14 @@ function gdprcono_display_notification_bar() {
                 <div class="gdprcono-front__inner">
                     <p class="gdprcono-front__headline-text">
                         ' . $headline_text . '
-                        <a href="#gdprcono-modal__main" rel="modal:open" class="gdprcono-front__dialog">' . $readmore_text . '</a>
+                        <a href="' . get_option( 'gpdrcono_readmore_link' ) . '">' . $readmore_text . '</a>
                     </p>
 
                     <div class="gdprcono-front__action-button">
                         <button id="gdprcono-accept-btn">' . $accept_text . '</button>
+                        <button id="gdprcono-settings-btn" href="#gdprcono-modal__main" rel="modal:open" class="gdprcono-front__dialog">
+                            ' . __( 'Cookie Settings', 'gdprcono' ) . '
+                        </button>
                         <button id="gdprcono-reject-btn">' . $reject_text . '</button>
                     </div>
                 </div>

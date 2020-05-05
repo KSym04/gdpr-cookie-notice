@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eteam.dk <1.0.0>\n"
-"POT-Creation-Date: 2020-05-04 15:38+0800\n"
-"PO-Revision-Date: 2020-05-04 15:38+0800\n"
+"POT-Creation-Date: 2020-05-04 19:02+0800\n"
+"PO-Revision-Date: 2020-05-04 19:02+0800\n"
 "Last-Translator: \n"
 "Language-Team: Eteam.dk\n"
 "Language: en\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/admin.php:12 gpdr-cookie-notice.php:69 gpdr-cookie-notice.php:193
+#: admin/admin.php:12 gpdr-cookie-notice.php:69 gpdr-cookie-notice.php:206
 msgid "GDPR Cookie Notice & Compliance"
 msgstr "GDPR Cookie Notice & Compliance"
 
@@ -113,49 +113,49 @@ msgstr "Deactivate Text"
 msgid "Notice"
 msgstr "Notice"
 
-#: gpdr-cookie-notice.php:192
+#: gpdr-cookie-notice.php:205
 msgid "GDPR Cookie Notice & Compliance / Settings"
 msgstr "GDPR Cookie Notice & Compliance / Settings"
 
-#: gpdr-cookie-notice.php:222
+#: gpdr-cookie-notice.php:223
 msgid ""
 "Denne hjemmeside anvender cookies til statistik og indstillinger. <br />\n"
 "        Hvis du klikker videre på siden, accepterer du brugen af cookies."
 msgstr ""
 
-#: gpdr-cookie-notice.php:226
+#: gpdr-cookie-notice.php:227
 msgid "OK"
 msgstr "OK"
 
-#: gpdr-cookie-notice.php:229
+#: gpdr-cookie-notice.php:230
 msgid "Nej, tak"
 msgstr ""
 
-#: gpdr-cookie-notice.php:232
+#: gpdr-cookie-notice.php:233
 msgid "Læs mere"
 msgstr ""
 
-#: gpdr-cookie-notice.php:254
+#: gpdr-cookie-notice.php:255
 msgid "Persondatapolitik"
 msgstr ""
 
-#: gpdr-cookie-notice.php:369
+#: gpdr-cookie-notice.php:370
 msgid "Nødvendige cookies"
 msgstr ""
 
-#: gpdr-cookie-notice.php:387
+#: gpdr-cookie-notice.php:388
 msgid "Cookies oplysninger"
 msgstr ""
 
-#: gpdr-cookie-notice.php:441
+#: gpdr-cookie-notice.php:442
 msgid "Aktiver cookies"
 msgstr ""
 
-#: gpdr-cookie-notice.php:444
+#: gpdr-cookie-notice.php:445
 msgid "Deaktiver cookies"
 msgstr ""
 
-#: gpdr-cookie-notice.php:448
+#: gpdr-cookie-notice.php:449
 msgid ""
 "Hvis du deaktiverer denne cookies funktion, kan vi ikke gemme dine "
 "præferencer.<br />\n"
@@ -163,7 +163,7 @@ msgid ""
 "aktivere eller deaktivere cookies igen."
 msgstr ""
 
-#: gpdr-cookie-notice.php:500
+#: gpdr-cookie-notice.php:501
 msgid "Settings"
 msgstr "Settings"
 
@@ -174,6 +174,10 @@ msgstr "Activate All"
 #: inc/gdpr-cookie-notice-shortcode.php:38
 msgid "Save Settings"
 msgstr "Save Settings"
+
+#: inc/gdpr-cookie-notice-template.php:98
+msgid "Cookie Settings"
+msgstr "Cookie Settings"
 
 #~ msgid ""
 #~ "This website uses cookies for statistics and settings. By clicking "

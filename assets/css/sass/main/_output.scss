@@ -4,13 +4,21 @@
         &__wrapper {
             position: fixed;
             z-index: 99999;
-            padding: 20px 20px;
+            padding: 20px 20px 15px;
             font-family: $text__default;
 
             &-top {
                 bottom: 0;
                 left: 0;
                 right: 0;
+            }
+
+            .reposition {
+                position: absolute;
+                color: inherit;
+                left: 25px;
+                top: 36px;
+                font-size: 12px;
             }
         }
 
@@ -40,6 +48,8 @@
         }
 
         &__action-button {
+            position: relative;
+            padding: 0 0 20px;
             display: block;
             width: 25%;
             text-align: right;

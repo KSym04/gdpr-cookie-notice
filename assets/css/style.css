@@ -5,13 +5,20 @@
 .gpdrcono-activated .gdprcono-front__wrapper {
   position: fixed;
   z-index: 99999;
-  padding: 20px 20px;
+  padding: 20px 20px 15px;
   font-family: "Open Sans", sans-serif;
 }
 .gpdrcono-activated .gdprcono-front__wrapper-top {
   bottom: 0;
   left: 0;
   right: 0;
+}
+.gpdrcono-activated .gdprcono-front__wrapper .reposition {
+  position: absolute;
+  color: inherit;
+  left: 25px;
+  top: 36px;
+  font-size: 12px;
 }
 .gpdrcono-activated .gdprcono-front__inner {
   max-width: 710px;
@@ -37,6 +44,8 @@
   text-decoration: underline;
 }
 .gpdrcono-activated .gdprcono-front__action-button {
+  position: relative;
+  padding: 0 0 20px;
   display: block;
   width: 25%;
   text-align: right;
@@ -400,6 +409,15 @@
     width: 100%;
     text-align: center;
     float: none;
+  }
+  .gpdrcono-activated .gdprcono-front__wrapper .reposition {
+    position: absolute;
+    color: inherit;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 38px;
+    font-size: 12px;
   }
 }
 @media (max-width: 520px) {
