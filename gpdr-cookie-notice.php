@@ -3,7 +3,7 @@
 Plugin Name: GDPR Cookie Notice & Compliance
 Plugin URI: https://www.eteam.dk/om-eteam/
 Description: Simple utility plugin for GDPR compliance
-Version: 1.0.3
+Version: 1.0.4
 Author: Eteam.dk
 Author URI: https://www.eteam.dk/
 Copyright: Eteam.dk
@@ -74,7 +74,7 @@ class gdpr_cookie_notice_compliance {
 			'path'		 => plugin_dir_path( __FILE__ ),
 			'dir'		 => plugin_dir_url( __FILE__ )
         );
-        
+
         // Language.
         add_action( 'plugins_loaded', array( $this, 'language_support' ) );
 
@@ -91,7 +91,7 @@ class gdpr_cookie_notice_compliance {
             add_action( 'wp_footer', array( $this, 'show_notifications' ) );
         }
     }
-    
+
 	/*
 	*  language_support
 	*
@@ -124,7 +124,7 @@ class gdpr_cookie_notice_compliance {
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-template.php' );
 
         if( ! is_admin() && ( ! isset( $_COOKIE['gdprconostatus'] ) || empty( $_COOKIE['gdprconostatus'] ) ) ) {
-            $host = parse_url( gdprcono_get_fullurl(), PHP_URL_HOST ); 
+            $host = parse_url( gdprcono_get_fullurl(), PHP_URL_HOST );
             setcookie( "gdprconostatus", "hold", time() + 172800, "/", $host );
         }
 
@@ -165,20 +165,20 @@ class gdpr_cookie_notice_compliance {
         $notice_txtcolor_hover = get_option( 'gpdrcono_notice_txtcolor_hover' );
 
         $inline_styles = "
-            .gpdrcono-activated 
-            .gdprcono-front__wrapper { 
+            .gpdrcono-activated
+            .gdprcono-front__wrapper {
                 background-color: {$notice_bgcolor} !important;
                 color: {$notice_txtcolor} !important;
             }
 
-            .gpdrcono-activated 
+            .gpdrcono-activated
             .gdprcono-front__headline-text {
                 color: {$notice_txtcolor} !important;
             }
 
-            .gpdrcono-activated 
-            .gdprcono-front__wrapper 
-            .gdprcono-front__headline-text a:hover { 
+            .gpdrcono-activated
+            .gdprcono-front__wrapper
+            .gdprcono-front__headline-text a:hover {
                 color: {$notice_txtcolor_hover} !important;
             }
         ";
@@ -187,7 +187,7 @@ class gdpr_cookie_notice_compliance {
 
         // Script.
         wp_enqueue_script( 'js-cookie', 'https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js', array( 'jquery' ), '3.0.0-beta.4' );
-        wp_enqueue_script( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js', array( 'jquery', 'js-cookie' ), '0.9.1' ); 
+        wp_enqueue_script( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js', array( 'jquery', 'js-cookie' ), '0.9.1' );
 
         wp_register_script( 'gdprcono', plugin_dir_url( __FILE__ ) . 'assets/js/script.js', array( 'js-cookie', 'jquery' ), $this->settings['version'] );
         wp_localize_script( 'gdprcono', 'gdprcono_handler_params', array( 'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php') );
@@ -212,7 +212,7 @@ class gdpr_cookie_notice_compliance {
 
 		add_filter( 'plugin_action_links_' . $this->settings['basename'], array( $this, 'admin_settings_url') );
     }
-    
+
 	/*
 	*  admin_page_options_register
 	*
@@ -265,11 +265,11 @@ class gdpr_cookie_notice_compliance {
         Telefon: <a href="tel: +4538423040">38 42 30 40</a>
         Mail: <a href="mailto:info@eteam.dk">info@eteam.dk</a>
         CVR: 37872628
-        
+
         <strong>Hvilke persondata indsamler og behandler vi?</strong>
-        
+
         Eteam.dk ApS indsamler og lagrer alle oplysninger, som du indtaster på vores hjemmesider, eller som du opgiver, når du benytter vores tjenester. Herudover indsamler vi oplysninger, som automatisk sendes til os fra dit udstyr.
-        
+
         De oplysninger som vi indsamler kan omfatte, men er ikke begrænset til:
         <ul>
              <li>Oplysninger, som du opgiver, når du bliver oprettet som kunde/bruger eller benytter de tjenester, vi stiller til rådighed</li>
@@ -277,14 +277,14 @@ class gdpr_cookie_notice_compliance {
              <li>Yderligere oplysninger, som du måtte opgive via sociale medier eller andre tredjepartstjenester.</li>
         </ul>
         Udover de oplysninger, som du selv giver os, indsamler vi automatisk de oplysninger, der sendes til os fra din computer, mobilenhed eller andet udstyr.
-        
+
         Disse oplysninger omfatter, men er ikke begrænset til:
         <ul>
              <li>Oplysninger om din interaktion med vores websteder og tjenester, herunder, men ikke begrænset til, enheds-id, enhedstype, oplysninger om geoplacering, computer-og forbindelsesoplysninger, statistik om sidevisninger, trafik til og fra vores hjemmeside, henvisnings-URL-adresse, IP-adresse og standardweblogoplysninger, og</li>
              <li>Oplysninger indsamlet via cookies og lignende teknologier.</li>
         </ul>
         <strong>Hvad bruger vi dine persondata til?</strong>
-        
+
         Vi anvender de oplysninger vi har om dig til en række formål, herunder til at:
         <ul>
              <li>Behandle dine forespørgsler og ordrer</li>
@@ -301,19 +301,19 @@ class gdpr_cookie_notice_compliance {
              <li>Undgå eller imødegå sikkerhedsbrud.</li>
         </ul>
         Vi behandler og opbevarer kun data om dig, der er nødvendige, relevante og tilstrækkelige til at opfylde de formål, som er nævnt ovenfor. Vi lagrer ikke persondata længere end tilladt ved lov og sletter persondata, når de ikke længere er nødvendige til ovennævnte formål.
-        
+
         <strong>Kontrol og opdatering af persondata</strong>
-        
+
         Vi kontrollerer, at de persondata, vi behandler om dig, ikke er urigtige eller vildledende. Vi sørger også for at opdateredine persondata løbende. Da vores service er afhængig af, at dine data er korrekte og opdaterede, beder vi dig oplyse os om relevante ændringer i dine data.
-        
+
         <strong>Indhentelse og tilbagetrækning af samtykke</strong>
-        
+
         Vi indhenter dit samtykke, inden vi behandler dine persondata til de formål, der er beskrevet ovenfor, medmindre vi har et lovligt grundlag for at indhente dem. Vi oplyser dig om et sådant grundlag og om vores legitime interesse i at behandle dine persondata.
-        
+
         Dit samtykke er frivilligt, og du kan til enhver tid trække det tilbage ved at henvende dig til os.
-        
+
         <strong>Videregivelse af persondata</strong>
-        
+
         Vi videregiver ikke persondata til tredjeparter, undtagen i følgende specifikke tilfælde:
         <ul>
              <li>Du har afgivet dit udtrykkelige samtykke til videregivelsen</li>
@@ -322,43 +322,43 @@ class gdpr_cookie_notice_compliance {
              <li>Når vi i god tro mener, at videregivelsen af oplysninger er nødvendig for at forhindre eller reagere på bedrageri, forsvare vores hjemmesider mod angreb, eller beskytte vores virksomheds, kunders og brugeres ejendom og sikkerhed, eller offentlighedens sikkerhed.</li>
         </ul>
         Eteam.dk ApS videregiver ikke persondata om dig til tredjeparter med henblik på deres egne markedsføringsformål, medmindre du udtrykkeligt har samtykket til at oplysningerne må videregives til sådanne formål.
-        
+
         Med disse parter er der indgået databehandleraftaler (DPA) iht. GDPR-forskrifterne herfor.
-        
+
         <strong>Hvor lagres dine persondata?</strong>
-        
+
         Personoplysningerne lagres hos os og vores databehandler, som opbevarer og behandler persondata på vores vegne i henhold til denne persondatapolitik og den gældende lovgivning om beskyttelse af persondata.Hvis vi videregiver dine persondata til samarbejdspartnere i Danmark eller tredjelande, sikrer vi os altid, at deres niveau for persondatabeskyttelse passer til de krav, vi har opstillet i denne privatlivspolitik og som følger af gældende lovgivning.
-        
+
         <strong>Beskyttelseaf persondata</strong>
-        
+
         Vi beskytter dine oplysninger ved hjælp af tekniske og administrative sikkerhedsforanstaltninger (f.eks. firewalls, datakryptering samt fysiske og administrative adgangskontroller til data og servere), som begrænser risikoen for tab, misbrug, uautoriseret adgang, videregivelse og ændring.
-        
+
         <strong>Adgang til dine persondata</strong>
-        
+
         Du har til en enhver tid ret til at få oplyst, hvilke data vi behandler om dig og hvad vi anvender dem til. Du kan også få oplyst, hvor længe vi opbevarer dine persondata, og hvem, der modtager data om dig, i det omfang vi videregiver data i Danmark og i udlandet.
-        
+
         Hvis du anmoder om det, kan vi oplyse dig om til de data, vi behandler om dig. Adgangen kan dog være begrænset af hensyn til andre personers privatlivsbeskyttelse, til forretningshemmeligheder og immaterielle rettigheder.
-        
+
         Du har også ret til at modtage de persondata, du har stillet til rådighed for os. Du har også ret til at overføre disse persondata til en anden tjenesteudbyde. Hvis du ønsker at bruge din ret til dataoverførsel, vil du modtage dine persondata fra os i et almindeligt anvendt format.
-        
+
         <strong>Rettelse eller sletning af persondata</strong>
-        
+
         Hvis du mener, at de persondata, vi behandler om dig, er forkerte, har du ret til at få dem rettet. Du skal blot henvende dig til os og oplyse, hvad du ønsker at få rettet.
-        
+
         Hvis du mener, at dine persondata ikke længere er nødvendige i forhold til det formål, som vi indhentede dem til, eller hvis du hvis du mener, at dine persondata bliver behandlet i strid med lovgivningen eller andre retlige forpligtelser, kan du altid anmode om at få dem slettet.
-        
+
         Når du henvender dig med en anmodning om at få rettet eller slettet dine persondata, undersøger vi, om betingelserne er opfyldt, og gennemfører i så fald ændringer eller sletning så hurtigt som muligt.
-        
+
         <strong>Indsigelse eller klage mod behandling af persondata</strong>
-        
+
         Du har ret til at gøre indsigelse mod vores behandling af dine persondata. Hvis din indsigelse er berettiget, sørger vi for at ophøre med behandlingen af dine persondata. Du har også ret til at klage over behandlingen af oplysninger og data vedrørende dig. Klage indgives til Datatilsynet.
-        
+
         <strong>Ændring af privatlivspolitikken</strong>
-        
+
         Vi forbeholder os ret til at ændre denne privatlivspolitik, således at vi til enhver tid overholder gældende lovgivning. Den senest opdaterede version af den til enhver tid gældende persondatapolitik kan findes på <a href="https://www.eteam.dk">www.eteam.dk</a>
-        
+
         <strong>Har du kommentarer eller spørgsmål?</strong>
-        
+
         Har du kommentarer eller spørgsmål vedrørende vores indsamling eller behandling af persondata, er du altid velkommen til at kontakte os på mail: <a href="mailto:info@eteam.dk">info@eteam.dk</a>';
 
         add_option( 'gpdrcono_privacy_policy_page', __( $privacy_policy_content ) );
@@ -374,9 +374,9 @@ class gdpr_cookie_notice_compliance {
         $cookie_policy_content = 'Visse typer cookies er nødvendige for at kunne levere f.eks. tjenester som du har anmodet om. Det kan eksempelvis være et kunde login.
 
         Disse typer cookies skal sørge for, at du får den bedst mulige oplevelse af vores hjemmeside. Cookies husker din navigation på siden, valg i bokse og lignende.
-        
+
         Ingen af disse informationer kan personligt identificere dig.
-        
+
         [gdprcono_cookie_switch_box]';
 
         add_option( 'gpdrcono_cookie_required_settings_tab_content', __( $cookie_policy_content ) );
@@ -392,40 +392,40 @@ class gdpr_cookie_notice_compliance {
         $cookie_information_content = 'Vi bruger cookies til at indsamle statistik, der kan være med til at forbedre brugeroplevelsen.
 
         <span style="font-size: 1rem;">Cookies oplysninger gemmes i din browser og udfører diverse funktioner, så som f.eks. at genkende dig, når du vender tilbage til vores hjemmeside.</span>
-        
+
         Du kan også vælge at justere dine cookies indstillinger ved hjælp af topfanerne her på siden.
-        
+
         <a class="button" href="https://ec.europa.eu/info/law/law-topic/data-protection/reform/what-does-general-data-protection-regulation-gdpr-govern_da" target="_blank" rel="noopener">Læs mere om GDPR reglerne her</a>
-        
+
         <strong>General information om brugen af cookies på denne hjemmeside.</strong>
-        
+
         Ved at benytte denne hjemmeside accepterer du samtidig at siden bruger cookies.
-        
+
         <strong>Hvad er cookies?</strong>
         Cookies er små tekstfiler, der gemmes i din browser, som gør at vi kan se at din computer, smartphone, iPad eller lignende har besøgt denne hjemmeside.
         Disse cookies har forskellige formål og kan eksempelvis bruges til at huske præferencer og føre statistik over besøgende på denne hjemmeside.
-        
+
         Læs mere om cookies regler: <a href="https://erhvervsstyrelsen.dk/cookie-loven" target="_blank" rel="noopener">KLIK HER</a>
-        
+
         <strong>Oversigt over hjemmesidens brug af cookies.</strong>
-        
+
         <strong>Nødvendige cookies.</strong>
         Visse typer cookies er nødvendige for at kunne levere f.eks. tjenester som du har anmodet om. Det kan eksempelvis være et kunde login.
-        
+
         <strong>Cookies til dine præferencer.</strong>
         Disse typer cookies skal sørge for, at du får den bedst mulige oplevelse af vores hjemmeside. Cookies husker din navigation på siden, valg i bokse og lignende. Ingen af disse informationer kan personligt  identificere dig.
-        
+
         <strong>Cookies for optimering og drift.</strong>
         Disse typer cookies anvendes eksempelvis til at samle statistik om trafik til og fra hjemmesiden. Kun i begrænset omfang kan disse data identificere dig som bruger. Der bliver dog ikke gemt eller gjort brug af disse data og vi deler heller disse IKKE data med 3. part.
-        
+
         Dataene anvendes bland andet i forbindelse med brugen af Google Analytics, Meta Trafik eller andre typer analyseprogrammer. Disse oplysninger går til servere, som kan være placeret i Danmark og i udlandet. Du kan fravælge cookies fra Google Analytics her: <a href="http://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">http://tools.google.com/dlpage/gaoptout</a>
-        
+
         <strong>Sådan afviser du cookies.</strong>
         Ved at ændre indstillingerne i din browser, kan du afvise cookies på din computer. Hvordan du ændrer indstillingerne i din browser afhænger af, hvilken browser du anvender. Vælger du at indstille din browser, så du ikke modtager cookies, skal du være opmærksom på, at du kan gå glip af funktioner og lignende på hjemmesiden, som i så fald ikke vil fungere.
-        
+
         <strong>Sådan sletter du dine cookies.</strong>
         Har du tidligere accepteret cookies, kan disse også slettes igen. Dette gøres i indstillingerne på din webbrowser.
-        
+
         <strong>Fjern cookiefiler i browsere:
         </strong>Microsoft Edge: <a href="https://support.microsoft.com/da-dk/help/10607/microsoft-edge-view-delete-browser-history" rel="noopener">KLIK HER</a>
         Internet Explorer: <a href="https://support.microsoft.com/da-dk/help/278835/how-to-delete-cookie-files-in-internet-explorer" target="_blank" rel="noopener">KLIK HER</a>
@@ -446,9 +446,9 @@ class gdpr_cookie_notice_compliance {
         add_option( 'gpdrcono_switch_deactivate_text', esc_html__( 'Deaktiver cookies', 'gdprcono' ) );
         register_setting( 'gdprcono_options_group', 'gpdrcono_switch_deactivate_text' );
 
-        add_option( 'gpdrcono_switch_content', __( 
+        add_option( 'gpdrcono_switch_content', __(
             'Hvis du deaktiverer denne cookies funktion, kan vi ikke gemme dine præferencer.<br />
-            Det betyder, at hver gang du besøger denne hjemmeside, skal du aktivere eller deaktivere cookies igen.', 'gdprcono' ) 
+            Det betyder, at hver gang du besøger denne hjemmeside, skal du aktivere eller deaktivere cookies igen.', 'gdprcono' )
         );
         register_setting( 'gdprcono_options_group', 'gpdrcono_switch_content' );
 	}
@@ -464,7 +464,7 @@ class gdpr_cookie_notice_compliance {
 		$this->admin_save_settings();
         include( $this->settings['path'] . 'admin/admin.php' );
     }
-    
+
     /*
 	*  admin_save_settings
 	*
@@ -537,7 +537,6 @@ class gdpr_cookie_notice_compliance {
 *  @param	N/A
 *  @return	(object)
 */
-
 function gdpr_cookie_notice_compliance() {
 	global $gdpr_cookie_notice_compliance;
 	if( ! isset( $gdpr_cookie_notice_compliance ) ) {

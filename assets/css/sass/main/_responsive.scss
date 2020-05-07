@@ -1,6 +1,5 @@
 // Small laptop.
 .gpdrcono-activated {
-
     @media (max-width: 1368px) {
         .gdprcono-tab {
             &__content {
@@ -8,7 +7,7 @@
                     width: 55%;
                     max-width: 570px;
                 }
-        
+
                 & > img {
                     width: 35%;
                     margin: 0 auto;
@@ -25,7 +24,7 @@
                     width: 100%;
                     max-width: none;
                 }
-        
+
                 & > img {
                     display: none;
                 }
@@ -47,7 +46,7 @@
             }
         }
 
-        .gdprcono-tab { 
+        .gdprcono-tab {
             &__list {
                 li {
                     font-size: 17px;
@@ -108,14 +107,12 @@
             padding: 8px 16px 10px;
         }
 
-        #gdprcono-accept-btn,
-        #gdprcono-reject-btn,
-        #gdprcono-settings-btn {
-            border-radius: 15px;
-            padding: 3px 12px 4px;
-            border: none;
-            font-size: 12px;
+        .toggle-text-on {
+            font-size: 13px !important;
+        }
+
+        .toggle-text-off {
+            font-size: 13px !important;
         }
     }
-
 } // wrap responsive CSS support for GDPR Cookie Notice plugin.
