@@ -175,12 +175,18 @@
   border-radius: 25px;
   line-height: 1;
   text-decoration: none;
-  color: inherit;
+  color: inherit !important;
+  font-weight: inherit !important;
+  background-color: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-height: 36px;
+  text-transform: none;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner .button:hover {
-  border: 1px solid #ffffff;
-  background-color: #960001;
-  color: #ffffff;
+  border: 1px solid #ffffff !important;
+  background-color: #960001 !important;
+  color: #ffffff !important;
 }
 .gpdrcono-activated .gdprcono-tab__content > img {
   width: 35%;

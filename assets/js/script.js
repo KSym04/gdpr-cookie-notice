@@ -1,6 +1,8 @@
 //(function( $ ) {
     //"use strict";
 
+    jQuery.noConflict();
+
     // Globals
     var bodyOfDOM = jQuery('html');
 

@@ -197,12 +197,17 @@
                     border-radius: 25px;
                     line-height: 1;
                     text-decoration: none;
-                    color: inherit;
+                    color: inherit !important;
+                    font-weight: inherit !important;
+                    background-color: transparent;
+                    box-sizing: border-box;
+                    max-height: 36px;
+                    text-transform: none;
 
                     &:hover {
-                        border: 1px solid $color__white;
-                        background-color: $color__red;
-                        color: $color__white;
+                        border: 1px solid $color__white !important;
+                        background-color: $color__red !important;
+                        color: $color__white !important;
                     }
                 }
             }
