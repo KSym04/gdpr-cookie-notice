@@ -185,6 +185,7 @@
                     a {
                         color: $color__red;
                         font-size: inherit !important;
+                        text-decoration: none;
                     }
                 }
 
@@ -245,6 +246,7 @@
     #gdprcono-reject-btn,
     #gdprcono-settings-btn {
         background-color: $color__light-grey;
+        box-shadow: none;
         border-radius: 20px;
         padding: 7px 20px 8px;
         box-sizing: border-box;
