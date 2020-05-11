@@ -66,6 +66,7 @@
                 font-family: $text__heading;
                 font-size: 20px;
                 color: $color__darkgrey;
+                line-height: 1.4 !important;
 
                 img {
                     display: inline-block;
@@ -147,12 +148,17 @@
 
                     ul,
                     ol {
-                        list-style-type: disc;
-                        margin: 0 0 1.5rem 2rem;
+                        list-style-type: disc !important;
+                        margin: 0 0 1.5rem 2rem !important;
                         padding: 0;
                         font-family: $text__default;
                         font-size: inherit;
                         color: $color__darkgrey;
+
+                        li {
+                            list-style: disc !important;
+                            line-height: 1.4 !important;
+                        }
                     }
 
                     strong {
@@ -170,6 +176,7 @@
                         font-family: $text__default;
                         font-size: inherit;
                         color: $color__darkgrey;
+                        line-height: 1.4;
                     }
 
                     a {

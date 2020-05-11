@@ -3,7 +3,7 @@
 Plugin Name: GDPR Cookie Notice & Compliance
 Plugin URI: https://www.eteam.dk/om-eteam/
 Description: Simple utility plugin for GDPR compliance
-Version: 1.0.4
+Version: 1.0.5
 Author: Eteam.dk
 Author URI: https://www.eteam.dk/
 Copyright: Eteam.dk

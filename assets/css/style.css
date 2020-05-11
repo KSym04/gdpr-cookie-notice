@@ -61,6 +61,7 @@
   font-family: "Oswald", sans-serif;
   font-size: 20px;
   color: #333333;
+  line-height: 1.4 !important;
 }
 .gpdrcono-activated .gdprcono-tab__list li img {
   display: inline-block;
@@ -130,12 +131,17 @@
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article ul,
 .gpdrcono-activated .gdprcono-tab__content-inner article ol {
-  list-style-type: disc;
-  margin: 0 0 1.5rem 2rem;
+  list-style-type: disc !important;
+  margin: 0 0 1.5rem 2rem !important;
   padding: 0;
   font-family: "Open Sans", sans-serif;
   font-size: inherit;
   color: #333333;
+}
+.gpdrcono-activated .gdprcono-tab__content-inner article ul li,
+.gpdrcono-activated .gdprcono-tab__content-inner article ol li {
+  list-style: disc !important;
+  line-height: 1.4 !important;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article strong {
   display: block;
@@ -151,6 +157,7 @@
   font-family: "Open Sans", sans-serif;
   font-size: inherit;
   color: #333333;
+  line-height: 1.4;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article a {
   color: #960001;
