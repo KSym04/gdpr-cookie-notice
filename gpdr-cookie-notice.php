@@ -3,7 +3,7 @@
 Plugin Name: GDPR Cookie Notice & Compliance
 Plugin URI: https://www.eteam.dk/om-eteam/
 Description: Simple utility plugin for GDPR compliance
-Version: 1.0.5
+Version: 1.0.6
 Author: Eteam.dk
 Author URI: https://www.eteam.dk/
 Copyright: Eteam.dk
@@ -186,10 +186,10 @@ class gdpr_cookie_notice_compliance {
         wp_add_inline_style( 'gdprcono-base', $inline_styles );
 
         // Script.
-        wp_enqueue_script( 'js-cookie', 'https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js', array( 'jquery' ), '3.0.0-beta.4' );
-        wp_enqueue_script( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js', array( 'jquery', 'js-cookie' ), '0.9.1' );
+        wp_enqueue_script( 'js-cookie', 'https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js', array( 'jquery', 'jquery-migrate' ), '3.0.0-beta.4' );
+        wp_enqueue_script( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js', array( 'jquery', 'js-cookie', 'jquery-migrate' ), '0.9.1' );
 
-        wp_register_script( 'gdprcono', plugin_dir_url( __FILE__ ) . 'assets/js/script.js', array( 'js-cookie', 'jquery' ), $this->settings['version'] );
+        wp_register_script( 'gdprcono', plugin_dir_url( __FILE__ ) . 'assets/js/script.js', array( 'js-cookie', 'jquery', 'jquery-migrate' ), $this->settings['version'] );
         wp_localize_script( 'gdprcono', 'gdprcono_handler_params', array( 'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php') );
         wp_enqueue_script( 'gdprcono' );
 	}

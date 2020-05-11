@@ -1,8 +1,8 @@
-(function( $ ) {
-    "use strict";
+//(function( $ ) {
+    //"use strict";
 
     // Globals
-    var bodyOfDOM = jQuery('body');
+    var bodyOfDOM = jQuery('html');
 
     // FUNCTIONS //
     function removeNotifications(){
@@ -17,7 +17,8 @@
         }
     }
 
-    $(document).ready(function(){
+    jQuery(document).ready(function($){
+        bodyOfDOM = jQuery('html');
         // Add GDPR class.
         bodyOfDOM.addClass('gpdrcono-activated');
 
@@ -28,9 +29,9 @@
 
         // Switch.
         var currentStatusToggle = 1;
-        $('.gdprcono-togglefy').click(function(e){
+        jQuery('.gdprcono-togglefy').click(function(e){
             e.preventDefault();
-            var addOrRemove = $(this).toggleClass('toggle-on');
+            var addOrRemove = jQuery(this).toggleClass('toggle-on');
             currentStatusToggle = addOrRemove.context.classList.length;
             switchBoxSlide(currentStatusToggle);
             jQuery('.activateall-btn').hide();
@@ -112,7 +113,8 @@
         });
     });
 
-    $(window).load(function(){
+    jQuery(window).load(function($){
+        bodyOfDOM = jQuery('html');
         // Add GDPR class.
         bodyOfDOM.addClass('gpdrcono-activated');
 
@@ -121,4 +123,4 @@
             removeNotifications();
         }
     });
-})(jQuery);
+//})(jQuery);

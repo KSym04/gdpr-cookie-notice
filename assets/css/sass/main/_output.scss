@@ -158,6 +158,9 @@
                         li {
                             list-style: disc !important;
                             line-height: 1.4 !important;
+                            font-size: inherit !important;
+                            font-family: inherit !important;
+                            color: inherit !important;
                         }
                     }
 
@@ -181,6 +184,7 @@
 
                     a {
                         color: $color__red;
+                        font-size: inherit !important;
                     }
                 }
 
@@ -214,13 +218,14 @@
 
             a {
                 display: inline-block;
-                padding: 12px 30px 14px;
+                padding: 13px 30px 14px;
                 margin: 20px auto 0;
                 background-color: transparent;
                 border: 1px solid #2f2f2f;
                 border-radius: 50px;
                 font-family: $text__default;
                 color: #2f2f2f;
+                font-size: 14px;
                 text-decoration: none;
                 line-height: 1;
 
@@ -262,18 +267,18 @@
     /* dialog box */
     .jquery-modal {
         &.blocker {
-            background-color: rgba( 0, 0, 0, 0.7 );
-            z-index: 99999;
+            background-color: rgba( 0, 0, 0, 0.7 ) !important;
+            z-index: 99999 !important;
         }
     }
 
     #gdprcono-modal {
         &__main.modal {
-            max-width: 1220px;
-            padding: 50px 50px 40px;
-            background-color: #ebebeb;
-            box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 );
-            overflow: initial;
+            max-width: 1220px !important;
+            padding: 50px 50px 40px !important;
+            background-color: #ebebeb !important;
+            box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 ) !important;
+            overflow: initial !important;
 
             a.close-modal {
                 top: -25px;
