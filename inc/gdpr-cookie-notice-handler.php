@@ -16,7 +16,7 @@ function gdprcono_accept_cookie_handler() {
     if( 'accept' == $permit ) {
         $message['status'] = true;
         $host = parse_url( gdprcono_get_fullurl(), PHP_URL_HOST ); 
-        setcookie( "gdprconostatus", "accept", time() + 172800, "/", $host );
+        setcookie( "gdprconostatus", "accept", time() + 315360000, "/", $host );
     }
     
     echo json_encode( $message );
