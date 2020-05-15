@@ -88,7 +88,7 @@ class gdpr_cookie_notice_compliance {
         add_action( 'init', array( $this, 'main' ) );
 
         if( ! is_admin() && 'hold' == $_COOKIE['gdprconostatus'] ) {
-            add_action( 'wp_footer', array( $this, 'show_notifications' ) );
+            add_action( 'wp_footer', array( $this, 'show_notifications' ), 99999 );
         }
     }
 
