@@ -64,6 +64,7 @@ class gdpr_cookie_notice_compliance {
 	*  @return	N/A
 	*/
 	public function initialize() {
+
 		// Variables.
 		$this->settings = array(
 			'name'		 => __( 'GDPR Cookie Notice & Compliance', 'gdprcono' ),
@@ -553,3 +554,12 @@ function gdpr_cookie_notice_compliance() {
 gdpr_cookie_notice_compliance();
 
 endif; // class_exists check.
+
+/**
+ * Initialize on deactivation.
+ */
+function gdpr_run_checks() {
+    setcookie( "gdprconostatus", "hold", time() - 172800, "/", $_SERVER['SERVER_NAME'] );
+}
+register_activation_hook( __FILE__, 'gdpr_run_checks' );
+register_deactivation_hook( __FILE__, 'gdpr_run_checks' );
