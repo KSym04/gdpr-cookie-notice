@@ -126,7 +126,7 @@ class gdpr_cookie_notice_compliance {
 
         if( ! is_admin() && ( ! isset( $_COOKIE['gdprconostatus'] ) || empty( $_COOKIE['gdprconostatus'] ) ) ) {
             $host = parse_url( gdprcono_get_fullurl(), PHP_URL_HOST );
-            setcookie( "gdprconostatus", "hold", time() + 172800, "/", $host );
+            setcookie( "gdprconostatus", "hold", time() + 172800 );
         }
 
         if( ! is_admin() && 'reject' == $_COOKIE['gdprconostatus'] ) {
@@ -559,7 +559,7 @@ endif; // class_exists check.
  * Initialize on deactivation.
  */
 function gdpr_run_checks() {
-    setcookie( "gdprconostatus", "hold", time() - 172800, "/", $_SERVER['SERVER_NAME'] );
+    setcookie( "gdprconostatus", "hold", time() - 172800 );
 }
 register_activation_hook( __FILE__, 'gdpr_run_checks' );
 register_deactivation_hook( __FILE__, 'gdpr_run_checks' );

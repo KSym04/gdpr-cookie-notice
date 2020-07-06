@@ -2,7 +2,6 @@
     //"use strict";
 
     jQuery.noConflict();
-    var CookiesGDPR = Cookies.noConflict();
 
     // Globals
     var bodyOfDOM = jQuery('html');
@@ -25,7 +24,7 @@
         // Add GDPR class.
         bodyOfDOM.addClass('gpdrcono-activated');
 
-        var consentGDPRStatus = CookiesGDPR.get('gdprconostatus');
+        var consentGDPRStatus = Cookies.get('gdprconostatus');
         if('reject' == consentGDPRStatus) {
             removeNotifications();
         }
@@ -59,14 +58,17 @@
         // Form submit (accept).
         jQuery('#gdprcono-accept-btn, .gdprcono-popactivate > a').on('click', function(e){
             e.preventDefault();
-            CookiesGDPR.set('gdprconostatus', 'accept', { expires: 7, path: '/' });
+            Cookies.remove('gdprconostatus', { path: '/' });
+            Cookies.set('gdprconostatus', 'accept', { expires: 7, path: '/' });
             removeNotifications();
+            location.reload();
         });
 
         // Form submit (reject).
         jQuery('#gdprcono-reject-btn').on('click', function(e){
             e.preventDefault();
-            CookiesGDPR.set('gdprconostatus');
+            Cookies.remove('gdprconostatus', { path: '/' });
+            Cookies.set('gdprconostatus', 'reject', { expires: 7, path: '/' });
             removeNotifications();
             location.reload();
         });
@@ -77,7 +79,7 @@
         // Add GDPR class.
         bodyOfDOM.addClass('gpdrcono-activated');
 
-        var consentGDPRStatus = CookiesGDPR.get('gdprconostatus');
+        var consentGDPRStatus = Cookies.get('gdprconostatus');
         if('reject' == consentGDPRStatus) {
             removeNotifications();
         }
