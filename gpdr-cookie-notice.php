@@ -3,7 +3,7 @@
 Plugin Name: GDPR Cookie Notice & Compliance
 Plugin URI: https://www.eteam.dk/om-eteam/
 Description: Simple utility plugin for GDPR compliance
-Version: 1.0.7
+Version: 1.0.8
 Author: Eteam.dk
 Author URI: https://www.eteam.dk/
 Copyright: Eteam.dk
@@ -189,7 +189,7 @@ class gdpr_cookie_notice_compliance {
         // Script.
         wp_dequeue_script( 'bootstrap' ); // eliminate shitty bootstrap.
         wp_dequeue_script( 'bootstrap-js' ); // eliminate shitty bootstrap.
-        wp_enqueue_script( 'js-cookie', 'https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js', array( 'jquery', 'jquery-migrate' ), '3.0.0-beta.4' );
+        wp_enqueue_script( 'js-cookie', 'https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js', array( 'jquery', 'jquery-migrate' ), '2.2.1' );
         wp_enqueue_script( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js', array( 'jquery', 'js-cookie', 'jquery-migrate' ), '0.9.1' );
 
         wp_register_script( 'gdprcono', plugin_dir_url( __FILE__ ) . 'assets/js/script.js', array( 'js-cookie', 'jquery', 'jquery-migrate' ), $this->settings['version'] );

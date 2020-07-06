@@ -2,6 +2,7 @@
     //"use strict";
 
     jQuery.noConflict();
+    var CookiesGDPR = Cookies.noConflict();
 
     // Globals
     var bodyOfDOM = jQuery('html');
@@ -24,7 +25,7 @@
         // Add GDPR class.
         bodyOfDOM.addClass('gpdrcono-activated');
 
-        var consentGDPRStatus = Cookies.get('gdprconostatus');
+        var consentGDPRStatus = CookiesGDPR.get('gdprconostatus');
         if('reject' == consentGDPRStatus) {
             removeNotifications();
         }
@@ -58,60 +59,16 @@
         // Form submit (accept).
         jQuery('#gdprcono-accept-btn, .gdprcono-popactivate > a').on('click', function(e){
             e.preventDefault();
-
-            // Submission controller.
-            var dataPosts = {
-                    'action' : 'gdprcono_accept_cookie_handler',
-                    'permit' : 'accept'
-                };
-
-            jQuery.ajax({
-                url : gdprcono_handler_params.ajaxurl,
-                data : dataPosts,
-                dataType: "text",
-                type : 'POST',
-                beforeSend : function () {
-
-                },
-                success : function(data){
-                    var json = jQuery.parseJSON(data);
-                    console.log(json);
-
-                    if( json.status == true ) {
-                        removeNotifications();
-                    }
-                }
-            });
+            CookiesGDPR.set('gdprconostatus', 'accept', { expires: 7, path: '/' });
+            removeNotifications();
         });
 
         // Form submit (reject).
         jQuery('#gdprcono-reject-btn').on('click', function(e){
             e.preventDefault();
-
-            // Submission controller.
-            var dataPosts = {
-                    'action' : 'gdprcono_reject_cookie_handler',
-                    'permit' : 'reject'
-                };
-
-            jQuery.ajax({
-                url : gdprcono_handler_params.ajaxurl,
-                data : dataPosts,
-                dataType: "text",
-                type : 'POST',
-                beforeSend : function () {
-
-                },
-                success : function(data){
-                    var json = jQuery.parseJSON(data);
-                    console.log(json);
-
-                    if( json.status == true ) {
-                        removeNotifications();
-                        location.reload();
-                    }
-                }
-            });
+            CookiesGDPR.set('gdprconostatus');
+            removeNotifications();
+            location.reload();
         });
     });
 
@@ -120,9 +77,10 @@
         // Add GDPR class.
         bodyOfDOM.addClass('gpdrcono-activated');
 
-        var consentGDPRStatus = Cookies.get('gdprconostatus');
+        var consentGDPRStatus = CookiesGDPR.get('gdprconostatus');
         if('reject' == consentGDPRStatus) {
             removeNotifications();
         }
     });
+
 //})(jQuery);
