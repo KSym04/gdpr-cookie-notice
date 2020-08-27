@@ -16,7 +16,7 @@ function gdprcono_accept_cookie_handler() {
     if( 'accept' == $permit ) {
         $message['status'] = true;
         $host = parse_url( gdprcono_get_fullurl(), PHP_URL_HOST ); 
-        setcookie( "gdprconostatus", "accept", time() + 315360000 );
+        setcookie( "gdprconostatus", "accept", time() + 172800, "/", $host );
     }
     
     echo json_encode( $message );
@@ -40,7 +40,7 @@ function gdprcono_reject_cookie_handler() {
     if( 'reject' == $permit ) {
         $message['status'] = true;
         $host = parse_url( gdprcono_get_fullurl(), PHP_URL_HOST ); 
-        setcookie( "gdprconostatus", "reject", time() + 172800 );
+        setcookie( "gdprconostatus", "reject", time() + 172800, "/", $host );
     }
 
     // Clear all cookies.

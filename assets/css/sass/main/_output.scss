@@ -30,7 +30,6 @@
             float: left;
             margin-top: 0;
             margin-bottom: 0;
-            margin: 0;
 
             a {
                 color: inherit;
@@ -67,7 +66,6 @@
                 font-family: $text__heading;
                 font-size: 20px;
                 color: $color__darkgrey;
-                line-height: 1.4 !important;
 
                 img {
                     display: inline-block;
@@ -149,20 +147,12 @@
 
                     ul,
                     ol {
-                        list-style-type: disc !important;
-                        margin: 0 0 1.5rem 2rem !important;
+                        list-style-type: disc;
+                        margin: 0 0 1.5rem 2rem;
                         padding: 0;
                         font-family: $text__default;
                         font-size: inherit;
                         color: $color__darkgrey;
-
-                        li {
-                            list-style: disc !important;
-                            line-height: 1.4 !important;
-                            font-size: inherit !important;
-                            font-family: inherit !important;
-                            color: inherit !important;
-                        }
                     }
 
                     strong {
@@ -180,13 +170,10 @@
                         font-family: $text__default;
                         font-size: inherit;
                         color: $color__darkgrey;
-                        line-height: 1.4;
                     }
 
                     a {
                         color: $color__red;
-                        font-size: inherit !important;
-                        text-decoration: none;
                     }
                 }
 
@@ -198,17 +185,12 @@
                     border-radius: 25px;
                     line-height: 1;
                     text-decoration: none;
-                    color: inherit !important;
-                    font-weight: inherit !important;
-                    background-color: transparent;
-                    box-sizing: border-box;
-                    max-height: 36px;
-                    text-transform: none;
+                    color: inherit;
 
                     &:hover {
-                        border: 1px solid $color__white !important;
-                        background-color: $color__red !important;
-                        color: $color__white !important;
+                        border: 1px solid $color__white;
+                        background-color: $color__red;
+                        color: $color__white;
                     }
                 }
             }
@@ -218,10 +200,6 @@
                 margin: -40px auto;
                 display: block;
             }
-
-            .h3img {
-                display: none;
-            }
         }
 
         &__activate-all {
@@ -229,14 +207,13 @@
 
             a {
                 display: inline-block;
-                padding: 13px 30px 14px;
+                padding: 12px 30px 14px;
                 margin: 20px auto 0;
                 background-color: transparent;
                 border: 1px solid #2f2f2f;
                 border-radius: 50px;
                 font-family: $text__default;
                 color: #2f2f2f;
-                font-size: 14px;
                 text-decoration: none;
                 line-height: 1;
 
@@ -256,7 +233,6 @@
     #gdprcono-reject-btn,
     #gdprcono-settings-btn {
         background-color: $color__light-grey;
-        box-shadow: none;
         border-radius: 20px;
         padding: 7px 20px 8px;
         box-sizing: border-box;
@@ -268,7 +244,6 @@
         height: 28px !important;
         display: inline-block !important;
         text-decoration: none !important;
-        float: none !important;
 
         &:hover,
         &:hover {
@@ -280,18 +255,18 @@
     /* dialog box */
     .jquery-modal {
         &.blocker {
-            background-color: rgba( 0, 0, 0, 0.7 ) !important;
-            z-index: 99999 !important;
+            background-color: rgba( 0, 0, 0, 0.7 );
+            z-index: 99999;
         }
     }
 
     #gdprcono-modal {
         &__main.modal {
-            max-width: 1220px !important;
-            padding: 50px 50px 40px !important;
-            background-color: #ebebeb !important;
-            box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 ) !important;
-            overflow: initial !important;
+            max-width: 1220px;
+            padding: 50px 50px 40px;
+            background-color: #ebebeb;
+            box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 );
+            overflow: initial;
 
             a.close-modal {
                 top: -25px;

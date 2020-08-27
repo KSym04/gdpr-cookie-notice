@@ -1,26 +1,19 @@
-//(function( $ ) {
-    //"use strict";
+    jQuery(document).ready(function(){
+		var bodyOfDOM = jQuery('body');
 
-    jQuery.noConflict();
+		// FUNCTIONS //
+		function removeNotifications(){
+			jQuery('.gdprcono-front__wrapper').remove();
+		}
 
-    // Globals
-    var bodyOfDOM = jQuery('html');
+		function switchBoxSlide(currentStatusToggle) {
+			if (currentStatusToggle == 2) {
+				jQuery('.switchcontent-box').slideUp();
+			} else {
+				jQuery('.switchcontent-box').slideDown();
+			}
+		}
 
-    // FUNCTIONS //
-    function removeNotifications(){
-        jQuery('.gdprcono-front__wrapper').remove();
-    }
-
-    function switchBoxSlide(currentStatusToggle) {
-        if (currentStatusToggle == 2) {
-            jQuery('.switchcontent-box').slideUp();
-        } else {
-            jQuery('.switchcontent-box').slideDown();
-        }
-    }
-
-    jQuery(document).ready(function($){
-        bodyOfDOM = jQuery('html');
         // Add GDPR class.
         bodyOfDOM.addClass('gpdrcono-activated');
 
@@ -58,31 +51,59 @@
         // Form submit (accept).
         jQuery('#gdprcono-accept-btn, .gdprcono-popactivate > a').on('click', function(e){
             e.preventDefault();
-            Cookies.remove('gdprconostatus', { path: '/' });
-            Cookies.set('gdprconostatus', 'accept', { expires: 7, path: '/' });
-            removeNotifications();
-            location.reload();
+
+            // Submission controller.
+            var dataPosts = {
+                    'action' : 'gdprcono_accept_cookie_handler',
+                    'permit' : 'accept'
+                };
+
+            jQuery.ajax({
+                url : gdprcono_handler_params.ajaxurl,
+                data : dataPosts,
+                dataType: "text",
+                type : 'POST',
+                beforeSend : function () {
+
+                },
+                success : function(data){
+                    var json = jQuery.parseJSON(data);
+                    console.log(json);
+
+                    if( json.status == true ) {
+                        removeNotifications();
+                    }
+                }
+            });
         });
 
         // Form submit (reject).
         jQuery('#gdprcono-reject-btn').on('click', function(e){
             e.preventDefault();
-            Cookies.remove('gdprconostatus', { path: '/' });
-            Cookies.set('gdprconostatus', 'reject', { expires: 7, path: '/' });
-            removeNotifications();
-            location.reload();
+
+            // Submission controller.
+            var dataPosts = {
+                    'action' : 'gdprcono_reject_cookie_handler',
+                    'permit' : 'reject'
+                };
+
+            jQuery.ajax({
+                url : gdprcono_handler_params.ajaxurl,
+                data : dataPosts,
+                dataType: "text",
+                type : 'POST',
+                beforeSend : function () {
+
+                },
+                success : function(data){
+                    var json = jQuery.parseJSON(data);
+                    console.log(json);
+
+                    if( json.status == true ) {
+                        removeNotifications();
+                        location.reload();
+                    }
+                }
+            });
         });
     });
-
-    jQuery(window).load(function($){
-        bodyOfDOM = jQuery('html');
-        // Add GDPR class.
-        bodyOfDOM.addClass('gpdrcono-activated');
-
-        var consentGDPRStatus = Cookies.get('gdprconostatus');
-        if('reject' == consentGDPRStatus) {
-            removeNotifications();
-        }
-    });
-
-//})(jQuery);

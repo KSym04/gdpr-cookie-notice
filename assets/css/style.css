@@ -30,7 +30,6 @@
   float: left;
   margin-top: 0;
   margin-bottom: 0;
-  margin: 0;
 }
 .gpdrcono-activated .gdprcono-front__headline-text a {
   color: inherit;
@@ -62,7 +61,6 @@
   font-family: "Oswald", sans-serif;
   font-size: 20px;
   color: #333333;
-  line-height: 1.4 !important;
 }
 .gpdrcono-activated .gdprcono-tab__list li img {
   display: inline-block;
@@ -132,20 +130,12 @@
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article ul,
 .gpdrcono-activated .gdprcono-tab__content-inner article ol {
-  list-style-type: disc !important;
-  margin: 0 0 1.5rem 2rem !important;
+  list-style-type: disc;
+  margin: 0 0 1.5rem 2rem;
   padding: 0;
   font-family: "Open Sans", sans-serif;
   font-size: inherit;
   color: #333333;
-}
-.gpdrcono-activated .gdprcono-tab__content-inner article ul li,
-.gpdrcono-activated .gdprcono-tab__content-inner article ol li {
-  list-style: disc !important;
-  line-height: 1.4 !important;
-  font-size: inherit !important;
-  font-family: inherit !important;
-  color: inherit !important;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article strong {
   display: block;
@@ -161,12 +151,9 @@
   font-family: "Open Sans", sans-serif;
   font-size: inherit;
   color: #333333;
-  line-height: 1.4;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner article a {
   color: #960001;
-  font-size: inherit !important;
-  text-decoration: none;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner .button {
   cursor: pointer;
@@ -176,40 +163,30 @@
   border-radius: 25px;
   line-height: 1;
   text-decoration: none;
-  color: inherit !important;
-  font-weight: inherit !important;
-  background-color: transparent;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  max-height: 36px;
-  text-transform: none;
+  color: inherit;
 }
 .gpdrcono-activated .gdprcono-tab__content-inner .button:hover {
-  border: 1px solid #ffffff !important;
-  background-color: #960001 !important;
-  color: #ffffff !important;
+  border: 1px solid #ffffff;
+  background-color: #960001;
+  color: #ffffff;
 }
 .gpdrcono-activated .gdprcono-tab__content > img {
   width: 35%;
   margin: -40px auto;
   display: block;
 }
-.gpdrcono-activated .gdprcono-tab__content .h3img {
-  display: none;
-}
 .gpdrcono-activated .gdprcono-tab__activate-all {
   padding-left: 20px;
 }
 .gpdrcono-activated .gdprcono-tab__activate-all a {
   display: inline-block;
-  padding: 13px 30px 14px;
+  padding: 12px 30px 14px;
   margin: 20px auto 0;
   background-color: transparent;
   border: 1px solid #2f2f2f;
   border-radius: 50px;
   font-family: "Open Sans", sans-serif;
   color: #2f2f2f;
-  font-size: 14px;
   text-decoration: none;
   line-height: 1;
 }
@@ -224,8 +201,6 @@
 .gpdrcono-activated #gdprcono-reject-btn,
 .gpdrcono-activated #gdprcono-settings-btn {
   background-color: #777777;
-  -webkit-box-shadow: none;
-          box-shadow: none;
   border-radius: 20px;
   padding: 7px 20px 8px;
   -webkit-box-sizing: border-box;
@@ -239,7 +214,6 @@
   height: 28px !important;
   display: inline-block !important;
   text-decoration: none !important;
-  float: none !important;
 }
 .gpdrcono-activated #gdprcono-accept-btn:hover, .gpdrcono-activated #gdprcono-accept-btn:hover,
 .gpdrcono-activated #gdprcono-reject-btn:hover,
@@ -250,16 +224,16 @@
   color: #777777;
 }
 .gpdrcono-activated .jquery-modal.blocker {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-  z-index: 99999 !important;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
 }
 .gpdrcono-activated #gdprcono-modal__main.modal {
-  max-width: 1220px !important;
-  padding: 50px 50px 40px !important;
-  background-color: #ebebeb !important;
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
-  overflow: initial !important;
+  max-width: 1220px;
+  padding: 50px 50px 40px;
+  background-color: #ebebeb;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: initial;
 }
 .gpdrcono-activated #gdprcono-modal__main.modal a.close-modal {
   top: -25px;
@@ -392,7 +366,7 @@
     display: none;
   }
   .gpdrcono-activated #gdprcono-modal__main.modal {
-    padding: 30px 30px 30px !important;
+    padding: 30px 30px 30px;
   }
   .gpdrcono-activated .gdprcono-tab__activate-all a {
     padding: 10px 30px 11px;
