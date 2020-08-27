@@ -3,7 +3,7 @@
 Plugin Name: GDPR Cookie Notice & Compliance
 Plugin URI: https://www.eteam.dk/om-eteam/
 Description: Simple utility plugin for GDPR compliance
-Version: 1.0.8
+Version: 1.0.9
 Author: Eteam.dk
 Author URI: https://www.eteam.dk/
 Copyright: Eteam.dk
@@ -68,13 +68,16 @@ class gdpr_cookie_notice_compliance {
 		// Variables.
 		$this->settings = array(
 			'name'		 => __( 'GDPR Cookie Notice & Compliance', 'gdprcono' ),
-			'version'	 => '1.0.0',
+			'version'	 => '1.0.9',
 			'menu_slug'	 => 'gdpr-cookie-notice-compliance',
 			'permission' => 'manage_options',
 			'basename'	 => plugin_basename( __FILE__ ),
 			'path'		 => plugin_dir_path( __FILE__ ),
 			'dir'		 => plugin_dir_url( __FILE__ )
         );
+
+        // WordPress filter add class - frontend.
+        add_filter( 'body_class', 'activate_gdpr' );
 
         // Language.
         add_action( 'plugins_loaded', array( $this, 'language_support' ) );
@@ -85,7 +88,7 @@ class gdpr_cookie_notice_compliance {
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_page_styles_scripts' ) );
 
         // Actions (main).
-        add_action( 'wp_enqueue_scripts', array( $this, 'main_styles_scripts' ), 99999 );
+        add_action( 'wp_enqueue_scripts', array( $this, 'main_styles_scripts' ) );
         add_action( 'init', array( $this, 'main' ) );
 
         if( ! is_admin() && 'hold' == $_COOKIE['gdprconostatus'] ) {
@@ -154,11 +157,11 @@ class gdpr_cookie_notice_compliance {
 	*/
 	public function main_styles_scripts() {
         // Style.
-        wp_enqueue_style( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css', array(), '0.9.1' );
-        wp_enqueue_style( 'google-fonts-open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap', array(), $this->settings['version'] );
-        wp_enqueue_style( 'google-fonts-oswald', 'https://fonts.googleapis.com/css?family=Oswald&display=swap', array(), $this->settings['version'] );
-        wp_enqueue_style( 'google-fonts-quicksand', 'https://fonts.googleapis.com/css?family=Quicksand&display=swap', array(), $this->settings['version'] );
-        wp_enqueue_style( 'gdprcono-base', plugin_dir_url( __FILE__ ) . 'assets/css/style.css', array( 'jquery-modal' ), $this->settings['version'] );
+        wp_enqueue_style( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css', array(), time() );
+        wp_enqueue_style( 'google-fonts-open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap', array(), time() );
+        wp_enqueue_style( 'google-fonts-oswald', 'https://fonts.googleapis.com/css?family=Oswald&display=swap', array(), time() );
+        wp_enqueue_style( 'google-fonts-quicksand', 'https://fonts.googleapis.com/css?family=Quicksand&display=swap', array(), time() );
+        wp_enqueue_style( 'gdprcono-base', plugin_dir_url( __FILE__ ) . 'assets/css/style.css', array( 'jquery-modal' ), time() );
 
         // Build inline styles.
         $notice_bgcolor = get_option( 'gpdrcono_notice_bgcolor' );
@@ -189,13 +192,22 @@ class gdpr_cookie_notice_compliance {
         // Script.
         wp_dequeue_script( 'bootstrap' ); // eliminate shitty bootstrap.
         wp_dequeue_script( 'bootstrap-js' ); // eliminate shitty bootstrap.
-        wp_enqueue_script( 'js-cookie', 'https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js', array( 'jquery', 'jquery-migrate' ), '2.2.1' );
-        wp_enqueue_script( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js', array( 'jquery', 'js-cookie', 'jquery-migrate' ), '0.9.1' );
+        wp_enqueue_script( 'js-cookie', 'https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js', array( 'jquery', 'jquery-migrate' ), time() );
+        wp_enqueue_script( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js', array( 'jquery', 'js-cookie', 'jquery-migrate' ), time() );
 
-        wp_register_script( 'gdprcono', plugin_dir_url( __FILE__ ) . 'assets/js/script.js', array( 'js-cookie', 'jquery', 'jquery-migrate' ), $this->settings['version'] );
+        wp_register_script( 'gdprcono', plugin_dir_url( __FILE__ ) . 'assets/js/script.js', array( 'js-cookie', 'jquery', 'jquery-migrate' ), time() );
         wp_localize_script( 'gdprcono', 'gdprcono_handler_params', array( 'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php') );
         wp_enqueue_script( 'gdprcono' );
-	}
+    }
+    
+    /**
+     * WordPress function that add class on body tag.
+     */
+    function activate_gdpr( $classes ) {
+        $gdpr_class = 'gdprcono-activated';
+        $classes[] = $gdpr_class;
+        return $classes;
+    }
 
 	/*
 	*  admin_page_url
