@@ -451,6 +451,21 @@ class gdpr_cookie_notice_compliance {
             Det betyder, at hver gang du besøger denne hjemmeside, skal du aktivere eller deaktivere cookies igen.', 'gdprcono' )
         );
         register_setting( 'gdprcono_options_group', 'gpdrcono_switch_content' );
+
+        // install database.
+        global $wpdb;
+ 
+        $charset_collate = $wpdb->get_charset_collate();
+        $table_name = $wpdb->prefix . 'new_table_name';
+        
+        $sql = "CREATE TABLE $table_name (
+            id mediumint(9) NOT NULL AUTO_INCREMENT,
+            COLUMNNAME longtext NOT NULL,
+            UNIQUE KEY id (id)
+        ) $charset_collate;";
+        
+        
+        dbDelta( $sql );
 	}
 
 	/*
