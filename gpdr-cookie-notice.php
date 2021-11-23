@@ -3,7 +3,7 @@
 Plugin Name: GDPR Cookie Notice & Compliance
 Plugin URI: https://www.eteam.dk/om-eteam/
 Description: Simple utility plugin for GDPR compliance
-Version: 1.0.9
+Version: 1.0.10
 Author: Eteam.dk
 Author URI: https://www.eteam.dk/
 Copyright: Eteam.dk
@@ -67,7 +67,7 @@ class gdpr_cookie_notice_compliance {
 		// Variables.
 		$this->settings = array(
 			'name'		 => __( 'GDPR Cookie Notice & Compliance', 'gdprcono' ),
-			'version'	 => '1.0.9',
+			'version'	 => '1.0.10',
 			'menu_slug'	 => 'gdpr-cookie-notice-compliance',
 			'permission' => 'manage_options',
 			'basename'	 => plugin_basename( __FILE__ ),
@@ -111,12 +111,12 @@ class gdpr_cookie_notice_compliance {
 	*  @since	1.0.0
 	*/
 	public function main() {
-        include( $this->settings['path'] . 'ver/plugin-update-checker.php' );
-        $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://www.eteam.dk/modules/gdpr-cookie-notice.json',
-            __FILE__,
-            'gdprcono'
-        );
+        // include( $this->settings['path'] . 'ver/plugin-update-checker.php' );
+        // $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+        //     'https://www.eteam.dk/modules/gdpr-cookie-notice.json',
+        //     __FILE__,
+        //     'gdprcono'
+        // );
 
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-helpers.php' );
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-shortcode.php' );

@@ -38,7 +38,7 @@
 }
 .gpdrcono-activated .gdprcono-front__action-button {
   position: relative;
-  padding: 0;
+  padding: 5px 0 0;
   display: block;
   width: 35%;
   text-align: right;
@@ -206,7 +206,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: none;
-  font-size: 14px;
+  font-size: 13px;
   color: #ffffff;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
