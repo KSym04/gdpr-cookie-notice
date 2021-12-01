@@ -426,3 +426,8 @@
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.gpdr-reject,
+.gpdr-accept {
+  display: none !important;
+}

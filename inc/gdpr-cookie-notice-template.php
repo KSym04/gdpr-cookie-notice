@@ -58,48 +58,53 @@ function gdprcono_generate_select_html( $selected, $args = array() ) {
  * @package GDPR_Cookie_Notice_Compliance
  */
 function gdprcono_display_notification_bar() {
-    if( 'reject' == $_COOKIE['gdprconostatus'] ) {
-        gdprcono_clearall_cookies();
+    global $wpdb;
+    $session_key = sanitize_key( $_COOKIE['gdprstatus'] );
+    $gdprtable = $wpdb->prefix . 'gdpr_sessions';
+    $metadata = $wpdb->get_row( "SELECT session_status FROM $gdprtable WHERE session_key = '$session_key' LIMIT 1" );
+    $metadata_session_status = $metadata->session_status;
+
+    if( empty( $metadata_session_status ) ) {
+        $metadata_session_status = 'hold';
     }
 
-    if( 'hold' == $_COOKIE['gdprconostatus'] ) {
-        $serial_id = mt_rand( 100000, 999999 );
-        remove_filter( 'the_content', 'wpautop' );
+    // For tabbing serial.
+    $serial_id = mt_rand( 100000, 999999 );
+    remove_filter( 'the_content', 'wpautop' );
         
-        // Clean vars.
-        $headline_text = get_option( 'gpdrcono_headline_text' );
-        $accept_text = get_option( 'gpdrcono_accept_text' );
-        $reject_text = get_option( 'gpdrcono_reject_text' );
-        $readmore_text = get_option( 'gpdrcono_readmore_text' );
+    // Clean vars.
+    $headline_text = get_option( 'gpdrcono_headline_text' );
+    $accept_text = get_option( 'gpdrcono_accept_text' );
+    $reject_text = get_option( 'gpdrcono_reject_text' );
+    $readmore_text = get_option( 'gpdrcono_readmore_text' );
 
-        $gpdrcono_privacy_policy_page = do_shortcode( get_option( 'gpdrcono_privacy_policy_page' ) );
-        $gpdrcono_cookie_required_settings_tab_content = do_shortcode( get_option( 'gpdrcono_cookie_required_settings_tab_content' ) );
-        $gpdrcono_cookie_information_tab_content = do_shortcode( get_option( 'gpdrcono_cookie_information_tab_content' ) );
-        $gpdrcono_switch_content = wpautop( get_option( 'gpdrcono_switch_content' ) );
+    $gpdrcono_privacy_policy_page = do_shortcode( get_option( 'gpdrcono_privacy_policy_page' ) );
+    $gpdrcono_cookie_required_settings_tab_content = do_shortcode( get_option( 'gpdrcono_cookie_required_settings_tab_content' ) );
+    $gpdrcono_cookie_information_tab_content = do_shortcode( get_option( 'gpdrcono_cookie_information_tab_content' ) );
+    $gpdrcono_switch_content = wpautop( get_option( 'gpdrcono_switch_content' ) );
 
-        if( 'true' == get_option( 'gpdrcono_apply_wpautop' ) ) {
-            $gpdrcono_privacy_policy_page = wpautop( $gpdrcono_privacy_policy_page );
-            $gpdrcono_cookie_required_settings_tab_content = wpautop( $gpdrcono_cookie_required_settings_tab_content );
-            $gpdrcono_cookie_information_tab_content = wpautop( $gpdrcono_cookie_information_tab_content );
-            $gpdrcono_switch_content = wpautop( $gpdrcono_switch_content );
-        }
+    if( 'true' == get_option( 'gpdrcono_apply_wpautop' ) ) {
+        $gpdrcono_privacy_policy_page = wpautop( $gpdrcono_privacy_policy_page );
+        $gpdrcono_cookie_required_settings_tab_content = wpautop( $gpdrcono_cookie_required_settings_tab_content );
+        $gpdrcono_cookie_information_tab_content = wpautop( $gpdrcono_cookie_information_tab_content );
+        $gpdrcono_switch_content = wpautop( $gpdrcono_switch_content );
+    }
 
-        echo '<div class="gdprcono-front__wrapper gdprcono-front__wrapper-top">
-                <div class="gdprcono-front__inner">
-                    <p class="gdprcono-front__headline-text">
-                        ' . $headline_text . '
-                        <a href="' . get_option( 'gpdrcono_readmore_link' ) . '">' . $readmore_text . '</a>
-                    </p>
-
-                    <div class="gdprcono-front__action-button">
-                        <button id="gdprcono-accept-btn">' . $accept_text . '</button>
-                        <a id="gdprcono-settings-btn" href="#gdprcono-modal__main" rel="modal:open" class="gdprcono-front__dialog">
-                            ' . __( 'Cookie Settings', 'gdprcono' ) . '
-                        </a>
-                        <button id="gdprcono-reject-btn">' . $reject_text . '</button>
-                    </div>
+    echo '<div class="gdprcono-front__wrapper gdprcono-front__wrapper-top gpdr-' . $metadata_session_status . '">
+            <div class="gdprcono-front__inner">
+                <p class="gdprcono-front__headline-text">
+                    ' . $headline_text . '
+                    <a href="' . get_option( 'gpdrcono_readmore_link' ) . '">' . $readmore_text . '</a>
+                </p>
+                <div class="gdprcono-front__action-button">
+                    <button id="gdprcono-accept-btn">' . $accept_text . '</button>
+                    <a id="gdprcono-settings-btn" href="#gdprcono-modal__main" rel="modal:open" class="gdprcono-front__dialog">
+                        ' . __( 'Cookie Settings', 'gdprcono' ) . '
+                    </a>
+                    <button id="gdprcono-reject-btn">' . $reject_text . '</button>
                 </div>
-              </div>';
+            </div>
+          </div>';
 
         // Privacy policy page.
         $gpdrcono_privacy_policy_tab_title = get_option( 'gpdrcono_privacy_policy_tab_title' );
@@ -157,5 +162,8 @@ function gdprcono_display_notification_bar() {
                     ' . do_shortcode( '[gdprcono_activate_all_button]' ) . '
                 </div>
               </div>';
+              
+    if( 'reject' == $metadata->session_status ) {
+        gdprcono_clearall_cookies();
     }
 }

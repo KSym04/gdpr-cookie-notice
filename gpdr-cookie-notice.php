@@ -3,7 +3,7 @@
 Plugin Name: GDPR Cookie Notice & Compliance
 Plugin URI: https://www.eteam.dk/om-eteam/
 Description: Simple utility plugin for GDPR compliance
-Version: 1.0.10
+Version: 2.0.0
 Author: Eteam.dk
 Author URI: https://www.eteam.dk/
 Copyright: Eteam.dk
@@ -67,7 +67,7 @@ class gdpr_cookie_notice_compliance {
 		// Variables.
 		$this->settings = array(
 			'name'		 => __( 'GDPR Cookie Notice & Compliance', 'gdprcono' ),
-			'version'	 => '1.0.10',
+			'version'	 => '2.0.0',
 			'menu_slug'	 => 'gdpr-cookie-notice-compliance',
 			'permission' => 'manage_options',
 			'basename'	 => plugin_basename( __FILE__ ),
@@ -87,9 +87,12 @@ class gdpr_cookie_notice_compliance {
         add_action( 'wp_enqueue_scripts', array( $this, 'main_styles_scripts' ), 99999 );
         add_action( 'init', array( $this, 'main' ) );
 
-        if( ! is_admin() && 'hold' == $_COOKIE['gdprconostatus'] ) {
-            add_action( 'wp_footer', array( $this, 'show_notifications' ) );
-        }
+        // Deprecate old version.
+        setcookie( "gdprconostatus", "hold", time()-31540000 );
+        setcookie( "gdprconostatus", "hold", time()-31540000, "/" );
+
+        // Attach notifications.
+        add_action( 'wp_footer', array( $this, 'show_notifications' ) );
     }
 
 	/*
@@ -111,26 +114,31 @@ class gdpr_cookie_notice_compliance {
 	*  @since	1.0.0
 	*/
 	public function main() {
-        // include( $this->settings['path'] . 'ver/plugin-update-checker.php' );
-        // $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-        //     'https://www.eteam.dk/modules/gdpr-cookie-notice.json',
-        //     __FILE__,
-        //     'gdprcono'
-        // );
-
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-helpers.php' );
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-shortcode.php' );
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-handler.php' );
         include( $this->settings['path'] . 'inc/gdpr-cookie-notice-template.php' );
 
-        if( ! is_admin() && ( ! isset( $_COOKIE['gdprconostatus'] ) || empty( $_COOKIE['gdprconostatus'] ) ) ) {
-            $host = parse_url( gdprcono_get_fullurl(), PHP_URL_HOST );
-            setcookie( "gdprconostatus", "hold", time() + 172800, "/", $host );
-        }
+        // Check status.
+        global $wpdb;
+        $gdprtable = $wpdb->prefix . 'gdpr_sessions';
 
-        if( ! is_admin() && 'reject' == $_COOKIE['gdprconostatus'] ) {
-            gdprcono_clearall_cookies();
+        // If cookie is not yet existing generate cookies.
+        if( empty( $_COOKIE['gdprstatus'] ) ) { 
+            $session_key = time() . strtolower( md5( mt_rand( 0, 999999 ) ) ) . strtolower( md5( mt_rand( 0, 999999 ) ) );
+            $timestamp_validity = time() + 172800;
+            setcookie( "gdprstatus", $session_key, $timestamp_validity, "/" );
+
+            $wpdb->insert( $gdprtable, array(
+                "ts" => $timestamp_validity,
+                "session_key" => $session_key,
+                "session_status" => "hold"
+            ));
         }
+        
+        // Deprecate old version.
+        setcookie( "gdprconostatus", "hold", time()-31540000 );
+        setcookie( "gdprconostatus", "hold", time()-31540000, "/" );
     }
 
 	/*
@@ -452,20 +460,21 @@ class gdpr_cookie_notice_compliance {
         );
         register_setting( 'gdprcono_options_group', 'gpdrcono_switch_content' );
 
-        // install database.
+        // Install database.
         global $wpdb;
  
         $charset_collate = $wpdb->get_charset_collate();
-        $table_name = $wpdb->prefix . 'new_table_name';
+        $table_name = $wpdb->prefix . 'gdpr_sessions';
         
-        $sql = "CREATE TABLE $table_name (
-            id mediumint(9) NOT NULL AUTO_INCREMENT,
-            COLUMNNAME longtext NOT NULL,
+        $sql = "CREATE TABLE IF NOT EXISTS $table_name (
+            id mediumint(100) NOT NULL AUTO_INCREMENT,
+            ts varchar(255),
+            session_key varchar(255),
+            session_status varchar(255),
             UNIQUE KEY id (id)
         ) $charset_collate;";
         
-        
-        dbDelta( $sql );
+        $wpdb->get_results($sql);
 	}
 
 	/*
@@ -562,7 +571,7 @@ function gdpr_cookie_notice_compliance() {
 	return $gdpr_cookie_notice_compliance;
 }
 
-// initialize.
+// Initialize.
 gdpr_cookie_notice_compliance();
 
 endif; // class_exists check.

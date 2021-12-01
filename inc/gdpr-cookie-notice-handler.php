@@ -13,10 +13,23 @@ function gdprcono_accept_cookie_handler() {
     $message['status'] = false;
 
     $permit = sanitize_text_field( $_POST['permit'] );
+    $session_key = $_COOKIE['gdprstatus'];
     if( 'accept' == $permit ) {
         $message['status'] = true;
-        $host = parse_url( gdprcono_get_fullurl(), PHP_URL_HOST ); 
-        setcookie( "gdprconostatus", "accept", time() + 172800, "/", $host );
+
+        global $wpdb;
+        $gdprtable = $wpdb->prefix . 'gdpr_sessions';
+        $wpdb->update( 
+            $gdprtable, 
+            array( 
+                'session_status' => 'accept'
+            ), 
+            array( 'session_key' => sanitize_key( $session_key ) ), 
+            array( 
+                '%s',
+            ), 
+            array( '%s' ) 
+        );
     }
     
     echo json_encode( $message );
@@ -37,10 +50,23 @@ function gdprcono_reject_cookie_handler() {
     $message['status'] = false;
 
     $permit = sanitize_text_field( $_POST['permit'] );
+    $session_key = $_COOKIE['gdprstatus'];
     if( 'reject' == $permit ) {
         $message['status'] = true;
-        $host = parse_url( gdprcono_get_fullurl(), PHP_URL_HOST ); 
-        setcookie( "gdprconostatus", "reject", time() + 172800, "/", $host );
+
+        global $wpdb;
+        $gdprtable = $wpdb->prefix . 'gdpr_sessions';
+        $wpdb->update( 
+            $gdprtable, 
+            array( 
+                'session_status' => 'reject'
+            ), 
+            array( 'session_key' => sanitize_key( $session_key ) ), 
+            array( 
+                '%s',
+            ), 
+            array( '%s' ) 
+        );
     }
 
     // Clear all cookies.
