@@ -116,3 +116,9 @@
         }
     }
 } // wrap responsive CSS support for GDPR Cookie Notice plugin.
+
+/* Statuses */
+.gdpr-status-accept,
+.gdpr-status-reject {
+  display: none !important;
+}

@@ -17,9 +17,10 @@
         // Add GDPR class.
         bodyOfDOM.addClass('gpdrcono-activated');
 
-        // Remove previous cookies.
-        Cookies.remove('gdprconostatus');
-        Cookies.remove('gdprconostatus', { path: '' });
+        var consentGDPRStatus = Cookies.get('gdprconostatus');
+        if('reject' == consentGDPRStatus) {
+            removeNotifications();
+        }
 
         // Switch.
         var currentStatusToggle = 1;
@@ -54,7 +55,6 @@
             // Submission controller.
             var dataPosts = {
                     'action' : 'gdprcono_accept_cookie_handler',
-                    //'cookies' : Cookies.get('gdprstatus'),
                     'permit' : 'accept'
                 };
 
@@ -84,7 +84,6 @@
             // Submission controller.
             var dataPosts = {
                     'action' : 'gdprcono_reject_cookie_handler',
-                    //'cookies' : Cookies.get('gdprstatus'),
                     'permit' : 'reject'
                 };
 

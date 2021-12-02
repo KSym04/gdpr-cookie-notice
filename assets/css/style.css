@@ -425,9 +425,8 @@
   }
 }
 
-/*# sourceMappingURL=style.css.map */
-
-.gpdr-reject,
-.gpdr-accept {
+/* Statuses */
+.gdpr-status-accept,
+.gdpr-status-reject {
   display: none !important;
 }
